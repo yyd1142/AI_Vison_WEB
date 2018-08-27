@@ -3,13 +3,13 @@
   <el-row>
     <el-col :span="4">
       <div class="menu-wrap">
-        <div class="title-top">菜单列表</div>
-        <el-menu default-active="2" class="el-menu-vertical-demo" @open="handleOpen" @close="handleClose">
+        <div class="title-top">{{language.MenuList[lang]}}</div>
+        <el-menu default-active="1" class="el-menu-vertical-demo" @open="handleOpen" @close="handleClose">
           <el-submenu index="1">
             <template slot="title">
               <div class="menu-cell">
                 <i class="iconfont icon-yibiaopan icon"></i>
-                <span class="title">整体概况</span>
+                <span class="title">{{language.Overview[lang]}}</span>
               </div>
             </template>
             <el-menu-item-group>
@@ -71,13 +71,14 @@
             </div>
             <div class="right-wrap">
               <div class="location-wrap" style="margin-right: 25px;">
-                <el-dropdown>
+                <el-dropdown @command="chooseLang">
                   <span class="el-dropdown-link">
-                    <i class="iconfont icon-location location-icon"></i>简体中文
+                    <i class="iconfont icon-location location-icon"></i>{{items[lang]}}
                   </span>
                   <el-dropdown-menu slot="dropdown">
-                    <el-dropdown-item>繁体中文</el-dropdown-item>
-                    <el-dropdown-item>English</el-dropdown-item>
+                    <el-dropdown-item command="hk">繁体中文</el-dropdown-item>
+                    <el-dropdown-item command="cn">简体中文</el-dropdown-item>
+                    <el-dropdown-item command="en">English</el-dropdown-item>
                   </el-dropdown-menu>
                 </el-dropdown>
               </div>
@@ -94,6 +95,9 @@
               </div>
             </div>
           </header>
+          <div class="content">
+            <slot name="page"></slot>
+          </div>
       </div>
     </el-col>
   </el-row>
@@ -101,7 +105,7 @@
 </template>
 
 <style lang="less">
-@import "style/config";
+@import url("../static/style/config.less");
 .main-wrap {
   .el-menu > .el-submenu {
     padding: 10px 0;
@@ -135,6 +139,7 @@
       display: flex;
       display: -webkit-flex; /* Safari */
       position: relative;
+      flex: 1;
       .logo-wrap {
         display: flex;
         display: -webkit-flex; /* Safari */
@@ -154,7 +159,7 @@
         flex-direction: row;
         justify-content: center;
         height: 80px;
-        padding:  12px 0 12px 15px;
+        padding: 12px 0 12px 15px;
         .title-big {
           font-size: 22px;
           color: #333;
@@ -187,6 +192,13 @@
         }
       }
     }
+    .content {
+      width: 100%;
+      display: flex;
+      display: -webkit-flex;
+      background-color: #fff;
+      flex: 1;
+    }
   }
   .menu-cell {
     width: 100%;
@@ -207,13 +219,29 @@
 </style>
 
 <script>
+import language from '@static/language/config.json';
+
 export default {
+  data() {
+    return {
+      lang: 'cn',
+      language: language,
+      items: {
+        'cn': '简体中文',
+        'hk': '繁体中文',
+        'en': 'English'
+      }
+    }
+  },
   methods: {
     handleOpen(key, keyPath) {
       console.log(key, keyPath);
     },
     handleClose(key, keyPath) {
       console.log(key, keyPath);
+    },
+    chooseLang(command) {
+      this.lang = command;
     }
   }
 };

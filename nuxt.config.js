@@ -38,6 +38,7 @@ module.exports = {
       config.resolve.alias['@components'] = path.join(__dirname, 'components')
       config.resolve.alias['@plugins'] = path.join(__dirname, 'plugins')
       config.resolve.alias['@assets'] = path.join(__dirname, 'assets')
+      config.resolve.alias['@static'] = path.join(__dirname, 'static')
       if (ctx.isClient) {
         // config.module.rules.push({
         //   enforce: 'pre',
