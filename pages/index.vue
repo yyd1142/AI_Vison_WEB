@@ -154,7 +154,7 @@
         flex-direction: row;
         justify-content: center;
         height: 80px;
-        padding: 12px 0 12px 15px;
+        padding:  12px 0 12px 15px;
         .title-big {
           font-size: 22px;
           color: #333;
