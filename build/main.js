@@ -65,17 +65,22 @@ module.exports =
 /******/ 	__webpack_require__.p = "/";
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 5);
+/******/ 	return __webpack_require__(__webpack_require__.s = 6);
 /******/ })
 /************************************************************************/
 /******/ ([
 /* 0 */
-/***/ function(module, exports) {
+/***/ function(module, exports, __webpack_require__) {
 
+/* WEBPACK VAR INJECTION */(function(__dirname) {var path = __webpack_require__(4);
+var resolve = path.resolve;
 module.exports = {
   /*
   ** Headers of the page
   */
+  router: {
+    middleware: 'auth'
+  },
   head: {
     title: '智慧销售分析系统',
     meta: [{ charset: 'utf-8' }, { name: 'viewport', content: 'width=device-width, initial-scale=1' }, { hid: 'description', name: 'description', content: 'Nuxt.js project' }],
@@ -84,7 +89,7 @@ module.exports = {
   /*
   ** Global CSS
   */
-  css: ['~assets/css/main.css'],
+  css: ['@assets/css/main.css', '@assets/icons/iconfont.css', 'element-ui/lib/theme-chalk/index.css'],
   /*
   ** Customize the progress-bar color
   */
@@ -97,23 +102,30 @@ module.exports = {
      ** Run ESLINT on save
      */
     extend: function extend(config, ctx) {
+      config.resolve.alias['@components'] = path.join(__dirname, 'components');
+      config.resolve.alias['@plugins'] = path.join(__dirname, 'plugins');
+      config.resolve.alias['@assets'] = path.join(__dirname, 'assets');
+      config.resolve.alias['@static'] = path.join(__dirname, 'static');
+      config.resolve.alias['@store'] = path.join(__dirname, 'store');
       if (ctx.isClient) {
-        config.module.rules.push({
-          enforce: 'pre',
-          test: /\.(js|vue)$/,
-          loader: 'eslint-loader',
-          exclude: /(node_modules)/
-        });
+        // config.module.rules.push({
+        //   enforce: 'pre',
+        //   test: /\.(js|vue)$/,
+        //   loader: 'eslint-loader',
+        //   exclude: /(node_modules)/
+        // })
       }
     }
-  }
+  },
+  plugins: ['@plugins/element-ui', '~/utils/auth']
 };
+/* WEBPACK VAR INJECTION */}.call(exports, ""))
 
 /***/ },
 /* 1 */
 /***/ function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(4);
+module.exports = __webpack_require__(5);
 
 
 /***/ },
@@ -132,20 +144,22 @@ module.exports = require("nuxt");
 /* 4 */
 /***/ function(module, exports) {
 
-module.exports = require("regenerator-runtime");
+module.exports = require("path");
 
 /***/ },
 /* 5 */
+/***/ function(module, exports) {
+
+module.exports = require("regenerator-runtime");
+
+/***/ },
+/* 6 */
 /***/ function(module, exports, __webpack_require__) {
 
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__Users_dee_Projects_AIVision_WEB_node_modules_babel_runtime_regenerator__ = __webpack_require__(1);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__Users_dee_Projects_AIVision_WEB_node_modules_babel_runtime_regenerator___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0__Users_dee_Projects_AIVision_WEB_node_modules_babel_runtime_regenerator__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_koa__ = __webpack_require__(2);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_koa___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1_koa__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_nuxt__ = __webpack_require__(3);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_nuxt___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2_nuxt__);
 
 
 var start = function () {
@@ -155,7 +169,7 @@ var start = function () {
       while (1) {
         switch (_context.prev = _context.next) {
           case 0:
-            app = new __WEBPACK_IMPORTED_MODULE_1_koa___default.a();
+            app = new Koa();
             host = process.env.HOST || '127.0.0.1';
             port = process.env.PORT || 3000;
 
@@ -166,7 +180,7 @@ var start = function () {
             config.dev = !(app.env === 'production');
 
             // Instantiate nuxt.js
-            nuxt = new __WEBPACK_IMPORTED_MODULE_2_nuxt__["Nuxt"](config);
+            nuxt = new Nuxt(config);
 
             // Build in development
 
@@ -175,7 +189,7 @@ var start = function () {
               break;
             }
 
-            builder = new __WEBPACK_IMPORTED_MODULE_2_nuxt__["Builder"](nuxt);
+            builder = new Builder(nuxt);
             _context.next = 10;
             return builder.build();
 
@@ -206,8 +220,11 @@ var start = function () {
 
 function _asyncToGenerator(fn) { return function () { var gen = fn.apply(this, arguments); return new Promise(function (resolve, reject) { function step(key, arg) { try { var info = gen[key](arg); var value = info.value; } catch (error) { reject(error); return; } if (info.done) { resolve(value); } else { return Promise.resolve(value).then(function (value) { step("next", value); }, function (err) { step("throw", err); }); } } return step("next"); }); }; }
 
+var Koa = __webpack_require__(2);
 
-
+var _require = __webpack_require__(3),
+    Nuxt = _require.Nuxt,
+    Builder = _require.Builder;
 
 start();
 

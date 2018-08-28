@@ -4,6 +4,9 @@ module.exports = {
   /*
   ** Headers of the page
   */
+  router: {
+    middleware: 'auth'
+  },
   head: {
     title: '智慧销售分析系统',
     meta: [
@@ -39,6 +42,8 @@ module.exports = {
       config.resolve.alias['@plugins'] = path.join(__dirname, 'plugins')
       config.resolve.alias['@assets'] = path.join(__dirname, 'assets')
       config.resolve.alias['@static'] = path.join(__dirname, 'static')
+      config.resolve.alias['@store'] = path.join(__dirname, 'store')
+      config.resolve.alias['@pages'] = path.join(__dirname, 'pages')
       if (ctx.isClient) {
         // config.module.rules.push({
         //   enforce: 'pre',
@@ -50,6 +55,8 @@ module.exports = {
     }
   },
   plugins: [
-    '@plugins/element-ui'
+    '@plugins/element-ui',
+    '~/utils/auth',
+    '~theme/index.css'
   ]
 }

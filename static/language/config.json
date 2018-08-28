@@ -1,12 +1,122 @@
 {
-    "MenuList": {
-        "cn": "菜单列表",
-        "en": "Menu list",
-        "hk": "菜單列表"
-    },
-    "Overview": {
-        "cn": "整体概况",
-        "en": "Overview",
-        "hk": "整體概況"
-    }
+  "name": {
+    "cn": "智能零售分析系统",
+    "en": "Intelligent Retail Analysis System",
+    "hk": "智能零售分析系統"
+  },
+  "MenuList": {
+    "cn": "菜单列表",
+    "en": "Menu List",
+    "hk": "菜單列表"
+  },
+  "Overview": {
+    "cn": "整体概况",
+    "en": "Overview",
+    "hk": "整體概況"
+  },
+  "BaseAnalysis": {
+    "cn": "基础分析",
+    "en": "Base Analysis",
+    "hk": "基礎分析"
+  },
+  "AreaOverview": {
+    "cn": "地区概况",
+    "en": "Area Overview",
+    "hk": "地區概況"
+  },
+  "AdvancedAnalysis": {
+    "cn": "高级分析",
+    "en": "Advanced Analysis",
+    "hk": "高級分析"
+  },
+  "PassengerFlow": {
+    "cn": "店铺客流",
+    "en": "Passenger Flow",
+    "hk": "店铺客流"
+  },
+  "ThermalMap": {
+    "cn": "热力分布",
+    "en": "Thermal Map",
+    "hk": "热力分布"
+  },
+  "ReportAnalysis": {
+    "cn": "报表分析",
+    "en": "Report Analysis",
+    "hk": "報表分析"
+  },
+  "RemotePatrol": {
+    "cn": "远程巡逻",
+    "en": "Remote Patrol",
+    "hk": "遠程巡邏"
+  },
+  "FittingAnalysis": {
+    "cn": "店铺试衣分析",
+    "en": "Fitting Analysis",
+    "hk": "店鋪試衣分析"
+  },
+  "IndependentStore": {
+    "cn": "独立门店",
+    "en": "Independent Store",
+    "hk": "獨立門店"
+  },
+  "CycleComparison": {
+    "cn": "周期对比分析",
+    "en": "Cycle Comparison Analysis",
+    "hk": "週期對比分析"
+  },
+  "StoreComparison": {
+    "cn": "门店对比分析",
+    "en": "Store Comparison Analysis",
+    "hk": "門店對比分析"
+  },
+  "Setting": {
+    "cn": "配置管理",
+    "en": "Setting",
+    "hk": "配置管理"
+  },
+  "UserManagement": {
+    "cn": "用户管理",
+    "en": "User Management",
+    "hk": "用戶管理"
+  },
+  "DataManagement": {
+    "cn": "数据管理",
+    "en": "Data Management",
+    "hk": "數據管理"
+  },
+  "Profile": {
+    "cn": "账号设置",
+    "en": "Profile",
+    "hk": "賬號設置"
+  },
+  "SignOut": {
+    "cn": "退出账号",
+    "en": "Sign out",
+    "hk": "退出賬號"
+  },
+  "Store": {
+    "cn": "门店",
+    "en": "Store",
+    "hk": "門店"
+  },
+  "StoreInput": {
+    "cn": "请选择门店",
+    "en": "please select a store",
+    "hk": "請選擇門店"
+  },
+  "Yesterday": {
+    "cn": "昨天",
+    "en": "Yesterday",
+    "hk": "昨天"
+  },
+  "Last_7_days": {
+    "cn": "近7日",
+    "en": "Last 7 days",
+    "hk": "近7日"
+  },
+  "Last_30_days": {
+    "cn": "近30日",
+    "en": "Last 30 days",
+    "hk": "近30日"
+  }
 }
