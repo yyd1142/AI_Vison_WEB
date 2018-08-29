@@ -6,7 +6,7 @@
       </div>
       <div class="title">
         <div class="title-big">{{languageDatas.name[language]}}</div>
-        <div class="title-sub">{{languageDatas.Overview[language]}} | {{languageDatas.AreaOverview[language]}}</div>
+        <div class="title-sub">{{headerTitle[defaultActive]}}</div>
       </div>
       <div class="right-wrap">
         <div class="location-wrap" style="margin-right: 25px;">
@@ -15,8 +15,8 @@
                     <i class="iconfont icon-location location-icon"></i>{{items[language]}}
                   </span>
             <el-dropdown-menu slot="dropdown">
-              <el-dropdown-item command="hk">繁体中文</el-dropdown-item>
               <el-dropdown-item command="cn">简体中文</el-dropdown-item>
+              <el-dropdown-item command="hk">繁体中文</el-dropdown-item>
               <el-dropdown-item command="en">English</el-dropdown-item>
             </el-dropdown-menu>
           </el-dropdown>
@@ -49,12 +49,34 @@
       };
     },
     props:{
-      language: String
+      language: String,
+      defaultActive: String
     },
     computed: {
       languageDatas() {
         return this.$store.getters.languageDatas;
       },
+      headerTitle() {
+        const languageDatas = this.languageDatas;
+        const language = this.language;
+        const title = {
+          '1-1': `${languageDatas.Overview[language]} | ${languageDatas.AreaOverview[language]}`,
+          '1-2': `${languageDatas.Overview[language]} | ${languageDatas.IndependentStore[language]}`,
+
+          '2-1': `${languageDatas.BaseAnalysis[language]} | ${languageDatas.PassengerFlow[language]}`,
+          '2-2': `${languageDatas.BaseAnalysis[language]} | ${languageDatas.ThermalMap[language]}`,
+          '2-3': `${languageDatas.BaseAnalysis[language]} | ${languageDatas.ReportAnalysis[language]}`,
+          '2-4': `${languageDatas.BaseAnalysis[language]} | ${languageDatas.RemotePatrol[language]}`,
+          '2-5': `${languageDatas.BaseAnalysis[language]} | ${languageDatas.FittingAnalysis[language]}`,
+
+          '3-1': `${languageDatas.AdvancedAnalysis[language]} | ${languageDatas.CycleComparison[language]}`,
+          '3-2': `${languageDatas.AdvancedAnalysis[language]} | ${languageDatas.StoreComparison[language]}`,
+
+          '4-1': `${languageDatas.Setting[language]} | ${languageDatas.UserManagement[language]}`,
+          '4-2': `${languageDatas.Setting[language]} | ${languageDatas.DataManagement[language]}`,
+        }
+        return title;
+      }
     },
     methods: {
       chooseLang(command) {

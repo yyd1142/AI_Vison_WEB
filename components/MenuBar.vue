@@ -84,7 +84,7 @@
       },
       _onPress(path) {
         path = `/${path}?language=${this.language}`;
-        this.$router.push(path);
+        window.location.href = path;
       }
     }
   }

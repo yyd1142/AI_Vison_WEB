@@ -21,8 +21,18 @@
   },
   "AreaOverview": {
     "cn": "地区概况",
-    "en": "Area Overview",
+    "en": "Regional Overview",
     "hk": "地區概況"
+  },
+  "AreaTotalOverview": {
+    "cn": "地区总体概况",
+    "en": "Regional Overview",
+    "hk": "地區總體概況"
+  },
+  "StoreTotalOverview": {
+    "cn": "门店总体概况",
+    "en": "Store Overview",
+    "hk": "門店總體概況"
   },
   "AdvancedAnalysis": {
     "cn": "高级分析",
@@ -118,5 +128,140 @@
     "cn": "近30日",
     "en": "Last 30 days",
     "hk": "近30日"
+  },
+  "Area": {
+    "cn": "地区",
+    "en": "Regions",
+    "hk": "地區"
+  },
+  "AreaAcount": {
+    "cn": "地区总数",
+    "en": "Total",
+    "hk": "地區總數"
+  },
+  "areaInput": {
+    "cn": "请选择地区",
+    "en": "please select an regions",
+    "hk": "請選擇地區"
+  },
+  "areaAcountInput": {
+    "cn": "请输入地区总数",
+    "en": "please enter the total number of regions",
+    "hk": "請輸入地區總數"
+  },
+  "PassengerFlowToday": {
+    "cn": "本日客流人数",
+    "en": "Total number of passengers",
+    "hk": "本日客流人數"
+  },
+  "Sales": {
+    "cn": "销售额",
+    "en": "Sales",
+    "hk": "銷售額"
+  },
+  "TurnoverRate": {
+    "cn": "成交率",
+    "en": "Turnover rate",
+    "hk": "成交率"
+  },
+  "JointRate": {
+    "cn": "连带率",
+    "en": "Joint rate",
+    "hk": "連帶率"
+  },
+  "CustomerPrice": {
+    "cn": "客单价",
+    "en": "Customer price",
+    "hk": "客單價"
+  },
+  "RegionalTOPList": {
+    "cn": "地区TOP",
+    "en": "Regional TOP list",
+    "hk": "地區TOP"
+  },
+  "And": {
+    "cn": "与",
+    "en": "And",
+    "hk": "與"
+  },
+  "PassengerFlowAnalysis": {
+    "cn": "客流分析",
+    "en": "Passenger flow analysis",
+    "hk": "客流分析"
+  },
+  "NumberOfStores": {
+    "cn": "进店数（人）",
+    "en": "Number of stores （person）",
+    "hk": "進店數（人）"
+  },
+  "Mon": {
+    "cn": "周一",
+    "en": "Mon",
+    "hk": "週一"
+  },
+  "Tue": {
+    "cn": "周二",
+    "en": "Tue",
+    "hk": "週二"
+  },
+  "Wed": {
+    "cn": "周三",
+    "en": "Wed",
+    "hk": "週三"
+  },
+  "Thu": {
+    "cn": "周四",
+    "en": "Thu",
+    "hk": "週四"
+  },
+  "Fry": {
+    "cn": "周五",
+    "en": "Fry",
+    "hk": "週五"
+  },
+  "Sat": {
+    "cn": "周六",
+    "en": "Sat",
+    "hk": "週六"
+  },
+  "Sun": {
+    "cn": "周日",
+    "en": "Sun",
+    "hk": "週日"
+  },
+  "StoreIndicatorOverview": {
+    "cn": "门店指标总况",
+    "en": "Store Indicator Overview",
+    "hk": "門店指標總況"
+  },
+  "IndexComparison": {
+    "cn": "指标对比",
+    "en": "Index Comparison",
+    "hk": "指標對比"
+  },
+  "DailyMarketingAmount": {
+    "cn": "日营销额",
+    "en": "Daily marketing amount",
+    "hk": "日營銷額"
+  },
+  "DailyIndicator": {
+    "cn": "日目标",
+    "en": "Daily indicator",
+    "hk": "日目標"
+  },
+  "MonthlyIndicator": {
+    "cn": "月目标",
+    "en": "Monthly indicator",
+    "hk": "月目標"
+  },
+  "AccumulatedSales": {
+    "cn": "累计销售额",
+    "en": "Accumulated sales",
+    "hk": "累計銷售額"
+  },
+  "WeatherTrend": {
+    "cn": "天气趋势",
+    "en": "Weather Trend",
+    "hk": "天氣趨勢"
   }
 }

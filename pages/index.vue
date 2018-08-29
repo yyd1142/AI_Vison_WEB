@@ -6,7 +6,7 @@
       </el-col>
       <el-col :span="20">
         <div class="content-wrap">
-          <MyHeader :language="language || `cn`"></MyHeader>
+          <MyHeader :language="language || `cn`" :default-active="defaultActive"></MyHeader>
           <div class="content">
             <slot name="page"></slot>
           </div>

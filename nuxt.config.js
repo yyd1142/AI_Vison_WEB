@@ -16,7 +16,15 @@ module.exports = {
     ],
     link: [
       { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }
-    ]
+    ],
+    script: [
+      {
+        async: 'async',
+        defer: 'defer',
+        type: 'text/javascript',
+        src: '/libs/echarts.min.js'
+      }
+    ],
   },
   /*
   ** Global CSS
