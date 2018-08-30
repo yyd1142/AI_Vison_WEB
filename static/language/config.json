@@ -194,41 +194,35 @@
     "en": "Number of stores （person）",
     "hk": "進店數（人）"
   },
-  "Mon": {
+  "Week": [{
     "cn": "周一",
     "en": "Mon",
     "hk": "週一"
-  },
-  "Tue": {
+  },{
     "cn": "周二",
     "en": "Tue",
     "hk": "週二"
-  },
-  "Wed": {
+  },{
     "cn": "周三",
     "en": "Wed",
     "hk": "週三"
-  },
-  "Thu": {
+  },{
     "cn": "周四",
     "en": "Thu",
     "hk": "週四"
-  },
-  "Fry": {
+  },{
     "cn": "周五",
     "en": "Fry",
     "hk": "週五"
-  },
-  "Sat": {
+  },{
     "cn": "周六",
     "en": "Sat",
     "hk": "週六"
-  },
-  "Sun": {
+  },{
     "cn": "周日",
     "en": "Sun",
     "hk": "週日"
-  },
+  }],
   "StoreIndicatorOverview": {
     "cn": "门店指标总况",
     "en": "Store Indicator Overview",
@@ -263,5 +257,15 @@
     "cn": "天气趋势",
     "en": "Weather Trend",
     "hk": "天氣趨勢"
+  },
+  "DaytimeTemperature": {
+    "cn": "白天气温",
+    "en": "Daytime temperature",
+    "hk": "白天氣溫"
+  },
+  "NightTemperature": {
+    "cn": "夜晚气温",
+    "en": "Night temperature",
+    "hk": "夜晚氣溫"
   }
 }

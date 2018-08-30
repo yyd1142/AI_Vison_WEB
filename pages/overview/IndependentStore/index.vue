@@ -3,14 +3,13 @@
     <RootPage :language="language" default-active="1-2" :default-openeds="['1']">
       <div class="overview-wrap" slot="page">
         <div class="form-cell">
-          <el-form ref="form" :model="form" label-width="80px">
-            <el-form-item :label="languageDatas.Store[language]">
-              <el-select v-model="form.store" :placeholder="languageDatas.areaInput[language]">
-                <el-option label="区域一" value="shanghai"></el-option>
-                <el-option label="区域二" value="beijing"></el-option>
-              </el-select>
-            </el-form-item>
-          </el-form>
+          <div class="form-item">
+            <MySelectCell
+              :lable="languageDatas.Store[language]"
+              :placeholder="languageDatas.areaInput[language]"
+              :option="optionDatas">
+            </MySelectCell>
+          </div>
           <div class="button-group">
             <el-button-group>
               <el-button :type="item.type" v-for="(item, index) of buttonDatas" :key="index"
@@ -102,12 +101,13 @@
 
 <script>
   import RootPage from "@pages/index.vue";
-  import {TitleCell} from "@components/index.js";
+  import {TitleCell, MySelectCell} from "@components/index.js";
 
   export default {
     components: {
       RootPage,
-      TitleCell
+      TitleCell,
+      MySelectCell
     },
     computed: {
       languageDatas() {
@@ -132,7 +132,14 @@
           store: ''
         },
         typeIndex: 0,
-        typeDatas: []
+        typeDatas: [],
+        optionDatas: [{
+          lable: '廣州北京路1', value: 1
+        }, {
+          lable: '廣州北京路2', value: 2
+        }, {
+          lable: '廣州北京路3', value: 3
+        }]
       }
     },
     mounted() {
@@ -215,7 +222,10 @@
             trigger: 'axis'
           },
           legend: {
-            data: [`${this.languageDatas.NumberOfStores[this.language]}`, `${this.languageDatas.Sales[this.language]}（元）`],
+            data: [
+              `${this.languageDatas.DaytimeTemperature[this.language]}（℃）`,
+              `${this.languageDatas.NightTemperature[this.language]}（℃）`
+            ],
             top: 30,
             right: 15
           },
@@ -230,13 +240,13 @@
             type: 'category',
             boundaryGap: false,
             data: [
-              `${this.languageDatas.Mon[this.language]}`,
-              `${this.languageDatas.Tue[this.language]}`,
-              `${this.languageDatas.Wed[this.language]}`,
-              `${this.languageDatas.Thu[this.language]}`,
-              `${this.languageDatas.Fry[this.language]}`,
-              `${this.languageDatas.Sat[this.language]}`,
-              `${this.languageDatas.Sun[this.language]}`
+              `2018-08-20 \n ${this.languageDatas.Week[0][this.language]}`,
+              `2018-08-21 \n ${this.languageDatas.Week[1][this.language]}`,
+              `2018-08-22 \n ${this.languageDatas.Week[2][this.language]}`,
+              `2018-08-23 \n ${this.languageDatas.Week[3][this.language]}`,
+              `2018-08-24 \n ${this.languageDatas.Week[4][this.language]}`,
+              `2018-08-25 \n ${this.languageDatas.Week[5][this.language]}`,
+              `2018-08-26 \n ${this.languageDatas.Week[6][this.language]}`
             ]
           },
           yAxis: {
@@ -244,16 +254,14 @@
           },
           series: [
             {
-              name: `${this.languageDatas.NumberOfStores[this.language]}`,
+              name: `${this.languageDatas.DaytimeTemperature[this.language]}（℃）`,
               type: 'line',
-              stack: '总量',
-              data: [120, 132, 101, 134, 90, 230, 210]
+              data: [32, 30, 31, 31, 29, 29, 30]
             },
             {
-              name: `${this.languageDatas.Sales[this.language]}（元）`,
+              name: `${this.languageDatas.NightTemperature[this.language]}（℃）`,
               type: 'line',
-              stack: '总量',
-              data: [220, 182, 191, 234, 290, 330, 310]
+              data: [30, 29, 30, 31, 28, 28, 31]
             }
           ]
         };
@@ -294,20 +302,15 @@
       width: 100%;
       align-items: center;
       flex-direction: row;
-      .el-form {
-        width: 20%;
+      .form-item {
+        width: 70%;
         display: flex;
         display: -webkit-flex; /* Safari */
-        .el-form-item {
-          margin-bottom: 0;
-          width: 235px;
-          text-align: left;
-        }
       }
       .button-group {
         display: flex;
         display: -webkit-flex; /* Safari */
-        width: 80%;
+        width: 30%;
         height: 80px;
         align-items: center;
         justify-content: flex-end;
@@ -417,14 +420,14 @@
       display: -webkit-flex; /* Safari */
       flex-direction: row;
       position: relative;
-      .progress-content{
+      .progress-content {
         width: 70%;
         align-items: center;
         justify-content: center;
         display: flex;
         display: -webkit-flex; /* Safari */
       }
-      .progress-item{
+      .progress-item {
         width: 30%;
         align-items: center;
         justify-content: flex-start;
