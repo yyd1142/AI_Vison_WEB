@@ -1,37 +1,27 @@
 <template>
-  <div class="MySelectCell">
+  <div class="MyFormCell">
     <div class="lable-name">{{lable}}</div>
     <div class="select-cell">
-      <el-select v-model="value" :placeholder="placeholder" @change="handleChange()">
-        <el-option :label="item.lable" :value="item.value" v-for="item in option"></el-option>
-      </el-select>
+      <slot name="cell"></slot>
     </div>
   </div>
 </template>
 
 <script>
   export default {
-    name: "MySelectCell",
+    name: "MyFormCell",
     data() {
-      return {
-        value: ''
-      }
+      return { }
     },
     props: {
       lable: String,
-      placeholder: String,
-      option: Array
     },
-    methods: {
-      handleChange() {
-        console.log(this.value);
-      }
-    }
+    methods: { }
   }
 </script>
 
 <style lang="less">
-  .MySelectCell {
+  .MyFormCell {
     display: flex;
     display: -webkit-flex; /* Safari */
     flex-direction: row;

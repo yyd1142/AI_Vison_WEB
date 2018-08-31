@@ -3,28 +3,24 @@
     <RootPage :language="language" default-active="1-1" :default-openeds="['1']">
       <div class="overview-wrap" slot="page">
         <div class="form-cell">
-          <!--<el-form ref="form" :model="form" label-width="80px">-->
-            <!--<el-form-item :label="languageDatas.Area[language]">-->
-              <!--<el-select v-model="form.store" :placeholder="languageDatas.areaInput[language]">-->
-                <!--<el-option label="区域一" value="shanghai"></el-option>-->
-                <!--<el-option label="区域二" value="beijing"></el-option>-->
-              <!--</el-select>-->
-            <!--</el-form-item>-->
-            <!--<el-form-item :label="languageDatas.AreaAcount[language]">-->
-              <!--<el-input v-model="form.name" :placeholder="languageDatas.areaAcountInput[language]"></el-input>-->
-            <!--</el-form-item>-->
-          <!--</el-form>-->
           <div class="form-item">
-            <MySelectCell
-              :lable="languageDatas.Area[language]"
-              :placeholder="languageDatas.areaInput[language]"
-              :option="optionDatas">
-            </MySelectCell>
+            <MyFormCell :lable="languageDatas.Area[language]">
+              <div slot="cell">
+                <el-select v-model="form.area" :placeholder="languageDatas.areaInput[language]">
+                  <el-option :label="item.lable"
+                             :value="item.value"
+                             v-for="item, index in optionDatas"
+                             :key="index">
+                  </el-option>
+                </el-select>
+              </div>
+            </MyFormCell>
             <div class="input-cell_">
-              <MyInputCell
-                :lable="languageDatas.AreaAcount[language]"
-                :placeholder="languageDatas.areaAcountInput[language]">
-              </MyInputCell>
+              <MyFormCell :lable="languageDatas.AreaAcount[language]">
+                <div slot="cell">
+                  <el-input v-model="form.acount" :placeholder="languageDatas.areaAcountInput[language]"></el-input>
+                </div>
+              </MyFormCell>
             </div>
           </div>
           <div class="button-group">
@@ -65,14 +61,13 @@
 
 <script>
   import RootPage from "@pages/index.vue";
-  import {TitleCell, MySelectCell, MyInputCell} from "@components/index.js";
+  import {TitleCell, MyFormCell} from "@components/index.js";
 
   export default {
     components: {
       RootPage,
       TitleCell,
-      MySelectCell,
-      MyInputCell
+      MyFormCell
     },
     computed: {
       languageDatas() {
@@ -94,7 +89,8 @@
           type: ''
         }],
         form: {
-          store: ''
+          acount: '',
+          area: ''
         },
         typeIndex: 0,
         typeDatas: [],

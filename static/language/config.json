@@ -194,35 +194,43 @@
     "en": "Number of stores （person）",
     "hk": "進店數（人）"
   },
-  "Week": [{
-    "cn": "周一",
-    "en": "Mon",
-    "hk": "週一"
-  },{
-    "cn": "周二",
-    "en": "Tue",
-    "hk": "週二"
-  },{
-    "cn": "周三",
-    "en": "Wed",
-    "hk": "週三"
-  },{
-    "cn": "周四",
-    "en": "Thu",
-    "hk": "週四"
-  },{
-    "cn": "周五",
-    "en": "Fry",
-    "hk": "週五"
-  },{
-    "cn": "周六",
-    "en": "Sat",
-    "hk": "週六"
-  },{
-    "cn": "周日",
-    "en": "Sun",
-    "hk": "週日"
-  }],
+  "Week": [
+    {
+      "cn": "周一",
+      "en": "Mon",
+      "hk": "週一"
+    },
+    {
+      "cn": "周二",
+      "en": "Tue",
+      "hk": "週二"
+    },
+    {
+      "cn": "周三",
+      "en": "Wed",
+      "hk": "週三"
+    },
+    {
+      "cn": "周四",
+      "en": "Thu",
+      "hk": "週四"
+    },
+    {
+      "cn": "周五",
+      "en": "Fry",
+      "hk": "週五"
+    },
+    {
+      "cn": "周六",
+      "en": "Sat",
+      "hk": "週六"
+    },
+    {
+      "cn": "周日",
+      "en": "Sun",
+      "hk": "週日"
+    }
+  ],
   "StoreIndicatorOverview": {
     "cn": "门店指标总况",
     "en": "Store Indicator Overview",
@@ -267,5 +275,65 @@
     "cn": "夜晚气温",
     "en": "Night temperature",
     "hk": "夜晚氣溫"
+  },
+  "Date": {
+    "cn": "日期",
+    "en": "Date",
+    "hk": "日期"
+  },
+  "DateInput": {
+    "cn": "请选择日期",
+    "en": "please select a date",
+    "hk": "請選擇日期"
+  },
+  "Time": {
+    "cn": "时间",
+    "en": "Date",
+    "hk": "時間"
+  },
+  "TimeInput": {
+    "cn": "请选择时间",
+    "en": "please select time",
+    "hk": "請選擇時間"
+  },
+  "Cycle": {
+    "cn": "周期",
+    "en": "Cycle",
+    "hk": "週期"
+  },
+  "CycleInput": {
+    "cn": "请选择周期",
+    "en": "please select the period",
+    "hk": "請選擇週期"
+  },
+  "hour": {
+    "cn": "时",
+    "en": "hour",
+    "hk": "時"
+  },
+  "day": {
+    "cn": "天",
+    "en": "day",
+    "hk": "天"
+  },
+  "week": {
+    "cn": "周",
+    "en": "week",
+    "hk": "周"
+  },
+  "month": {
+    "cn": "月",
+    "en": "month",
+    "hk": "月"
+  },
+  "Search": {
+    "cn": "查询",
+    "en": "Search",
+    "hk": "查詢"
+  },
+  "PassengerFlowData": {
+    "cn": "客流数据",
+    "en": "Passenger Flow Data",
+    "hk": "客流數據"
   }
 }

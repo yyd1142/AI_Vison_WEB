@@ -4,11 +4,17 @@
       <div class="overview-wrap" slot="page">
         <div class="form-cell">
           <div class="form-item">
-            <MySelectCell
-              :lable="languageDatas.Store[language]"
-              :placeholder="languageDatas.areaInput[language]"
-              :option="optionDatas">
-            </MySelectCell>
+            <MyFormCell :lable="languageDatas.Store[language]">
+              <div slot="cell">
+                <el-select v-model="form.area" :placeholder="languageDatas.StoreInput[language]">
+                  <el-option :label="item.lable"
+                             :value="item.value"
+                             v-for="item, index in optionDatas"
+                             :key="index">
+                  </el-option>
+                </el-select>
+              </div>
+            </MyFormCell>
           </div>
           <div class="button-group">
             <el-button-group>
@@ -101,13 +107,13 @@
 
 <script>
   import RootPage from "@pages/index.vue";
-  import {TitleCell, MySelectCell} from "@components/index.js";
+  import {TitleCell, MyFormCell} from "@components/index.js";
 
   export default {
     components: {
       RootPage,
       TitleCell,
-      MySelectCell
+      MyFormCell
     },
     computed: {
       languageDatas() {
@@ -129,7 +135,7 @@
           type: ''
         }],
         form: {
-          store: ''
+          area: ''
         },
         typeIndex: 0,
         typeDatas: [],
