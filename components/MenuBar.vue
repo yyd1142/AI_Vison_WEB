@@ -24,7 +24,7 @@
           </template>
           <el-menu-item-group>
             <el-menu-item index="2-1" @click="_onPress('baseAnalysis')">{{languageDatas.PassengerFlow[language]}}</el-menu-item>
-            <el-menu-item index="2-2">{{languageDatas.ThermalMap[language]}}</el-menu-item>
+            <el-menu-item index="2-2" @click="_onPress('baseAnalysis/Thermal')">{{languageDatas.ThermalMap[language]}}</el-menu-item>
             <el-menu-item index="2-3">{{languageDatas.ReportAnalysis[language]}}</el-menu-item>
             <el-menu-item index="2-4">{{languageDatas.RemotePatrol[language]}}</el-menu-item>
             <el-menu-item index="2-5">{{languageDatas.FittingAnalysis[language]}}</el-menu-item>

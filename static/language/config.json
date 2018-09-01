@@ -335,5 +335,65 @@
     "cn": "客流数据",
     "en": "Passenger Flow Data",
     "hk": "客流數據"
+  },
+  "MaleToFemaleRatio": {
+    "cn": "男女比例",
+    "en": "Male to female ratio",
+    "hk": "男女比例"
+  },
+  "Male": {
+    "cn": "男性",
+    "en": "Male",
+    "hk": "男性"
+  },
+  "Female": {
+    "cn": "女性",
+    "en": "Female",
+    "hk": "女性"
+  },
+  "ratio": {
+    "cn": "比例",
+    "en": "ratio",
+    "hk": "比例"
+  },
+  "AgeDistribution": {
+    "cn": "年龄分布",
+    "en": "Age distribution",
+    "hk": "年齡分佈"
+  },
+  "TimePeriodRatio": {
+    "cn": "时间段比例",
+    "en": "Time piodRatio",
+    "hk": "時間段比例"
+  },
+  "DataDetail": {
+    "cn": "数据明细",
+    "en": "Data Detail",
+    "hk": "數據明細"
+  },
+  "NumberOfPassengers": {
+    "cn": "客流人数",
+    "en": "Number of passengers",
+    "hk": "客流人數"
+  },
+  "SortByStoreName": {
+    "cn": "按照店铺名称排序",
+    "en": "sort by store name",
+    "hk": "按照店鋪名稱排序"
+  },
+  "SortByTime": {
+    "cn": "按照时间排序",
+    "en": "sort by time",
+    "hk": "按照時間排序"
+  },
+  "SortByStoreName": {
+    "cn": "按照店铺名称排序",
+    "en": "sort by store name",
+    "hk": "按照店鋪名稱排序"
+  },
+  "SortByNumberOfPassengers": {
+    "cn": "按照客流人数排序",
+    "en": "sort by number of passengers",
+    "hk": "按照客流人數排序"
   }
 }

@@ -69,7 +69,60 @@
           :inLink="true">
         </TitleCell>
         <div class="chart-wrap">
-
+          <div class="chart-item chart-left">
+            <div class="chart-padding my-box-shadow">
+              <div id="chart1" style="width: 100%; height: 500px;"></div>
+            </div>
+          </div>
+          <div class="chart-item chart-right">
+            <div class="chart-padding my-box-shadow">
+              <div id="chart2" style="width: 100%; height: 500px;"></div>
+            </div>
+          </div>
+          <!--<div class="chart-item chart-right">-->
+          <!--<div class="chart-padding my-box-shadow">-->
+          <!--<div id="chart3" style="width: 100%; height: 500px;"></div>-->
+          <!--</div>-->
+          <!--</div>-->
+        </div>
+        <TitleCell
+          :title="`${languageDatas.DataDetail[language]}`"
+          :inLink="true">
+        </TitleCell>
+        <div class="data-detail-wrap">
+          <div class="detail-item detail-left">
+            <div class="detail-padding my-box-shadow">
+              <DataDetailTitle :title="`${languageDatas.NumberOfPassengers[language]}`" :menuDatas="menuDatas" ></DataDetailTitle>
+              <div v-for="item, index in PassengerFlowDatas" :key="index"
+                   :style="`background-color: ${index % 2 == 0 ? '#fff' : '#f2f6fc' }`">
+                <DataDetailCell :title="item.title" :label="item.label" :value="`${languageDatas.NumberOfPassengers[language]}：${item.value}`"></DataDetailCell>
+              </div>
+            </div>
+          </div>
+          <div class="detail-item detail-center">
+            <div class="detail-padding my-box-shadow">
+              <DataDetailTitle :title="`${languageDatas.MaleToFemaleRatio[language]}`" :menuDatas="menuDatas" ></DataDetailTitle>
+              <div v-for="item, index in PersonDatas" :key="index"
+                   :style="`background-color: ${index % 2 == 0 ? '#fff' : '#f2f6fc' }`">
+                <DataDetailCell
+                  :title="item.title"
+                  :label="item.label"
+                  :value="`${languageDatas.Male[language]}：${item.male}<br>${languageDatas.Female[language]}：${item.female}`"></DataDetailCell>
+              </div>
+            </div>
+          </div>
+          <div class="detail-item detail-right">
+            <div class="detail-padding my-box-shadow">
+              <DataDetailTitle :title="`${languageDatas.AgeDistribution[language]}`" :menuDatas="menuDatas" ></DataDetailTitle>
+              <div v-for="item, index in PersonDatas" :key="index"
+                   :style="`background-color: ${index % 2 == 0 ? '#fff' : '#f2f6fc' }`">
+                <DataDetailCell
+                  :title="item.title"
+                  :label="item.label"
+                  :value="`${languageDatas.Male[language]}：${item.male}<br>${languageDatas.Female[language]}：${item.female}`"></DataDetailCell>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </RootPage>
@@ -78,14 +131,16 @@
 
 <script>
   import RootPage from "@pages/index.vue";
-  import {TitleCell, MyFormCell} from "@components/index.js";
+  import {TitleCell, MyFormCell, DataDetailCell, DataDetailTitle} from "@components/index.js";
 
   export default {
     name: "baseAnalysis",
     components: {
       RootPage,
       TitleCell,
-      MyFormCell
+      MyFormCell,
+      DataDetailCell,
+      DataDetailTitle
     },
     computed: {
       languageDatas() {
@@ -96,15 +151,34 @@
         const language = this.language;
         const datas = [{
           lable: `${languageDatas.hour[language]}(累加)`, value: 1
-        },{
+        }, {
           lable: `${languageDatas.hour[language]}`, value: 2
-        },{
+        }, {
           lable: `${languageDatas.day[language]}`, value: 3
-        },{
+        }, {
           lable: `${languageDatas.week[language]}`, value: 4
-        },{
+        }, {
           lable: `${languageDatas.month[language]}`, value: 5
         }];
+        return datas;
+      },
+      menuDatas() {
+        const languageDatas = this.languageDatas;
+        const language = this.language;
+        const datas = [
+          {
+            name: `${languageDatas.SortByStoreName[language]}`,
+            value: '1'
+          },
+          {
+            name: `${languageDatas.SortByTime[language]}`,
+            value: '2'
+          },
+          {
+            name: `${languageDatas.SortByNumberOfPassengers[language]}`,
+            value: '3'
+          }
+        ];
         return datas;
       }
     },
@@ -125,7 +199,231 @@
           lable: '廣州北京路2', value: 2
         }, {
           lable: '廣州北京路3', value: 3
-        }]
+        }],
+        PassengerFlowDatas: [
+          {
+            title: '广州北京路店A',
+            value: '198',
+            label: '2018-09-09'
+          }, {
+            title: '广州北京路店A',
+            value: '198',
+            label: '2018-09-09'
+          }, {
+            title: '广州北京路店A',
+            value: '198',
+            label: '2018-09-09'
+          }, {
+            title: '广州北京路店A',
+            value: '198',
+            label: '2018-09-09'
+          }, {
+            title: '广州北京路店A',
+            value: '198',
+            label: '2018-09-09'
+          }
+        ],
+        PersonDatas: [
+          {
+            title: '广州北京路店A',
+            male: '67%',
+            female: '33%',
+            label: '2018-09-09'
+          },
+          {
+            title: '广州北京路店A',
+            male: '67%',
+            female: '33%',
+            label: '2018-09-09'
+          },
+          {
+            title: '广州北京路店A',
+            male: '67%',
+            female: '33%',
+            label: '2018-09-09'
+          },
+          {
+            title: '广州北京路店A',
+            male: '67%',
+            female: '33%',
+            label: '2018-09-09'
+          },
+          {
+            title: '广州北京路店A',
+            male: '67%',
+            female: '33%',
+            label: '2018-09-09'
+          },
+          {
+            title: '广州北京路店A',
+            male: '67%',
+            female: '33%',
+            label: '2018-09-09'
+          },
+        ]
+      }
+    },
+    mounted() {
+      this.initChart1();
+      this.initChart2();
+      // this.initChart3();
+    },
+    methods: {
+      initChart1() {
+        const chart = echarts.init(document.getElementById('chart1'));
+        const option = {
+          title: {
+            text: `${this.languageDatas.MaleToFemaleRatio[this.language]}`,
+            padding: [30, 0, 0, 15]
+          },
+          color: ['#2C82BE', '#76DDFB'],
+          tooltip: {
+            trigger: 'item',
+            formatter: "{a} <br/>{b}: {c} ({d}%)"
+          },
+          legend: {
+            orient: 'vertical',
+            x: 'right',
+            right: '20',
+            top: '20',
+            data: [`${this.languageDatas.Male[this.language]}`, `${this.languageDatas.Female[this.language]}`]
+          },
+          series: [
+            {
+              name: `${this.languageDatas.ratio[this.language]}`,
+              type: 'pie',
+              radius: ['50%', '70%'],
+              avoidLabelOverlap: false,
+              label: {
+                normal: {
+                  show: false,
+                  position: 'center'
+                },
+                emphasis: {
+                  show: true,
+                  textStyle: {
+                    fontSize: '30',
+                    fontWeight: 'bold'
+                  }
+                }
+              },
+              labelLine: {
+                normal: {
+                  show: false
+                }
+              },
+              data: [
+                {value: 335, name: `${this.languageDatas.Male[this.language]}`},
+                {value: 310, name: `${this.languageDatas.Female[this.language]}`},
+              ]
+            }
+          ]
+        };
+        chart.setOption(option);
+      },
+      initChart2() {
+        const chart = echarts.init(document.getElementById('chart2'));
+        const option = {
+          title: {
+            text: `${this.languageDatas.AgeDistribution[this.language]}`,
+            padding: [30, 0, 0, 15]
+          },
+          color: ['#2C82BE', '#76DDFB'],
+          tooltip: {
+            trigger: 'item',
+            formatter: "{a} <br/>{b}: {c} ({d}%)"
+          },
+          legend: {
+            orient: 'vertical',
+            x: 'right',
+            right: '20',
+            top: '20',
+            data: [`0-20`, `20-30`]
+          },
+          series: [
+            {
+              name: `${this.languageDatas.AgeDistribution[this.language]}`,
+              type: 'pie',
+              radius: ['50%', '70%'],
+              avoidLabelOverlap: false,
+              label: {
+                normal: {
+                  show: false,
+                  position: 'center'
+                },
+                emphasis: {
+                  show: true,
+                  textStyle: {
+                    fontSize: '30',
+                    fontWeight: 'bold'
+                  }
+                }
+              },
+              labelLine: {
+                normal: {
+                  show: false
+                }
+              },
+              data: [
+                {value: 245, name: `0-20`},
+                {value: 456, name: `20-30`},
+              ]
+            }
+          ]
+        };
+        chart.setOption(option);
+      },
+      initChart3() {
+        const chart = echarts.init(document.getElementById('chart3'));
+        const option = {
+          title: {
+            text: `${this.languageDatas.TimePeriodRatio[this.language]}`,
+            padding: [30, 0, 0, 15]
+          },
+          color: ['#2C82BE', '#76DDFB'],
+          tooltip: {
+            trigger: 'item',
+            formatter: "{a} <br/>{b}: {c} ({d}%)"
+          },
+          legend: {
+            orient: 'vertical',
+            x: 'right',
+            right: '20',
+            top: '20',
+            data: [`${this.languageDatas.Male[this.language]}`, `${this.languageDatas.Female[this.language]}`]
+          },
+          series: [
+            {
+              name: `${this.languageDatas.ratio[this.language]}`,
+              type: 'pie',
+              radius: ['50%', '70%'],
+              avoidLabelOverlap: false,
+              label: {
+                normal: {
+                  show: false,
+                  position: 'center'
+                },
+                emphasis: {
+                  show: true,
+                  textStyle: {
+                    fontSize: '30',
+                    fontWeight: 'bold'
+                  }
+                }
+              },
+              labelLine: {
+                normal: {
+                  show: false
+                }
+              },
+              data: [
+                {value: 335, name: `${this.languageDatas.Male[this.language]}`},
+                {value: 310, name: `${this.languageDatas.Female[this.language]}`},
+              ]
+            }
+          ]
+        };
+        chart.setOption(option);
       }
     }
   }
@@ -138,6 +436,10 @@
     display: -webkit-flex; /* Safari */
     padding: 0 15px 30px 15px;
     flex-direction: column;
+    .my-box-shadow {
+      -moz-box-shadow: 0px 1px 5px #ccc; /* 老的 Firefox */
+      box-shadow: 0px 1px 5px #ccc;
+    }
     .form-cell {
       width: 100%;
       display: flex;
@@ -160,6 +462,56 @@
         }
         .form-button {
           width: 240px;
+        }
+      }
+    }
+    .chart-wrap {
+      width: 100%;
+      display: flex;
+      display: -webkit-flex; /* Safari */
+      flex-direction: row;
+      margin: 15px 0;
+      .chart-item {
+        width: 100% / 2;
+        &.chart-left {
+          padding-right: 15px;
+        }
+        &.chart-center {
+          padding: 0 15px;
+        }
+        &.chart-right {
+          padding-left: 15px;
+        }
+        .chart-padding {
+          width: 100%;
+          background-color: #fff;
+          border-radius: 4px;
+
+        }
+      }
+    }
+    .data-detail-wrap {
+      width: 100%;
+      display: flex;
+      display: -webkit-flex; /* Safari */
+      flex-direction: row;
+      margin: 15px 0;
+      .detail-item {
+        width: 100% / 3;
+        &.detail-left {
+          padding-right: 15px;
+        }
+        &.detail-center {
+          padding: 0 15px;
+        }
+        &.detail-right {
+          padding-left: 15px;
+        }
+        .detail-padding {
+          width: 100%;
+          background-color: #fff;
+          border-radius: 4px;
+          min-height: 500px;
         }
       }
     }
