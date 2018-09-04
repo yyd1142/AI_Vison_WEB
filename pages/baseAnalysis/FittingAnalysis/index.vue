@@ -1,7 +1,7 @@
 <template>
   <div>
-    <RootPage :language="language" default-active="2-1" :default-openeds="['2']">
-      <div class="baseAnalysis" slot="page">
+    <RootPage :language="language" default-active="2-5" :default-openeds="['2']">
+      <div class="FittingAnalysis" slot="page">
         <div class="form-cell">
           <div class="form-item">
             <MyFormCell :lable="languageDatas.Date[language]">
@@ -139,7 +139,7 @@
   import {TitleCell, MyFormCell, DataDetailCell, DataDetailTitle} from "@components";
 
   export default {
-    name: "baseAnalysis",
+    name: "FittingAnalysis",
     components: {
       RootPage,
       TitleCell,
@@ -435,7 +435,7 @@
 </script>
 
 <style lang="less">
-  .baseAnalysis {
+  .FittingAnalysis {
     width: 100%;
     display: flex;
     display: -webkit-flex; /* Safari */

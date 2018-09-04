@@ -25,9 +25,9 @@
           <el-menu-item-group>
             <el-menu-item index="2-1" @click="_onPress('baseAnalysis')">{{languageDatas.PassengerFlow[language]}}</el-menu-item>
             <el-menu-item index="2-2" @click="_onPress('baseAnalysis/Thermal')">{{languageDatas.ThermalMap[language]}}</el-menu-item>
-            <el-menu-item index="2-3">{{languageDatas.ReportAnalysis[language]}}</el-menu-item>
-            <el-menu-item index="2-4">{{languageDatas.RemotePatrol[language]}}</el-menu-item>
-            <el-menu-item index="2-5">{{languageDatas.FittingAnalysis[language]}}</el-menu-item>
+            <el-menu-item index="2-3" @click="_onPress('baseAnalysis/Report')">{{languageDatas.ReportAnalysis[language]}}</el-menu-item>
+            <el-menu-item index="2-4" @click="_onPress('baseAnalysis/RemotePatrol')">{{languageDatas.RemotePatrol[language]}}</el-menu-item>
+            <el-menu-item index="2-5" @click="_onPress('baseAnalysis/FittingAnalysis')">{{languageDatas.FittingAnalysis[language]}}</el-menu-item>
           </el-menu-item-group>
         </el-submenu>
         <el-submenu index="3">
@@ -38,8 +38,8 @@
             </div>
           </template>
           <el-menu-item-group>
-            <el-menu-item index="3-1">{{languageDatas.CycleComparison[language]}}</el-menu-item>
-            <el-menu-item index="3-2">{{languageDatas.StoreComparison[language]}}</el-menu-item>
+            <el-menu-item index="3-1" @click="_onPress('advancedAnalysis')">{{languageDatas.CycleComparison[language]}}</el-menu-item>
+            <el-menu-item index="3-2" @click="_onPress('advancedAnalysis/StoreComparisonAnalysis')">{{languageDatas.StoreComparison[language]}}</el-menu-item>
           </el-menu-item-group>
         </el-submenu>
         <el-submenu index="4">
@@ -50,7 +50,7 @@
             </div>
           </template>
           <el-menu-item-group>
-            <el-menu-item index="4-1">{{languageDatas.UserManagement[language]}}</el-menu-item>
+            <el-menu-item index="4-1" @click="_onPress('Setting')">{{languageDatas.UserManagement[language]}}</el-menu-item>
             <el-menu-item index="4-2">{{languageDatas.DataManagement[language]}}</el-menu-item>
           </el-menu-item-group>
         </el-submenu>

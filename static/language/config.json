@@ -395,5 +395,210 @@
     "cn": "按照客流人数排序",
     "en": "sort by number of passengers",
     "hk": "按照客流人數排序"
+  },
+  "Lens": {
+    "cn": "镜头",
+    "en": "Lens",
+    "hk": "鏡頭"
+  },
+  "LensInput": {
+    "cn": "请选择镜头",
+    "en": "please choose the lens",
+    "hk": "請選擇鏡頭"
+  },
+  "ThermalMapForLens": {
+    "cn": "镜头热力图",
+    "en": "Thermal map for lens",
+    "hk": "鏡頭熱力圖"
+  },
+  "Export": {
+    "cn": "导出",
+    "en": "Export",
+    "hk": "導出"
+  },
+  "ReportType": {
+    "cn": "类型",
+    "en": "Type",
+    "hk": "類型"
+  },
+  "ReportTypeInput": {
+    "cn": "请选择类型",
+    "en": "please choose the type",
+    "hk": "請選擇類型"
+  },
+  "dailyReport": {
+    "cn": "日报",
+    "en": "daily",
+    "hk": "日報"
+  },
+  "weeklyReport": {
+    "cn": "周报",
+    "en": "weekly",
+    "hk": "週報"
+  },
+  "monthlyReport": {
+    "cn": "月报",
+    "en": "monthly",
+    "hk": "月報"
+  },
+  "ReportDetail": {
+    "cn": "报表明细",
+    "en": "Report Detail",
+    "hk": "報表明細"
+  },
+  "StoreInfo": {
+    "cn": "门店信息",
+    "en": "Store information",
+    "hk": "門店信息"
+  },
+  "Performance": {
+    "cn": "业绩",
+    "en": "Performance",
+    "hk": "業績"
+  },
+  "ReachedDaily": {
+    "cn": "日达成",
+    "en": "reached daily",
+    "hk": "日達成"
+  },
+  "DailyIndicator": {
+    "cn": "日指标",
+    "en": "daily indicator",
+    "hk": "日指標"
+  },
+  "DailySales": {
+    "cn": "日销额",
+    "en": "daily sales",
+    "hk": "日銷額"
+  },
+  "Year_on_yearSales": {
+    "cn": "同比销额",
+    "en": "year-on-year sales",
+    "hk": "同比銷額"
+  },
+  "Year_on_yearIncrease": {
+    "cn": "同比增幅",
+    "en": "year-on-year increase",
+    "hk": "同比增幅"
+  },
+  "DailyEvent": {
+    "cn": "每日活动",
+    "en": "Daily Activity",
+    "hk": "每日活動"
+  },
+  "EventDate": {
+    "cn": "活动日期",
+    "en": "Activity Date",
+    "hk": "活動日期"
+  },
+  "EventDateInput": {
+    "cn": "请选择活动日期",
+    "en": "please select an activity date",
+    "hk": "請選擇活動日期"
+  },
+  "EventName": {
+    "cn": "门店活动",
+    "en": "Activity Date",
+    "hk": "門店活動"
+  },
+  "EventNameInput": {
+    "cn": "请填写门店活动",
+    "en": "please fill in the store activity",
+    "hk": "請填寫門店活動"
+  },
+  "EventDesc": {
+    "cn": "引流策略",
+    "en": "Drainage Strategy",
+    "hk": "引流策略"
+  },
+  "EventDescInput": {
+    "cn": "请填写引流策略",
+    "en": "please fill in the drainage strategy",
+    "hk": "請填寫引流策略"
+  },
+  "Confirm": {
+    "cn": "确定",
+    "en": "Confirm",
+    "hk": "確定"
+  },
+  "VideoPlayback": {
+    "cn": "视频播放",
+    "en": "Video Playback",
+    "hk": "視頻播放"
+  },
+  "DestinationRegions": {
+    "cn": "所属地区",
+    "en": "Destination Regions",
+    "hk": "所屬地區"
+  },
+  "DestinationRegionsInput": {
+    "cn": "请选择所属地区",
+    "en": "please select a destination regions",
+    "hk": "請選擇所屬地區"
+  },
+  "CoreIndicator": {
+    "cn": "核心指标",
+    "en": "Core Indicator",
+    "hk": "核心指標"
+  },
+  "CoreIndicatorInput": {
+    "cn": "请选择核心指标",
+    "en": "please select a core indicatorInput",
+    "hk": "請選擇核心指標"
+  },
+  "ComparisonType": {
+    "cn": "对比类型",
+    "en": "Comparison Type",
+    "hk": "對比類型"
+  },
+  "ComparisonTypeInput": {
+    "cn": "请选择对比类型",
+    "en": "please select a type",
+    "hk": "請選擇對比類型"
+  },
+  "ComparisonDate": {
+    "cn": "对比日期",
+    "en": "Comparison Date",
+    "hk": "對比日期"
+  },
+  "DataAnalysisChart": {
+    "cn": "数据分析图",
+    "en": "Data Analysis Chart",
+    "hk": "數據分析圖"
+  },
+  "DataRecord": {
+    "cn": "数据记录",
+    "en": "Data ecord",
+    "hk": "數據記錄"
+  },
+  "Volume": {
+    "cn": "成交情况",
+    "en": "Volume",
+    "hk": "成交情況"
+  },
+  "CustomerPrice": {
+    "cn": "客单价",
+    "en": "Volume",
+    "hk": "客單價"
+  },
+  "NumberOfStores1": {
+    "cn": "进店数",
+    "en": "number of stores",
+    "hk": "進店數"
+  },
+  "NumberOfReceptions": {
+    "cn": "接待数",
+    "en": "number of receptions",
+    "hk": "接待數"
+  },
+  "ContrastStore": {
+    "cn": "对比门店",
+    "en": "Contrast store",
+    "hk": "對比門店"
+  },
+  "ContrastStoreInput": {
+    "cn": "请至少选择两个门店",
+    "en": "please select at least two stores",
+    "hk": "請至少選擇兩個門店"
   }
 }

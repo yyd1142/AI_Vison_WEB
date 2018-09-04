@@ -1,7 +1,7 @@
 <template>
   <div class="DataDetailTitle">
     <div class="title">{{title}}</div>
-    <div class="sort">
+    <div class="sort" v-if="menuDatas">
       <el-dropdown @command="handleChoose">
         <span class="el-dropdown-link">
           {{name}}<i class="el-icon-arrow-down el-icon--right"></i>
@@ -27,7 +27,9 @@
       }
     },
     mounted() {
-      this.name = this.menuDatas[0].name;
+      if(this.menuDatas && this.menuDatas.length > 0) {
+        this.name = this.menuDatas[0].name;
+      }
     },
     methods: {
       handleChoose(command) {

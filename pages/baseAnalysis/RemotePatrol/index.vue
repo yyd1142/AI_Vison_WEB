@@ -1,22 +1,22 @@
 <template>
   <div>
-    <RootPage :language="language" default-active="2-2" :default-openeds="['2']">
-      <div class="Thermal" slot="page">
+    <RootPage :language="language" default-active="2-4" :default-openeds="['2']">
+      <div class="RemotePatrol" slot="page">
         <div class="form-cell">
           <div class="form-item">
-            <MyFormCell :lable="languageDatas.Date[language]">
+            <MyFormCell :lable="languageDatas.Area[language]">
               <div slot="cell">
                 <el-date-picker
                   v-model="form.date"
                   type="date"
-                  :placeholder="languageDatas.DateInput[language]">
+                  :placeholder="languageDatas.areaInput[language]">
                 </el-date-picker>
               </div>
             </MyFormCell>
             <div class="input-cell_">
-              <MyFormCell :lable="languageDatas.Lens[language]">
+              <MyFormCell :lable="languageDatas.Store[language]">
                 <div slot="cell">
-                  <el-select v-model="form.area" :placeholder="languageDatas.LensInput[language]">
+                  <el-select v-model="form.area" :placeholder="languageDatas.StoreInput[language]">
                     <el-option :label="item.lable"
                                :value="item.value"
                                v-for="item, index in optionDatas"
@@ -28,11 +28,15 @@
             </div>
           </div>
           <div class="button-group">
-              <el-button style="width: 240px;" type="primary" @click="search()">{{languageDatas.Search[language]}}</el-button>
+            <el-button style="width: 240px;" type="primary" @click="search()">{{languageDatas.Search[language]}}</el-button>
           </div>
         </div>
-        <TitleCell :title="languageDatas.ThermalMapForLens[language]" :inLink="true"></TitleCell>
-        <div class="thermal-map-wrap my-box-shadow"></div>
+        <TitleCell :title="languageDatas.VideoPlayback[language]" :inLink="true"></TitleCell>
+        <div class="video-wrap my-box-shadow">
+          <div class="video-item" v-for="item, index in 6" :key="index">
+            <img src="/demo.jpg">
+          </div>
+        </div>
       </div>
     </RootPage>
   </div>
@@ -42,7 +46,7 @@
   import RootPage from "@pages/index.vue";
   import {TitleCell, MyFormCell} from "@components";
   export default {
-    name: "Thermal",
+    name: "RemotePatrol",
     components: {
       RootPage,
       TitleCell,
@@ -79,7 +83,7 @@
 </script>
 
 <style lang="less">
-  .Thermal {
+  .RemotePatrol {
     width: 100%;
     display: flex;
     display: -webkit-flex; /* Safari */
@@ -113,12 +117,24 @@
         justify-content: flex-end;
       }
     }
-    .thermal-map-wrap {
+    .video-wrap {
       width: 100%;
-      height: 800px;
       background-color: #fff;
       margin-top: 15px;
       border-radius: 4px;
+      display: flex;
+      display: -webkit-flex; /* Safari */
+      flex-direction: row;
+      .video-item {
+        width: 100% / 6;
+        height: 280px;
+        padding: 15px;
+        img {
+          width: 100%;
+          height: 280px;
+          border-radius: 4px;
+        }
+      }
     }
   }
 </style>
