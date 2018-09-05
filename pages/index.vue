@@ -45,7 +45,7 @@
       defaultOpeneds: Array
     },
     async asyncData(ctx) {
-
+      ctx.redirect("/overview");
       return {};
     },
   };

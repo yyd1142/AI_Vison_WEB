@@ -1,27 +1,27 @@
 {
   "name": {
     "cn": "智能零售分析系统",
-    "en": "Intelligent Retail Analysis System",
+    "en": "智能零售分析系统",
     "hk": "智能零售分析系統"
   },
   "MenuList": {
     "cn": "菜单列表",
-    "en": "Menu List",
+    "en": "Menu",
     "hk": "菜單列表"
   },
   "Overview": {
     "cn": "整体概况",
-    "en": "Overview",
+    "en": "Overall situation",
     "hk": "整體概況"
   },
   "BaseAnalysis": {
     "cn": "基础分析",
-    "en": "Base Analysis",
+    "en": "Base analysis",
     "hk": "基礎分析"
   },
   "AreaOverview": {
     "cn": "地区概况",
-    "en": "Regional Overview",
+    "en": "Regional overview",
     "hk": "地區概況"
   },
   "AreaTotalOverview": {
@@ -36,13 +36,13 @@
   },
   "AdvancedAnalysis": {
     "cn": "高级分析",
-    "en": "Advanced Analysis",
+    "en": "Advanced analysis",
     "hk": "高級分析"
   },
   "PassengerFlow": {
     "cn": "店铺客流",
-    "en": "Passenger Flow",
-    "hk": "店铺客流"
+    "en": "customer flow",
+    "hk": "店鋪客流"
   },
   "ThermalMap": {
     "cn": "热力分布",
@@ -51,17 +51,17 @@
   },
   "ReportAnalysis": {
     "cn": "报表分析",
-    "en": "Report Analysis",
+    "en": "Report analysis",
     "hk": "報表分析"
   },
   "RemotePatrol": {
-    "cn": "远程巡逻",
-    "en": "Remote Patrol",
-    "hk": "遠程巡邏"
+    "cn": "远程巡店",
+    "en": "Long distance patrol shop",
+    "hk": "遠程巡店"
   },
   "FittingAnalysis": {
     "cn": "店铺试衣分析",
-    "en": "Fitting Analysis",
+    "en": "Fitting room analysis",
     "hk": "店鋪試衣分析"
   },
   "IndependentStore": {
@@ -81,7 +81,7 @@
   },
   "Setting": {
     "cn": "配置管理",
-    "en": "Setting",
+    "en": "Configuration management",
     "hk": "配置管理"
   },
   "UserManagement": {
@@ -168,11 +168,6 @@
     "cn": "连带率",
     "en": "Joint rate",
     "hk": "連帶率"
-  },
-  "CustomerPrice": {
-    "cn": "客单价",
-    "en": "Customer price",
-    "hk": "客單價"
   },
   "RegionalTOPList": {
     "cn": "地区TOP",
@@ -328,12 +323,12 @@
   },
   "Search": {
     "cn": "查询",
-    "en": "Search",
+    "en": "Query",
     "hk": "查詢"
   },
   "PassengerFlowData": {
     "cn": "客流数据",
-    "en": "Passenger Flow Data",
+    "en": "Customer flow data",
     "hk": "客流數據"
   },
   "MaleToFemaleRatio": {
@@ -358,7 +353,7 @@
   },
   "AgeDistribution": {
     "cn": "年龄分布",
-    "en": "Age distribution",
+    "en": "Age ratio",
     "hk": "年齡分佈"
   },
   "TimePeriodRatio": {
@@ -453,17 +448,17 @@
   },
   "Performance": {
     "cn": "业绩",
-    "en": "Performance",
+    "en": "Achievement",
     "hk": "業績"
   },
   "ReachedDaily": {
     "cn": "日达成",
-    "en": "reached daily",
+    "en": "Day sales volume",
     "hk": "日達成"
   },
   "DailyIndicator": {
     "cn": "日指标",
-    "en": "daily indicator",
+    "en": "Day achievement",
     "hk": "日指標"
   },
   "DailySales": {
@@ -473,22 +468,22 @@
   },
   "Year_on_yearSales": {
     "cn": "同比销额",
-    "en": "year-on-year sales",
+    "en": "Year-on-year sales volume",
     "hk": "同比銷額"
   },
   "Year_on_yearIncrease": {
     "cn": "同比增幅",
-    "en": "year-on-year increase",
+    "en": "Year-on-year increase",
     "hk": "同比增幅"
   },
   "DailyEvent": {
     "cn": "每日活动",
-    "en": "Daily Activity",
+    "en": "Daily activities",
     "hk": "每日活動"
   },
   "EventDate": {
     "cn": "活动日期",
-    "en": "Activity Date",
+    "en": "Date of activity",
     "hk": "活動日期"
   },
   "EventDateInput": {
@@ -498,7 +493,7 @@
   },
   "EventName": {
     "cn": "门店活动",
-    "en": "Activity Date",
+    "en": "Shop activities",
     "hk": "門店活動"
   },
   "EventNameInput": {
@@ -528,17 +523,17 @@
   },
   "DestinationRegions": {
     "cn": "所属地区",
-    "en": "Destination Regions",
+    "en": "Affiliated area",
     "hk": "所屬地區"
   },
   "DestinationRegionsInput": {
     "cn": "请选择所属地区",
-    "en": "please select a destination regions",
+    "en": "please select an affiliated area",
     "hk": "請選擇所屬地區"
   },
   "CoreIndicator": {
     "cn": "核心指标",
-    "en": "Core Indicator",
+    "en": "Core indicator",
     "hk": "核心指標"
   },
   "CoreIndicatorInput": {
@@ -548,7 +543,7 @@
   },
   "ComparisonType": {
     "cn": "对比类型",
-    "en": "Comparison Type",
+    "en": "Type",
     "hk": "對比類型"
   },
   "ComparisonTypeInput": {
@@ -568,7 +563,7 @@
   },
   "DataRecord": {
     "cn": "数据记录",
-    "en": "Data ecord",
+    "en": "Data record",
     "hk": "數據記錄"
   },
   "Volume": {
@@ -600,5 +595,60 @@
     "cn": "请至少选择两个门店",
     "en": "please select at least two stores",
     "hk": "請至少選擇兩個門店"
+  },
+  "SearchUser": {
+    "cn": "搜索用户",
+    "en": "search user",
+    "hk": "搜索用戶"
+  },
+  "IncreaseUser": {
+    "cn": "新增用户",
+    "en": "Increase User",
+    "hk": "新增用戶"
+  },
+  "UserName": {
+    "cn": "用户名",
+    "en": "User name",
+    "hk": "用戶名"
+  },
+  "Role": {
+    "cn": "角色",
+    "en": "Role",
+    "hk": "角色"
+  },
+  "Permission": {
+    "cn": "权限",
+    "en": "Permission",
+    "hk": "權限"
+  },
+  "AccountStatus": {
+    "cn": "账户状态",
+    "en": "Status",
+    "hk": "賬戶狀態"
+  },
+  "Option": {
+    "cn": "操作",
+    "en": "Option",
+    "hk": "操作"
+  },
+  "View": {
+    "cn": "查看",
+    "en": "View",
+    "hk": "查看"
+  },
+  "Edit": {
+    "cn": "编辑",
+    "en": "Edit",
+    "hk": "編輯"
+  },
+  "Detelte": {
+    "cn": "删除",
+    "en": "Detelte",
+    "hk": "刪除"
+  },
+  "IncreaseData": {
+    "cn": "新增数据",
+    "en": "Increase Data",
+    "hk": "新增數據"
   }
 }

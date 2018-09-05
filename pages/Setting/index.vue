@@ -4,16 +4,15 @@
       <div class="Setting" slot="page">
         <div class="form-cell">
           <div class="form-item">
-            <el-input
-              placeholder="搜索用户"
-              v-model="form.username" style="width: 240px;">
+            <el-input :placeholder="languageDatas.SearchUser[language]"
+                      v-model="form.username" style="width: 240px;">
             </el-input>
           </div>
           <div class="form-item right">
-            <el-button type="primary" icon="el-icon-plus" style="width: 240px;">新增用户</el-button>
+            <el-button type="primary" icon="el-icon-plus" style="width: 240px;">{{languageDatas.IncreaseUser[language]}}</el-button>
           </div>
         </div>
-        <div class="table-cell">
+        <div class="table-cell my-box-shadow">
           <el-table
             :data="tableData"
             style="width: 100%"
@@ -21,41 +20,41 @@
           >
             <el-table-column
               prop="name"
-              label="用户名"
+              :label="languageDatas.UserName[language]"
               sortable
               width="180">
             </el-table-column>
             <el-table-column
               prop="role"
-              label="角色"
+              :label="languageDatas.Role[language]"
               sortable
               width="180">
             </el-table-column>
             <el-table-column
               prop="admin"
-              label="权限"
+              :label="languageDatas.Permission[language]"
               sortable
               width="180">
             </el-table-column>
             <el-table-column
               prop="stroe"
-              label="门店"
+              :label="languageDatas.Store[language]"
               sortable
               width="180">
             </el-table-column>
             <el-table-column
               prop="status"
-              label="账户状态"
+              :label="languageDatas.AccountStatus[language]"
               sortable
               width="180">
             </el-table-column>
             <el-table-column
               fixed="right"
-              label="操作">
+              :label="languageDatas.Option[language]">
               <template slot-scope="scope">
-                <el-button @click="handleClick(scope.row)" type="text" size="small">查看</el-button>
-                <el-button type="text" size="small">编辑</el-button>
-                <el-button type="text" size="small">删除</el-button>
+                <el-button @click="handleClick(scope.row)" type="text" size="small">{{languageDatas.View[language]}}</el-button>
+                <el-button type="text" size="small">{{languageDatas.Edit[language]}}</el-button>
+                <el-button type="text" size="small" style="color: #ff0514">{{languageDatas.Detelte[language]}}</el-button>
               </template>
             </el-table-column>
           </el-table>
@@ -85,35 +84,37 @@
         form: {
           username: ''
         },
-        tableData: [{
-          date: '2016-05-02',
-          name: '王小虎',
-          role: '店员',
-          admin: '管理员',
-          stroe: '广州分公司',
-          status: '正常'
-        }, {
-          date: '2016-05-04',
-          name: '王小虎',
-          role: '店员',
-          admin: '管理员',
-          stroe: '广州分公司',
-          status: '正常'
-        }, {
-          date: '2016-05-01',
-          name: '王小虎',
-          role: '店员',
-          admin: '管理员',
-          stroe: '广州分公司',
-          status: '正常'
-        }, {
-          date: '2016-05-03',
-          name: '王小虎',
-          role: '店员',
-          admin: '管理员',
-          stroe: '广州分公司',
-          status: '正常'
-        }]
+        tableData: [
+          {
+            date: '2016-05-02',
+            name: '王小虎',
+            role: '店员',
+            admin: '管理员',
+            stroe: '广州分公司',
+            status: '正常'
+          }, {
+            date: '2016-05-04',
+            name: '王小虎',
+            role: '店员',
+            admin: '管理员',
+            stroe: '广州分公司',
+            status: '正常'
+          }, {
+            date: '2016-05-01',
+            name: '王小虎',
+            role: '店员',
+            admin: '管理员',
+            stroe: '广州分公司',
+            status: '正常'
+          }, {
+            date: '2016-05-03',
+            name: '王小虎',
+            role: '店员',
+            admin: '管理员',
+            stroe: '广州分公司',
+            status: '正常'
+          }
+        ]
       }
     },
     methods: {

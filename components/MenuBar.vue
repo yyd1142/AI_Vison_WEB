@@ -51,7 +51,7 @@
           </template>
           <el-menu-item-group>
             <el-menu-item index="4-1" @click="_onPress('Setting')">{{languageDatas.UserManagement[language]}}</el-menu-item>
-            <el-menu-item index="4-2">{{languageDatas.DataManagement[language]}}</el-menu-item>
+            <el-menu-item index="4-2" @click="_onPress('Setting/DataManagement')">{{languageDatas.DataManagement[language]}}</el-menu-item>
           </el-menu-item-group>
         </el-submenu>
       </el-menu>
