@@ -32,7 +32,9 @@
           </div>
         </div>
         <TitleCell :title="languageDatas.ThermalMapForLens[language]" :inLink="true"></TitleCell>
-        <div class="thermal-map-wrap my-box-shadow"></div>
+        <div class="thermal-map-wrap my-box-shadow">
+          <img src="/re.jpg" style="width: 100%;">
+        </div>
       </div>
     </RootPage>
   </div>
@@ -54,19 +56,19 @@
       },
     },
     async asyncData(ctx) {
-      const language = ctx.query.language || 'cn';
+      const language = ctx.query.language || 'en';
       return {
         language: language,
         form: {
-          area: '',
+          area: 1,
           date: ''
         },
         optionDatas: [{
-          lable: '廣州北京路1', value: 1
+          lable: '廣州北京路A区', value: 1
         }, {
-          lable: '廣州北京路2', value: 2
+          lable: '廣州北京路A区', value: 2
         }, {
-          lable: '廣州北京路3', value: 3
+          lable: '廣州北京路A区', value: 3
         }]
       }
     },

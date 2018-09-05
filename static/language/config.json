@@ -150,9 +150,9 @@
     "hk": "請輸入地區總數"
   },
   "PassengerFlowToday": {
-    "cn": "本日客流人数",
-    "en": "Total number of passengers",
-    "hk": "本日客流人數"
+    "cn": "客流人数",
+    "en": "Customer Flow",
+    "hk": "客流人數"
   },
   "Sales": {
     "cn": "销售额",
@@ -181,7 +181,7 @@
   },
   "PassengerFlowAnalysis": {
     "cn": "客流分析",
-    "en": "Passenger flow analysis",
+    "en": "Customer flow analysis",
     "hk": "客流分析"
   },
   "NumberOfStores": {
@@ -331,6 +331,11 @@
     "en": "Male to female ratio",
     "hk": "男女比例"
   },
+  "MaleToFemaleRatioFitting": {
+    "cn": "试衣男女比例",
+    "en": "Fitting ratio of male and female",
+    "hk": "試衣男女比例"
+  },
   "Male": {
     "cn": "男性",
     "en": "Male",
@@ -351,6 +356,11 @@
     "en": "Age ratio",
     "hk": "年齡分佈"
   },
+  "AgeDistributionFitting": {
+    "cn": "试衣年龄分布",
+    "en": "Fitting age distribution",
+    "hk": "試衣年齡分佈"
+  },
   "TimePeriodRatio": {
     "cn": "时间段比例",
     "en": "Time piodRatio",
@@ -363,7 +373,7 @@
   },
   "NumberOfPassengers": {
     "cn": "客流人数",
-    "en": "Number of passengers",
+    "en": "The no.of customer flow",
     "hk": "客流人數"
   },
   "SortByStoreName": {
@@ -378,7 +388,7 @@
   },
   "SortByNumberOfPassengers": {
     "cn": "按照客流人数排序",
-    "en": "sort by number of passengers",
+    "en": "sort by number of customer flow",
     "hk": "按照客流人數排序"
   },
   "Lens": {
@@ -563,7 +573,7 @@
   },
   "CustomerPrice": {
     "cn": "客单价",
-    "en": "Volume",
+    "en": "Invoice",
     "hk": "客單價"
   },
   "NumberOfStores1": {
@@ -613,7 +623,7 @@
   },
   "AccountStatus": {
     "cn": "账户状态",
-    "en": "Status",
+    "en": "State",
     "hk": "賬戶狀態"
   },
   "Option": {
@@ -658,7 +668,7 @@
   },
   "DataType": {
     "cn": "数据类型",
-    "en": "Data type",
+    "en": "Type",
     "hk": "數據類型"
   },
   "DataAmount": {
@@ -670,5 +680,50 @@
     "cn": "销售数据",
     "en": "Sales data",
     "hk": "銷售數據"
+  },
+  "NoComparison": {
+    "cn": "不对比",
+    "en": "No Comparison",
+    "hk": "不對比"
+  },
+  "DailyComparison": {
+    "cn": "日对比",
+    "en": "Daily Comparison",
+    "hk": "日對比"
+  },
+  "WeeklyComparison": {
+    "cn": "周对比",
+    "en": "Weekly Comparison",
+    "hk": "周對比"
+  },
+  "MonthlyComparison": {
+    "cn": "月对比",
+    "en": "Monthly Comparison",
+    "hk": "月對比"
+  },
+  "DateNode": {
+    "cn": "日期节点",
+    "en": "Date node",
+    "hk": "日期節點"
+  },
+  "DateNodeInput": {
+    "cn": "请选择日期节点",
+    "en": "please select the date node",
+    "hk": "請選擇日期節點"
+  },
+  "SalesVolume": {
+    "cn": "销售数量",
+    "en": "Sales Volume",
+    "hk": "銷售數量"
+  },
+  "SalesInput": {
+    "cn": "请输入销售金额",
+    "en": "please enter the sales amount",
+    "hk": "請輸入銷售金額"
+  },
+  "SalesVolumeInput": {
+    "cn": "请输入销售数量",
+    "en": "please enter the sales volume",
+    "hk": "請輸入銷售數量"
   }
 }

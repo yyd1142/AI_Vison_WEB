@@ -188,7 +188,7 @@
       }
     },
     async asyncData(ctx) {
-      const language = ctx.query.language || 'cn';
+      const language = ctx.query.language || 'en';
       return {
         language: language,
         form: {
@@ -278,7 +278,7 @@
         const chart = echarts.init(document.getElementById('chart1'));
         const option = {
           title: {
-            text: `${this.languageDatas.MaleToFemaleRatio[this.language]}`,
+            text: `${this.languageDatas.MaleToFemaleRatioFitting[this.language]}`,
             padding: [30, 0, 0, 15]
           },
           color: ['#2C82BE', '#76DDFB'],
@@ -330,7 +330,7 @@
         const chart = echarts.init(document.getElementById('chart2'));
         const option = {
           title: {
-            text: `${this.languageDatas.AgeDistribution[this.language]}`,
+            text: `${this.languageDatas.AgeDistributionFitting[this.language]}`,
             padding: [30, 0, 0, 15]
           },
           color: ['#2C82BE', '#76DDFB'],

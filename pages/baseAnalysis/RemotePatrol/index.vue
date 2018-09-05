@@ -6,11 +6,13 @@
           <div class="form-item">
             <MyFormCell :lable="languageDatas.Area[language]">
               <div slot="cell">
-                <el-date-picker
-                  v-model="form.date"
-                  type="date"
-                  :placeholder="languageDatas.areaInput[language]">
-                </el-date-picker>
+                <el-select v-model="form.area" :placeholder="languageDatas.areaInput[language]">
+                  <el-option :label="item.lable"
+                             :value="item.value"
+                             v-for="item, index in optionDatas"
+                             :key="index">
+                  </el-option>
+                </el-select>
               </div>
             </MyFormCell>
             <div class="input-cell_">
@@ -58,12 +60,12 @@
       },
     },
     async asyncData(ctx) {
-      const language = ctx.query.language || 'cn';
+      const language = ctx.query.language || 'en';
       return {
         language: language,
         form: {
-          area: '',
-          date: ''
+          area: 1,
+          date: 2
         },
         optionDatas: [{
           lable: '廣州北京路1', value: 1

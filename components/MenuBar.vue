@@ -112,6 +112,7 @@
         padding-left: 20px;
         -moz-box-shadow: 0px 2px 8px #f2f2f2; /* 老的 Firefox */
         box-shadow: 0px 2px 8px #f2f2f2;
+        box-sizing: border-box;
       }
     }
     .menu-cell {

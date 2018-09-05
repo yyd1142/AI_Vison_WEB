@@ -112,9 +112,9 @@
         const datas = [{
           lable: `${languageDatas.dailyReport[language]}`, value: 1
         },{
-          lable: `${languageDatas.weeklyReport[language]}`, value: 1
+          lable: `${languageDatas.weeklyReport[language]}`, value: 2
         },{
-          lable: `${languageDatas.monthlyReport[language]}`, value: 1
+          lable: `${languageDatas.monthlyReport[language]}`, value: 3
         }]
         return datas;
       },
@@ -169,13 +169,13 @@
       }
     },
     async asyncData(ctx) {
-      const language = ctx.query.language || 'cn';
+      const language = ctx.query.language || 'en';
       return {
         language: language,
         form: {
-          area: '',
+          area: 1,
           date: '',
-          type: ''
+          type: 1
         },
         optionDatas: [{
           lable: '廣州北京路1', value: 1

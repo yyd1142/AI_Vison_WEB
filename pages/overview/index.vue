@@ -33,14 +33,23 @@
         </div>
         <TitleCell :title="languageDatas.AreaTotalOverview[language]" :inLink="true"></TitleCell>
         <div class="area-total-overview my-box-shadow">
-          <div class="area-button-group">
-            <el-button-group>
-              <el-button type="" icon="el-icon-arrow-left" @click="previousTypeBtn()"></el-button>
-              <el-button type="">{{typeDatas[typeIndex]}}</el-button>
-              <el-button type="" icon="el-icon-arrow-right" @click="nextTypeBtn()"></el-button>
-            </el-button-group>
-          </div>
-          <div id="AreaTotalOverview" class="chart-wrap" style="width: 100%; height: 500px;"></div>
+          <el-tabs type="border-card" @tab-click="typeBtn">
+            <el-tab-pane :label="languageDatas.PassengerFlow[language]">
+              <div id="AreaTotalOverview" class="chart-wrap" style="width: 100%; height: 500px;"></div>
+            </el-tab-pane>
+            <el-tab-pane :label="languageDatas.Sales[language]">
+              <div id="Sales" class="chart-wrap" style="width: 100%; height: 500px;"></div>
+            </el-tab-pane>
+            <el-tab-pane :label="languageDatas.TurnoverRate[language]">
+              <div id="TurnoverRate" class="chart-wrap" style="width: 100%; height: 500px;"></div>
+            </el-tab-pane>
+            <el-tab-pane :label="languageDatas.JointRate[language]">
+              <div id="JointRate" class="chart-wrap" style="width: 100%; height: 500px;"></div>
+            </el-tab-pane>
+            <el-tab-pane :label="languageDatas.CustomerPrice[language]">
+              <div id="CustomerPrice" class="chart-wrap" style="width: 100%; height: 500px;"></div>
+            </el-tab-pane>
+          </el-tabs>
         </div>
         <TitleCell
           :title="`${languageDatas.RegionalTOPList[language]} ${languageDatas.And[language]} ${languageDatas.PassengerFlowAnalysis[language]}`"
@@ -75,7 +84,7 @@
       },
     },
     async asyncData(ctx) {
-      const language = ctx.query.language || 'cn';
+      const language = ctx.query.language || 'en';
       return {
         language: language,
         buttonDatas: [{
@@ -112,9 +121,11 @@
         `${this.languageDatas.CustomerPrice[this.language]}`,
       ];
       this.typeDatas = typeDatas;
-      this.initChart();
-      this.topListChart();
-      this.passengerFlowChart();
+      this.$nextTick(() => {
+        this.initChart();
+        this.topListChart();
+        this.passengerFlowChart();
+      })
     },
     methods: {
       chooseDays(item, index) {
@@ -129,10 +140,10 @@
       initChart() {
         const chart = echarts.init(document.getElementById('AreaTotalOverview'));
         const option = {
-          title: {
-            text: `${this.languageDatas.PassengerFlowToday[this.language]}`,
-            padding: [30, 0, 0, 15]
-          },
+          // title: {
+          //   text: `${this.languageDatas.PassengerFlowToday[this.language]}`,
+          //   padding: [30, 0, 0, 15]
+          // },
           color: ['#5151e0'],
           tooltip: {
             trigger: 'axis',
@@ -145,12 +156,12 @@
             right: '15',
             bottom: '15',
             containLabel: true,
-            top: '100'
+            top: '15'
           },
           xAxis: [
             {
               type: 'category',
-              data: ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun'],
+              data: ['2018-09-01', '2018-09-02', '2018-09-03', '2018-09-04', '2018-09-05', '2018-09-06', '2018-09-07'],
               axisTick: {
                 alignWithLabel: true
               }
@@ -166,7 +177,7 @@
               name: `${this.languageDatas.PassengerFlowToday[this.language]}`,
               type: 'bar',
               barWidth: '60%',
-              data: [10, 52, 200, 334, 390, 330, 220, 10, 52, 200, 334, 390, 330, 220]
+              data: [200, 334, 390, 330, 220, 200, 220]
             }
           ]
         };
@@ -223,7 +234,7 @@
             trigger: 'axis'
           },
           legend: {
-            data: [`${this.languageDatas.NumberOfStores[this.language]}`, `${this.languageDatas.Sales[this.language]}（元）`],
+            data: [`${this.languageDatas.NumberOfStores[this.language]}`, `${this.languageDatas.Sales[this.language]}（HK）`],
             top: 30,
             right: 15
           },
@@ -258,7 +269,7 @@
               data: [120, 132, 101, 134, 90, 230, 210]
             },
             {
-              name: `${this.languageDatas.Sales[this.language]}（元）`,
+              name: `${this.languageDatas.Sales[this.language]}（HK）`,
               type: 'line',
               stack: '总量',
               data: [220, 182, 191, 234, 290, 330, 310]
@@ -267,18 +278,205 @@
         };
         chart.setOption(option);
       },
-      previousTypeBtn() {
-        const index = this.typeIndex;
-        if (index > 0) {
-          this.typeIndex = index - 1;
-        }
+      SalesChart() {
+        const chart = echarts.init(document.getElementById('Sales'));
+        const option = {
+          // title: {
+          //   text: `${this.languageDatas.PassengerFlowToday[this.language]}`,
+          //   padding: [30, 0, 0, 15]
+          // },
+          color: ['#5151e0'],
+          tooltip: {
+            trigger: 'axis',
+            axisPointer: {            // 坐标轴指示器，坐标轴触发有效
+              type: 'shadow'        // 默认为直线，可选为：'line' | 'shadow'
+            }
+          },
+          grid: {
+            left: '15',
+            right: '15',
+            bottom: '15',
+            containLabel: true,
+            top: '15'
+          },
+          xAxis: [
+            {
+              type: 'category',
+              data: ['2018-09-01', '2018-09-02', '2018-09-03', '2018-09-04', '2018-09-05', '2018-09-06', '2018-09-07'],
+              axisTick: {
+                alignWithLabel: true
+              }
+            }
+          ],
+          yAxis: [
+            {
+              type: 'value'
+            }
+          ],
+          series: [
+            {
+              name: `${this.languageDatas.Sales[this.language]}`,
+              type: 'bar',
+              barWidth: '60%',
+              data: [200, 343, 777, 777, 343, 222, 220]
+            }
+          ]
+        };
+        chart.setOption(option);
       },
-      nextTypeBtn() {
-        const index = this.typeIndex;
-        const lastIndex = this.typeDatas.length - 1;
-        if (index < lastIndex) {
-          this.typeIndex = index + 1;
-        }
+      TurnoverRateChart() {
+        const chart = echarts.init(document.getElementById('TurnoverRate'));
+        const option = {
+          // title: {
+          //   text: `${this.languageDatas.PassengerFlowToday[this.language]}`,
+          //   padding: [30, 0, 0, 15]
+          // },
+          color: ['#5151e0'],
+          tooltip: {
+            trigger: 'axis',
+            axisPointer: {            // 坐标轴指示器，坐标轴触发有效
+              type: 'shadow'        // 默认为直线，可选为：'line' | 'shadow'
+            }
+          },
+          grid: {
+            left: '15',
+            right: '15',
+            bottom: '15',
+            containLabel: true,
+            top: '15'
+          },
+          xAxis: [
+            {
+              type: 'category',
+              data: ['2018-09-01', '2018-09-02', '2018-09-03', '2018-09-04', '2018-09-05', '2018-09-06', '2018-09-07'],
+              axisTick: {
+                alignWithLabel: true
+              }
+            }
+          ],
+          yAxis: [
+            {
+              type: 'value'
+            }
+          ],
+          series: [
+            {
+              name: `${this.languageDatas.TurnoverRate[this.language]}`,
+              type: 'bar',
+              barWidth: '60%',
+              data: [545, 545, 675, 330, 653, 111, 99]
+            }
+          ]
+        };
+        chart.setOption(option);
+      },
+      JointRateChart() {
+        const chart = echarts.init(document.getElementById('JointRate'));
+        const option = {
+          // title: {
+          //   text: `${this.languageDatas.PassengerFlowToday[this.language]}`,
+          //   padding: [30, 0, 0, 15]
+          // },
+          color: ['#5151e0'],
+          tooltip: {
+            trigger: 'axis',
+            axisPointer: {            // 坐标轴指示器，坐标轴触发有效
+              type: 'shadow'        // 默认为直线，可选为：'line' | 'shadow'
+            }
+          },
+          grid: {
+            left: '15',
+            right: '15',
+            bottom: '15',
+            containLabel: true,
+            top: '15'
+          },
+          xAxis: [
+            {
+              type: 'category',
+              data: ['2018-09-01', '2018-09-02', '2018-09-03', '2018-09-04', '2018-09-05', '2018-09-06', '2018-09-07'],
+              axisTick: {
+                alignWithLabel: true
+              }
+            }
+          ],
+          yAxis: [
+            {
+              type: 'value'
+            }
+          ],
+          series: [
+            {
+              name: `${this.languageDatas.JointRate[this.language]}`,
+              type: 'bar',
+              barWidth: '60%',
+              data: [655, 356, 353, 143, 143, 645, 223]
+            }
+          ]
+        };
+        chart.setOption(option);
+      },
+      CustomerPriceChart() {
+        const chart = echarts.init(document.getElementById('CustomerPrice'));
+        const option = {
+          // title: {
+          //   text: `${this.languageDatas.PassengerFlowToday[this.language]}`,
+          //   padding: [30, 0, 0, 15]
+          // },
+          color: ['#5151e0'],
+          tooltip: {
+            trigger: 'axis',
+            axisPointer: {            // 坐标轴指示器，坐标轴触发有效
+              type: 'shadow'        // 默认为直线，可选为：'line' | 'shadow'
+            }
+          },
+          grid: {
+            left: '15',
+            right: '15',
+            bottom: '15',
+            containLabel: true,
+            top: '15'
+          },
+          xAxis: [
+            {
+              type: 'category',
+              data: ['2018-09-01', '2018-09-02', '2018-09-03', '2018-09-04', '2018-09-05', '2018-09-06', '2018-09-07'],
+              axisTick: {
+                alignWithLabel: true
+              }
+            }
+          ],
+          yAxis: [
+            {
+              type: 'value'
+            }
+          ],
+          series: [
+            {
+              name: `${this.languageDatas.CustomerPrice[this.language]}`,
+              type: 'bar',
+              barWidth: '60%',
+              data: [223, 123, 423, 222, 566, 322, 220]
+            }
+          ]
+        };
+        chart.setOption(option);
+      },
+      typeBtn(e) {
+        const index = parseInt(e.index);
+        this.$nextTick(() => {
+          if (index === 0) {
+            this.initChart()
+          } else if (index === 1) {
+            this.SalesChart()
+          } else if (index === 2) {
+            this.TurnoverRateChart()
+          } else if (index === 3) {
+            this.JointRateChart()
+          } else if (index === 4) {
+            this.CustomerPriceChart()
+          }
+        })
       }
     }
   };
@@ -303,7 +501,7 @@
       align-items: center;
       flex-direction: row;
       .form-item {
-        width: 70%;
+        width: 60%;
         display: flex;
         display: -webkit-flex; /* Safari */
         .input-cell_ {
@@ -313,7 +511,7 @@
       .button-group {
         display: flex;
         display: -webkit-flex; /* Safari */
-        width: 30%;
+        width: 40%;
         height: 80px;
         align-items: center;
         justify-content: flex-end;

@@ -78,7 +78,7 @@
       },
     },
     async asyncData(ctx) {
-      const language = ctx.query.language || 'cn';
+      const language = ctx.query.language || 'en';
       return {
         language: language,
         form: {
@@ -89,28 +89,28 @@
             date: '2016-05-02',
             name: '王小虎',
             role: '店员',
-            admin: '管理员',
+            admin: 'Administrators',
             stroe: '广州分公司',
             status: '正常'
           }, {
             date: '2016-05-04',
             name: '王小虎',
             role: '店员',
-            admin: '管理员',
+            admin: 'Administrators',
             stroe: '广州分公司',
             status: '正常'
           }, {
             date: '2016-05-01',
             name: '王小虎',
             role: '店员',
-            admin: '管理员',
+            admin: 'Administrators',
             stroe: '广州分公司',
             status: '正常'
           }, {
             date: '2016-05-03',
             name: '王小虎',
             role: '店员',
-            admin: '管理员',
+            admin: 'Administrators',
             stroe: '广州分公司',
             status: '正常'
           }

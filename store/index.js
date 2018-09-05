@@ -3,7 +3,7 @@ import language from '@static/language/config.json';
 
 const state = {
   datas: {},
-  language: 'cn'
+  language: 'en'
 }
 
 const getters = {

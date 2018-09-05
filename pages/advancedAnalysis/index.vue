@@ -35,7 +35,7 @@
                 <el-select v-model="form.coreIndicator" :placeholder="languageDatas.CoreIndicatorInput[language]">
                   <el-option :label="item.lable"
                              :value="item.value"
-                             v-for="item, index in DestinationRegionsDatas"
+                             v-for="item, index in CoreIndicatorDatas"
                              :key="index">
                   </el-option>
                 </el-select>
@@ -48,7 +48,7 @@
                 <el-select v-model="form.type" :placeholder="languageDatas.ComparisonTypeInput[language]">
                   <el-option :label="item.lable"
                              :value="item.value"
-                             v-for="item, index in DestinationRegionsDatas"
+                             v-for="item, index in ComparisonTypeDatas"
                              :key="index">
                   </el-option>
                 </el-select>
@@ -161,10 +161,64 @@
           }
         ];
         return datas;
+      },
+      ComparisonTypeDatas() {
+        const languageDatas = this.languageDatas;
+        const language = this.language;
+        const datas = [
+          {
+            lable: `${languageDatas.NoComparison[language]}`,
+            value: 1
+          },
+          {
+            lable: `${languageDatas.DailyComparison[language]}`,
+            value: 2
+          },
+          {
+            lable: `${languageDatas.WeeklyComparison[language]}`,
+            value: 3
+          },
+          {
+            lable: `${languageDatas.MonthlyComparison[language]}`,
+            value: 4
+          }
+        ];
+        return datas;
+      },
+      CoreIndicatorDatas() {
+        const languageDatas = this.languageDatas;
+        const language = this.language;
+        const datas = [
+          {
+            lable: `${languageDatas.Sales[language]}`,
+            value: 1
+          },
+          {
+            lable: `${languageDatas.NumberOfStores1[language]}`,
+            value: 2
+          },
+          {
+            lable: `${languageDatas.TurnoverRate[language]}`,
+            value: 3
+          },
+          {
+            lable: `${languageDatas.JointRate[language]}`,
+            value: 4
+          },
+          {
+            lable: `${languageDatas.CustomerPrice[language]}`,
+            value: 5
+          },
+          {
+            lable: `${languageDatas.NumberOfReceptions[language]}`,
+            value: 6
+          }
+        ];
+        return datas;
       }
     },
     async asyncData(ctx) {
-      const language = ctx.query.language || 'cn';
+      const language = ctx.query.language || 'en';
       return {
         language: language,
         form: {

@@ -54,20 +54,20 @@
     <el-dialog :title="languageDatas.IncreaseData[language]" :visible.sync="dialogFormVisible">
       <el-form :model="form">
         <el-form-item :label="languageDatas.DataType[language]" :label-width="formLabelWidth">
-          <el-select v-model="form.type" placeholder="请选择类型">
+          <el-select v-model="form.type" :placeholder="languageDatas.ReportTypeInput[language]">
             <el-option :label="languageDatas.SalesData[language]" value="shanghai"></el-option>
           </el-select>
         </el-form-item>
-        <el-form-item label="日期节点" :label-width="formLabelWidth">
-          <el-date-picker v-model="form.data" type="date" :placeholder="languageDatas.DateInput[language]">
+        <el-form-item :label="languageDatas.DateNode[language]" :label-width="formLabelWidth">
+          <el-date-picker v-model="form.data" type="date" :placeholder="languageDatas.DateNodeInput[language]">
           </el-date-picker>
         </el-form-item>
         <el-form-item :label="languageDatas.DataDetail[language]" :label-width="formLabelWidth"></el-form-item>
-        <el-form-item label="銷售金額" :label-width="formLabelWidth">
-        <el-input v-model="form.type" auto-complete="off"></el-input>
+        <el-form-item :label="languageDatas.Sales[language]" :label-width="formLabelWidth">
+        <el-input v-model="form.type" auto-complete="off" :placeholder="languageDatas.SalesInput[language]"></el-input>
         </el-form-item>
-        <el-form-item label="銷售數量" :label-width="formLabelWidth">
-        <el-input v-model="form.type" auto-complete="off"></el-input>
+        <el-form-item :label="languageDatas.SalesVolume[language]" :label-width="formLabelWidth">
+        <el-input v-model="form.type" auto-complete="off" :placeholder="languageDatas.SalesVolumeInput[language]"></el-input>
         </el-form-item>
       </el-form>
       <div slot="footer" class="dialog-footer">
@@ -92,7 +92,7 @@
       },
     },
     async asyncData(ctx) {
-      const language = ctx.query.language || 'cn';
+      const language = ctx.query.language || 'en';
       return {
         language: language,
         form: {

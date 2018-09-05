@@ -188,15 +188,15 @@
       }
     },
     async asyncData(ctx) {
-      const language = ctx.query.language || 'cn';
+      const language = ctx.query.language || 'en';
       return {
         language: language,
         form: {
           date: '',
           time: '',
-          cycle: '',
-          area: '',
-          store: ''
+          cycle: 2,
+          area: 1,
+          store: 1
         },
         optionDatas: [{
           lable: '廣州北京路1', value: 1

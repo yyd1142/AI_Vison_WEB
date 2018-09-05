@@ -48,7 +48,7 @@
     }
     .right-cell {
       height: 98px;
-      width: 138px;
+      width: 251px;
       position: absolute;
       right: 0;
       top: 0;
