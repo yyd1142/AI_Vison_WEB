@@ -241,11 +241,6 @@
     "en": "Daily marketing amount",
     "hk": "日營銷額"
   },
-  "DailyIndicator": {
-    "cn": "日目标",
-    "en": "Daily indicator",
-    "hk": "日目標"
-  },
   "MonthlyIndicator": {
     "cn": "月目标",
     "en": "Monthly indicator",
@@ -380,11 +375,6 @@
     "cn": "按照时间排序",
     "en": "sort by time",
     "hk": "按照時間排序"
-  },
-  "SortByStoreName": {
-    "cn": "按照店铺名称排序",
-    "en": "sort by store name",
-    "hk": "按照店鋪名稱排序"
   },
   "SortByNumberOfPassengers": {
     "cn": "按照客流人数排序",
@@ -650,5 +640,35 @@
     "cn": "新增数据",
     "en": "Increase Data",
     "hk": "新增數據"
+  },
+  "DataID": {
+    "cn": "数据编号",
+    "en": "Data ID",
+    "hk": "數據編號"
+  },
+  "StoreName": {
+    "cn": "店铺名称",
+    "en": "Store name",
+    "hk": "店鋪名稱"
+  },
+  "UpdateTime": {
+    "cn": "更新时间",
+    "en": "Update time",
+    "hk": "更新時間"
+  },
+  "DataType": {
+    "cn": "数据类型",
+    "en": "Data type",
+    "hk": "數據類型"
+  },
+  "DataAmount": {
+    "cn": "数据条数",
+    "en": "Amount",
+    "hk": "数据條數"
+  },
+  "SalesData": {
+    "cn": "销售数据",
+    "en": "Sales data",
+    "hk": "銷售數據"
   }
 }

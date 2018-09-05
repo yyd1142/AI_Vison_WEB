@@ -7,7 +7,9 @@
 
           </div>
           <div class="form-item right">
-            <el-button type="primary" icon="el-icon-plus" style="width: 240px;" @click="dialogFormVisible = true">{{languageDatas.IncreaseData[language]}}</el-button>
+            <el-button type="primary" icon="el-icon-plus" style="width: 240px;" @click="dialogFormVisible = true">
+              {{languageDatas.IncreaseData[language]}}
+            </el-button>
           </div>
         </div>
         <div class="table-cell my-box-shadow">
@@ -17,48 +19,55 @@
             :default-sort="{prop: 'date', order: 'descending'}"
           >
             <el-table-column
-              prop="name"
-              label="数据编号"
+              prop="id"
+              :label="languageDatas.DataID[language]"
               sortable
               width="180">
             </el-table-column>
             <el-table-column
-              prop="role"
-              label="店铺名称"
+              prop="storeName"
+              :label="languageDatas.StoreName[language]"
               sortable
               width="180">
             </el-table-column>
             <el-table-column
-              prop="admin"
-              label="更新时间"
+              prop="updateTime"
+              :label="languageDatas.UpdateTime[language]"
               sortable
               width="180">
             </el-table-column>
             <el-table-column
-              prop="stroe"
-              label="数据类型"
+              prop="type"
+              :label="languageDatas.DataType[language]"
               sortable
               width="180">
             </el-table-column>
             <el-table-column
-              prop="status"
-              label="数据条数"
+              prop="amount"
+              :label="languageDatas.DataAmount[language]"
               sortable>
             </el-table-column>
           </el-table>
         </div>
       </div>
     </RootPage>
-    <el-dialog title="新增数据" :visible.sync="dialogFormVisible">
+    <el-dialog :title="languageDatas.IncreaseData[language]" :visible.sync="dialogFormVisible">
       <el-form :model="form">
-        <el-form-item label="数据类型" :label-width="formLabelWidth">
-          <el-input v-model="form.type" auto-complete="off"></el-input>
+        <el-form-item :label="languageDatas.DataType[language]" :label-width="formLabelWidth">
+          <el-select v-model="form.type" placeholder="请选择类型">
+            <el-option :label="languageDatas.SalesData[language]" value="shanghai"></el-option>
+          </el-select>
         </el-form-item>
         <el-form-item label="日期节点" :label-width="formLabelWidth">
-          <el-select v-model="form.date" placeholder="请选择活动区域">
-            <el-option label="区域一" value="shanghai"></el-option>
-            <el-option label="区域二" value="beijing"></el-option>
-          </el-select>
+          <el-date-picker v-model="form.data" type="date" :placeholder="languageDatas.DateInput[language]">
+          </el-date-picker>
+        </el-form-item>
+        <el-form-item :label="languageDatas.DataDetail[language]" :label-width="formLabelWidth"></el-form-item>
+        <el-form-item label="銷售金額" :label-width="formLabelWidth">
+        <el-input v-model="form.type" auto-complete="off"></el-input>
+        </el-form-item>
+        <el-form-item label="銷售數量" :label-width="formLabelWidth">
+        <el-input v-model="form.type" auto-complete="off"></el-input>
         </el-form-item>
       </el-form>
       <div slot="footer" class="dialog-footer">
@@ -89,35 +98,22 @@
         form: {
           type: '', date: ''
         },
-        tableData: [{
-          date: '2016-05-02',
-          name: '王小虎',
-          role: '店员',
-          admin: '管理员',
-          stroe: '广州分公司',
-          status: '正常'
-        }, {
-          date: '2016-05-04',
-          name: '王小虎',
-          role: '店员',
-          admin: '管理员',
-          stroe: '广州分公司',
-          status: '正常'
-        }, {
-          date: '2016-05-01',
-          name: '王小虎',
-          role: '店员',
-          admin: '管理员',
-          stroe: '广州分公司',
-          status: '正常'
-        }, {
-          date: '2016-05-03',
-          name: '王小虎',
-          role: '店员',
-          admin: '管理员',
-          stroe: '广州分公司',
-          status: '正常'
-        }],
+        tableData: [
+          {
+            id: '112',
+            storeName: '广州分公司',
+            updateTime: '2018-09-18',
+            type: '銷售數據',
+            amount: '129',
+          },
+          {
+            id: '112',
+            storeName: '广州分公司',
+            updateTime: '2018-09-18',
+            type: '銷售數據',
+            amount: '129',
+          },
+        ],
         dialogFormVisible: false,
         formLabelWidth: '120px'
       }

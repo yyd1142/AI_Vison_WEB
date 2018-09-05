@@ -2,16 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="5874e592-3024-47f4-9ee2-4d8d070434bf" name="Default" comment="">
-      <change afterPath="$PROJECT_DIR$/pages/Setting/DataManagement/index.vue" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/server/config/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/main.js" beforeDir="false" afterPath="$PROJECT_DIR$/build/main.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/main.map" beforeDir="false" afterPath="$PROJECT_DIR$/build/main.map" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/MenuBar.vue" beforeDir="false" afterPath="$PROJECT_DIR$/components/MenuBar.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pages/Setting/index.vue" beforeDir="false" afterPath="$PROJECT_DIR$/pages/Setting/index.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pages/index.vue" beforeDir="false" afterPath="$PROJECT_DIR$/pages/index.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/output.log" beforeDir="false" afterPath="$PROJECT_DIR$/output.log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/Setting/DataManagement/index.vue" beforeDir="false" afterPath="$PROJECT_DIR$/pages/Setting/DataManagement/index.vue" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/static/language/config.json" beforeDir="false" afterPath="$PROJECT_DIR$/static/language/config.json" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -23,11 +17,33 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="index.js" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/server/index.js">
+      <file leaf-file-name="config.json" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/static/language/config.json">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="425">
-              <caret line="25" column="37" lean-forward="true" selection-start-line="25" selection-start-column="37" selection-end-line="25" selection-end-column="37" />
+            <state relative-caret-position="522">
+              <caret line="672" column="3" selection-start-line="672" selection-start-column="3" selection-end-line="672" selection-end-column="3" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="index.vue" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/pages/Setting/DataManagement/index.vue">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="469">
+              <caret line="66" column="42" selection-start-line="66" selection-start-column="42" selection-end-line="66" selection-end-column="42" />
+              <folding>
+                <element signature="n#style#0;n#el-button#0;n#div#1;n#div#0;n#div#0;n#RootPage#0;n#div#0;n#template#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#el-table#0;n#div#1;n#div#0;n#RootPage#0;n#div#0;n#template#0;n#!!top" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name=".gitignore" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/.gitignore">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="204">
+              <caret line="12" column="10" selection-start-line="12" selection-start-column="10" selection-end-line="12" selection-end-column="10" />
             </state>
           </provider>
         </entry>
@@ -44,15 +60,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>指標</find>
-      <find>活动日期</find>
-      <find>DataDetailTitle</find>
-      <find>確定</find>
-      <find>地区</find>
-      <find>AreaInput</find>
-      <find>地區</find>
-      <find>ComparisonType</find>
-      <find>ComparisonTypeInput</find>
       <find>language</find>
       <find>DateInput</find>
       <find>MyFormCell</find>
@@ -74,6 +81,15 @@
       <find>CustomerPrice</find>
       <find>門店名稱</find>
       <find>winston</find>
+      <find>店铺名称</find>
+      <find>DailyIndicator</find>
+      <find>StoreName</find>
+      <find>DataType</find>
+      <find>数据类型</find>
+      <find>數據明細</find>
+      <find>銷售金額</find>
+      <find>销售数据</find>
+      <find>选择日期</find>
     </findStrings>
     <dirStrings>
       <dir>$PROJECT_DIR$/pages/baseAnalysis/RemotePatrol</dir>
@@ -114,11 +130,12 @@
         <option value="$PROJECT_DIR$/pages/index.vue" />
         <option value="$PROJECT_DIR$/components/MenuBar.vue" />
         <option value="$PROJECT_DIR$/pages/Setting/index.vue" />
-        <option value="$PROJECT_DIR$/pages/Setting/DataManagement/index.vue" />
-        <option value="$PROJECT_DIR$/static/language/config.json" />
         <option value="$PROJECT_DIR$/server/config/index.js" />
         <option value="$PROJECT_DIR$/server/router/index.js" />
         <option value="$PROJECT_DIR$/server/index.js" />
+        <option value="$PROJECT_DIR$/pages/Setting/DataManagement/index.vue" />
+        <option value="$PROJECT_DIR$/static/language/config.json" />
+        <option value="$PROJECT_DIR$/.gitignore" />
       </list>
     </option>
   </component>
@@ -163,34 +180,6 @@
             <path>
               <item name="AIVision_WEB" type="b2602c69:ProjectViewProjectNode" />
               <item name="AIVision_WEB" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="AIVision_WEB" type="b2602c69:ProjectViewProjectNode" />
-              <item name="AIVision_WEB" type="462c0819:PsiDirectoryNode" />
-              <item name="pages" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="AIVision_WEB" type="b2602c69:ProjectViewProjectNode" />
-              <item name="AIVision_WEB" type="462c0819:PsiDirectoryNode" />
-              <item name="pages" type="462c0819:PsiDirectoryNode" />
-              <item name="Setting" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="AIVision_WEB" type="b2602c69:ProjectViewProjectNode" />
-              <item name="AIVision_WEB" type="462c0819:PsiDirectoryNode" />
-              <item name="server" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="AIVision_WEB" type="b2602c69:ProjectViewProjectNode" />
-              <item name="AIVision_WEB" type="462c0819:PsiDirectoryNode" />
-              <item name="server" type="462c0819:PsiDirectoryNode" />
-              <item name="config" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="AIVision_WEB" type="b2602c69:ProjectViewProjectNode" />
-              <item name="AIVision_WEB" type="462c0819:PsiDirectoryNode" />
-              <item name="server" type="462c0819:PsiDirectoryNode" />
-              <item name="router" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -286,12 +275,12 @@
       <workItem from="1535705063345" duration="6477000" />
       <workItem from="1535768165117" duration="15680000" />
       <workItem from="1536039205387" duration="18133000" />
-      <workItem from="1536112844464" duration="6815000" />
+      <workItem from="1536112844464" duration="8768000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="84632000" />
+    <option name="totallyTimeSpent" value="86585000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1440" height="809" extended-state="0" />
@@ -311,7 +300,7 @@
       <window_info anchor="bottom" id="Terminal" order="7" weight="0.3300562" />
       <window_info id="Capture Tool" order="2" />
       <window_info id="Designer" order="2" />
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.20457797" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.20457797" />
       <window_info anchor="right" id="Database" order="3" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
@@ -339,13 +328,6 @@
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/server/index.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="374">
-          <caret line="22" column="20" lean-forward="true" selection-start-line="22" selection-start-column="20" selection-end-line="22" selection-end-column="20" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/store/index.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="25">
@@ -708,24 +690,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/pages/Setting/DataManagement/index.vue">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="207">
-          <caret line="19" column="25" lean-forward="true" selection-start-line="19" selection-start-column="25" selection-end-line="19" selection-end-column="25" />
-          <folding>
-            <element signature="n#style#0;n#el-button#0;n#div#1;n#div#0;n#div#0;n#RootPage#0;n#div#0;n#template#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#el-table#0;n#div#1;n#div#0;n#RootPage#0;n#div#0;n#template#0;n#!!top" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/static/language/config.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="225">
-          <caret line="616" column="14" lean-forward="true" selection-start-line="616" selection-start-column="14" selection-end-line="616" selection-end-column="14" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/server/config/production.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="306">
@@ -763,8 +727,33 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/server/index.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="425">
-          <caret line="25" column="37" lean-forward="true" selection-start-line="25" selection-start-column="37" selection-end-line="25" selection-end-column="37" />
+        <state relative-caret-position="238">
+          <caret line="14" column="39" selection-start-line="14" selection-start-column="39" selection-end-line="14" selection-end-column="39" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/static/language/config.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="522">
+          <caret line="672" column="3" selection-start-line="672" selection-start-column="3" selection-end-line="672" selection-end-column="3" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pages/Setting/DataManagement/index.vue">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="469">
+          <caret line="66" column="42" selection-start-line="66" selection-start-column="42" selection-end-line="66" selection-end-column="42" />
+          <folding>
+            <element signature="n#style#0;n#el-button#0;n#div#1;n#div#0;n#div#0;n#RootPage#0;n#div#0;n#template#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#el-table#0;n#div#1;n#div#0;n#RootPage#0;n#div#0;n#template#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.gitignore">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="204">
+          <caret line="12" column="10" selection-start-line="12" selection-start-column="10" selection-end-line="12" selection-end-column="10" />
         </state>
       </provider>
     </entry>
