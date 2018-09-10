@@ -7,7 +7,7 @@
             <MyFormCell :lable="languageDatas.Area[language]">
               <div slot="cell">
                 <el-select v-model="form.area" :placeholder="languageDatas.areaInput[language]">
-                  <el-option :label="item.lable"
+                  <el-option :label="item.label"
                              :value="item.value"
                              v-for="item, index in optionDatas"
                              :key="index">
@@ -18,7 +18,7 @@
             <div class="input-cell_">
               <MyFormCell :lable="languageDatas.AreaAcount[language]">
                 <div slot="cell">
-                  <el-input v-model="form.acount" :placeholder="languageDatas.areaAcountInput[language]"></el-input>
+                  <el-input :value="areaAcount" disabled></el-input>
                 </div>
               </MyFormCell>
             </div>
@@ -57,7 +57,23 @@
         </TitleCell>
         <div class="top-list-and-passenger-flow">
           <div class="top-list-wrap">
-            <div id="TopListChart" class="chart-wrap my-box-shadow" style="width: 100%; height: 500px;"></div>
+            <el-tabs type="border-card" @tab-click="typeBtn">
+              <el-tab-pane :label="languageDatas.PassengerFlow[language]">
+                <div id="TopListChart" style="width: 100%; height: 500px;"></div>
+              </el-tab-pane>
+              <el-tab-pane :label="languageDatas.Sales[language]">
+                <!--<div id="Sales" class="chart-wrap" style="width: 100%; height: 500px;"></div>-->
+              </el-tab-pane>
+              <el-tab-pane :label="languageDatas.TurnoverRate[language]">
+                <!--<div id="TurnoverRate" class="chart-wrap" style="width: 100%; height: 500px;"></div>-->
+              </el-tab-pane>
+              <el-tab-pane :label="languageDatas.JointRate[language]">
+                <!--<div id="JointRate" class="chart-wrap" style="width: 100%; height: 500px;"></div>-->
+              </el-tab-pane>
+              <el-tab-pane :label="languageDatas.CustomerPrice[language]">
+                <!--<div id="CustomerPrice" class="chart-wrap" style="width: 100%; height: 500px;"></div>-->
+              </el-tab-pane>
+            </el-tabs>
           </div>
           <div class="passenger-flow-wrap">
             <div id="PassengerFlowChart" class="chart-wrap my-box-shadow" style="width: 100%; height: 500px;"></div>
@@ -70,7 +86,20 @@
 
 <script>
   import RootPage from "@pages/index.vue";
-  import {TitleCell, MyFormCell} from "@components/index.js";
+  import {TitleCell, MyFormCell} from "@components/index";
+  import api from '@plugins/api';
+  import moment from 'moment';
+
+  const getPeoPleCountById = (form, cb) => {
+    const params = {
+      id: form.area,
+      range: form.range,
+      groupby: 'day'
+    }
+    api.getPeoPleCountById(params).then(res => {
+      cb(res)
+    });
+  }
 
   export default {
     components: {
@@ -89,27 +118,27 @@
         language: language,
         buttonDatas: [{
           title: 'Yesterday',
-          type: 'primary'
+          type: '',
+          value: 1
         }, {
           title: 'Last_7_days',
-          type: ''
+          type: 'primary',
+          value: 7
         }, {
           title: 'Last_30_days',
-          type: ''
+          type: '',
+          value: 30
         }],
         form: {
           acount: '',
-          area: ''
+          area: '',
+          range: 1
         },
+        areaAcount: '',
         typeIndex: 0,
         typeDatas: [],
-        optionDatas: [{
-          lable: '廣州北京路1', value: 1
-        }, {
-          lable: '廣州北京路2', value: 2
-        }, {
-          lable: '廣州北京路3', value: 3
-        }]
+        optionDatas: [],
+        peopleCountsDatas: []
       }
     },
     mounted() {
@@ -122,74 +151,107 @@
       ];
       this.typeDatas = typeDatas;
       this.$nextTick(() => {
-        this.initChart();
+        this.getAllRegions();
         this.topListChart();
         this.passengerFlowChart();
       })
+
     },
     methods: {
-      chooseDays(item, index) {
-        for (let [k, i] of this.buttonDatas.entries()) {
-          if (k === index) {
-            i.type = 'primary';
+      getAllRegions() {
+        api.getAllRegions({}).then(res => {
+          if (res.code === 0) {
+            const language = this.language;
+            let datas = res.datas.map(item => {
+              item.value = item.id;
+              if (language === 'hk') {
+                item.label = item.titleZH;
+              } else if (language === 'cn') {
+                item.label = item.titleCN;
+              } else {
+                item.label = item.titleEN;
+              }
+              return item;
+            })
+            this.optionDatas = res.datas;
+            this.form['area'] = this.optionDatas[0].id;
+            this.$nextTick(() => {
+              this.initChart();
+              this.topListChart();
+            })
           } else {
-            i.type = '';
+            this.optionDatas = [];
           }
-        }
-      },
+        }).catch(err => {
+          console.log(err);
+        })
+      }
+      ,
       initChart() {
         const chart = echarts.init(document.getElementById('AreaTotalOverview'));
-        const option = {
-          // title: {
-          //   text: `${this.languageDatas.PassengerFlowToday[this.language]}`,
-          //   padding: [30, 0, 0, 15]
-          // },
-          color: ['#5151e0'],
-          tooltip: {
-            trigger: 'axis',
-            axisPointer: {            // 坐标轴指示器，坐标轴触发有效
-              type: 'shadow'        // 默认为直线，可选为：'line' | 'shadow'
-            }
-          },
-          grid: {
-            left: '15',
-            right: '15',
-            bottom: '15',
-            containLabel: true,
-            top: '15'
-          },
-          xAxis: [
-            {
-              type: 'category',
-              data: ['2018-09-01', '2018-09-02', '2018-09-03', '2018-09-04', '2018-09-05', '2018-09-06', '2018-09-07'],
-              axisTick: {
-                alignWithLabel: true
-              }
-            }
-          ],
-          yAxis: [
-            {
-              type: 'value'
-            }
-          ],
-          series: [
-            {
-              name: `${this.languageDatas.PassengerFlowToday[this.language]}`,
-              type: 'bar',
-              barWidth: '60%',
-              data: [200, 334, 390, 330, 220, 200, 220]
-            }
-          ]
-        };
-        chart.setOption(option);
+        getPeoPleCountById(this.form, (response) => {
+          const data = response.data;
+          let peopleCounts = data.peopleCounts;
+          for (let item of peopleCounts) {
+            item.timestamp = moment.unix(item.timestamp).format('YYYY-MM-DD')
+          }
+          this.peopleCountsDatas = peopleCounts;
+          this.areaAcount = data.counts;
+          let days = [];
+          let datas = [];
+          for (let item of this.peopleCountsDatas) {
+            days.push(item.timestamp);
+            datas.push(item.trackCount.totalEnter);
+          }
+          days.reverse();
+          datas.reverse();
+          const chartInit = (xAxis, series) => {
+            const option = {
+              color: ['#5151e0'],
+              tooltip: {
+                trigger: 'axis',
+                axisPointer: {
+                  type: 'shadow'
+                }
+              },
+              grid: {
+                left: '15',
+                right: '15',
+                bottom: '15',
+                containLabel: true,
+                top: '15'
+              },
+              xAxis: [
+                {
+                  type: 'category',
+                  data: xAxis,
+                  axisTick: {
+                    alignWithLabel: true
+                  }
+                }
+              ],
+              yAxis: [
+                {
+                  type: 'value'
+                }
+              ],
+              series: [
+                {
+                  name: `${this.languageDatas.PassengerFlowToday[this.language]}`,
+                  type: 'bar',
+                  barWidth: '60%',
+                  data: series
+                }
+              ]
+            };
+            chart.setOption(option);
+          }
+          chartInit(days, datas);
+        });
       },
       topListChart() {
         const chart = echarts.init(document.getElementById('TopListChart'));
         const option = {
-          title: {
-            text: `${this.languageDatas.RegionalTOPList[this.language]}`,
-            padding: [30, 0, 0, 15]
-          },
           color: ['#53A8E2'],
           tooltip: {
             trigger: 'axis',
@@ -202,7 +264,7 @@
             right: '15',
             bottom: '15',
             containLabel: true,
-            top: '100'
+            top: '15'
           },
           xAxis: {
             type: 'value',
@@ -221,7 +283,8 @@
           ]
         };
         chart.setOption(option);
-      },
+      }
+      ,
       passengerFlowChart() {
         const chart = echarts.init(document.getElementById('PassengerFlowChart'));
         const option = {
@@ -277,7 +340,8 @@
           ]
         };
         chart.setOption(option);
-      },
+      }
+      ,
       SalesChart() {
         const chart = echarts.init(document.getElementById('Sales'));
         const option = {
@@ -323,7 +387,8 @@
           ]
         };
         chart.setOption(option);
-      },
+      }
+      ,
       TurnoverRateChart() {
         const chart = echarts.init(document.getElementById('TurnoverRate'));
         const option = {
@@ -369,7 +434,8 @@
           ]
         };
         chart.setOption(option);
-      },
+      }
+      ,
       JointRateChart() {
         const chart = echarts.init(document.getElementById('JointRate'));
         const option = {
@@ -415,7 +481,8 @@
           ]
         };
         chart.setOption(option);
-      },
+      }
+      ,
       CustomerPriceChart() {
         const chart = echarts.init(document.getElementById('CustomerPrice'));
         const option = {
@@ -461,7 +528,8 @@
           ]
         };
         chart.setOption(option);
-      },
+      }
+      ,
       typeBtn(e) {
         const index = parseInt(e.index);
         this.$nextTick(() => {
@@ -478,8 +546,22 @@
           }
         })
       }
+      ,
+      chooseDays(item, index) {
+        for (let [k, i] of this.buttonDatas.entries()) {
+          if (k === index) {
+            i.type = 'primary';
+          } else {
+            i.type = '';
+          }
+        }
+        this.form['range'] = item.value;
+        this.getPeoPleCountById();
+      }
+      ,
     }
-  };
+  }
+  ;
 </script>
 
 <style lang="less">

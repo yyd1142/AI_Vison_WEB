@@ -31,7 +31,7 @@
   },
   "StoreTotalOverview": {
     "cn": "门店总体概况",
-    "en": "Store Overview",
+    "en": "General overview of the store",
     "hk": "門店總體概況"
   },
   "AdvancedAnalysis": {
@@ -111,7 +111,7 @@
   },
   "StoreInput": {
     "cn": "请选择门店",
-    "en": "please select a store",
+    "en": "please choose a store",
     "hk": "請選擇門店"
   },
   "Yesterday": {
@@ -141,7 +141,7 @@
   },
   "areaInput": {
     "cn": "请选择地区",
-    "en": "please select an regions",
+    "en": "please select the region",
     "hk": "請選擇地區"
   },
   "areaAcountInput": {
@@ -228,7 +228,7 @@
   ],
   "StoreIndicatorOverview": {
     "cn": "门店指标总况",
-    "en": "Store Indicator Overview",
+    "en": "Store indicator status",
     "hk": "門店指標總況"
   },
   "IndexComparison": {
@@ -238,7 +238,7 @@
   },
   "DailyMarketingAmount": {
     "cn": "日营销额",
-    "en": "Daily marketing amount",
+    "en": "Daily sales",
     "hk": "日營銷額"
   },
   "MonthlyIndicator": {
@@ -248,7 +248,7 @@
   },
   "AccumulatedSales": {
     "cn": "累计销售额",
-    "en": "Accumulated sales",
+    "en": "Cumulative sales",
     "hk": "累計銷售額"
   },
   "WeatherTrend": {
@@ -388,7 +388,7 @@
   },
   "SortByNumberOfPassengers": {
     "cn": "按照客流人数排序",
-    "en": "sort by number of customer flow",
+    "en": "Sort by number of passengers",
     "hk": "按照客流人數排序"
   },
   "Lens": {
@@ -403,7 +403,7 @@
   },
   "ThermalMapForLens": {
     "cn": "镜头热力图",
-    "en": "Thermal map for lens",
+    "en": "Lens heat map",
     "hk": "鏡頭熱力圖"
   },
   "Export": {
@@ -488,7 +488,7 @@
   },
   "EventDateInput": {
     "cn": "请选择活动日期",
-    "en": "please select an activity date",
+    "en": "please select an event date",
     "hk": "請選擇活動日期"
   },
   "EventName": {
@@ -648,7 +648,7 @@
   },
   "IncreaseData": {
     "cn": "新增数据",
-    "en": "Increase Data",
+    "en": "New data",
     "hk": "新增數據"
   },
   "DataID": {
@@ -725,5 +725,10 @@
     "cn": "请输入销售数量",
     "en": "please enter the sales volume",
     "hk": "請輸入銷售數量"
+  },
+  "StoreManager": {
+    "cn": "店长",
+    "en": "Store manager",
+    "hk": "店長"
   }
 }
