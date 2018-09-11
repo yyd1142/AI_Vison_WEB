@@ -63,6 +63,13 @@ const httpPost = function (path, domain) {
 export default {
   userInfo: httpGet('/user'),
   login: httpGet('/login'),
+  //regions
   getAllRegions: httpGet('/regionsAll'),
   getPeoPleCountById: httpGet('/regions/people-counts'),
+  getAllPeoPleCount: httpGet('/regions/people-counts/all'),
+  //stores
+  getAllStore: httpGet('/storesAll'),
+  getPeoPleCountByStoreInRegion: httpGet('/stores/people-counts'),
+  getAllPeoPleCountInRegion: httpGet('/stores/people-counts/all'),
+
 }

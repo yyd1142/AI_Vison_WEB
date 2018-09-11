@@ -1,26 +1,26 @@
 const axios = require('axios');
 const domain = 'https://blog.csdn.net/u011127019/phoenix/comment/list/52382277';
 
-class RegionsDBAction {
+class StoresDBAction {
   constructor() {
   }
 
-  async getAllRegions() {
+  async getAllStore(id) {
     return await axios.get(`${domain}?page=1&tree_type=1`).then(response => {
       if (response.data) {
         // return response.data;
         return [
           {
-            "id": "101",
-            "titleEN": "TST",
-            "titleZH": "尖沙咀",
-            "titleCN": "尖沙咀"
+            "id": "101001",
+            "titleEN": "TST1",
+            "titleZH": "尖沙咀1店",
+            "titleCN": "尖沙咀1店"
           },
           {
-            "id": "102",
-            "titleEN": "MK",
-            "titleZH": "旺角",
-            "titleCN": "旺角"
+            "id": "101002",
+            "titleEN": "TST2",
+            "titleZH": "尖沙咀2店",
+            "titleCN": "尖沙咀2店"
           }
         ]
       } else {
@@ -31,15 +31,15 @@ class RegionsDBAction {
     });
   }
 
-  async getPeoPleCountById(id, range, groupby) {
+  async getPeoPleCountByStoreInRegion(id, sid, range, groupby) {
     return await axios.get(`${domain}?page=1&tree_type=1`).then(response => {
       if (response.data) {
         // return response.data;
         return {
-          "id": "101",
-          "titleEN": "TST",
-          "titleZH": "尖沙咀",
-          "titleCN": "尖沙咀",
+          "id": "101001",
+          "titleEN": "TST1",
+          "titleZH": "尖沙咀1店",
+          "titleCN": "尖沙咀1店",
           "peopleCounts": [
             {
               "timestamp": "1536019200",
@@ -184,21 +184,21 @@ class RegionsDBAction {
     });
   }
 
-  async getAllPeoPleCount(range, groupby) {
+  async getAllPeoPleCountInRegion(id, range, groupby) {
     return await axios.get(`${domain}?page=1&tree_type=1`).then(response => {
       if (response.data) {
         // return response.data;
         return [
           {
-              "id": "101",
-              "titleEN": "TST",
-              "titleZH": "尖沙咀",
-              "titleCN": "尖沙咀",
+              "id": "101001",
+              "titleEN": "TST1",
+              "titleZH": "尖沙咀1店",
+              "titleCN": "尖沙咀1店",
               "peopleCounts": [
                   {
                       "timestamp": "1536019200",
                       "trackCount": {
-                          "totalEnter": 320,
+                          "totalEnter": 300,
                           "totalExit": 300
                       },
                       "genderCount": {
@@ -217,7 +217,7 @@ class RegionsDBAction {
                   {
                       "timestamp": "1535932800",
                       "trackCount": {
-                          "totalEnter": 450,
+                          "totalEnter": 400,
                           "totalExit": 400
                       },
                       "genderCount": {
@@ -255,7 +255,7 @@ class RegionsDBAction {
                   {
                       "timestamp": "1535760000",
                       "trackCount": {
-                          "totalEnter": 440,
+                          "totalEnter": 600,
                           "totalExit": 600
                       },
                       "genderCount": {
@@ -274,7 +274,7 @@ class RegionsDBAction {
                   {
                       "timestamp": "1535673600",
                       "trackCount": {
-                          "totalEnter": 760,
+                          "totalEnter": 500,
                           "totalExit": 500
                       },
                       "genderCount": {
@@ -293,7 +293,7 @@ class RegionsDBAction {
                   {
                       "timestamp": "1535587200",
                       "trackCount": {
-                          "totalEnter": 340,
+                          "totalEnter": 400,
                           "totalExit": 400
                       },
                       "genderCount": {
@@ -312,7 +312,7 @@ class RegionsDBAction {
                   {
                       "timestamp": "1535500800",
                       "trackCount": {
-                          "totalEnter": 670,
+                          "totalEnter": 300,
                           "totalExit": 300
                       },
                       "genderCount": {
@@ -331,10 +331,10 @@ class RegionsDBAction {
               ]
           },
           {
-              "id": "102",
-              "titleEN": "MK",
-              "titleZH": "旺角",
-              "titleCN": "旺角",
+              "id": "101002",
+              "titleEN": "TST2",
+              "titleZH": "尖沙咀2店",
+              "titleCN": "尖沙咀2店",
               "peopleCounts": [
                   {
                       "timestamp": "1536019200",
@@ -481,4 +481,4 @@ class RegionsDBAction {
   }
 }
 
-module.exports = RegionsDBAction;
+module.exports = StoresDBAction;

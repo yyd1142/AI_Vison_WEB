@@ -186,7 +186,7 @@
   },
   "NumberOfStores": {
     "cn": "进店数（人）",
-    "en": "Number of stores （person）",
+    "en": "number of stores（person）",
     "hk": "進店數（人）"
   },
   "Week": [
@@ -581,6 +581,11 @@
     "en": "number of stores",
     "hk": "進店數"
   },
+  "NumberOfExitStore": {
+    "cn": "出店数",
+    "en": "number of exit store",
+    "hk": "出店數"
+  },
   "NumberOfReceptions": {
     "cn": "接待数",
     "en": "number of receptions",
@@ -730,5 +735,10 @@
     "cn": "店长",
     "en": "Store manager",
     "hk": "店長"
+  },
+  "yearsOld": {
+    "cn": "岁",
+    "en": "years old",
+    "hk": "歲"
   }
 }

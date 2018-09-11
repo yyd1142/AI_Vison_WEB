@@ -27,13 +27,13 @@
     display: flex;
     display: -webkit-flex; /* Safari */
     position: relative;
-    height: 98px;
+    min-height: 98px;
+    justify-content: space-between;
     .left-cell {
-      width: 100%;
       display: flex;
       display: -webkit-flex; /* Safari */
-      height: 98px;
-      padding: 0 138px 0 15px;
+      min-height: 98px;
+      padding: 0 0 0 15px;
       flex-direction: column;
       justify-content: center;
       line-height: 28px;
@@ -47,21 +47,17 @@
       }
     }
     .right-cell {
-      height: 98px;
-      width: 251px;
-      position: absolute;
-      right: 0;
-      top: 0;
-      bottom: 0;
-      margin: auto;
+      min-height: 98px;
       display: flex;
       display: -webkit-flex; /* Safari */
       align-items: center;
       justify-content: flex-end;
+      padding: 15px 0;
       .value {
         font-size: 16px;
         color: #2d82be;
         padding-right: 15px;
+        line-height: 24px;
       }
     }
   }

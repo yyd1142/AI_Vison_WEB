@@ -20,7 +20,7 @@
     },
     methods: {
       handleOnpress() {
-
+        this.$emit('onPress');
       }
     }
   }

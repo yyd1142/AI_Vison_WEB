@@ -1,0 +1,59 @@
+@import url("./config.less");
+
+.overview-wrap {
+    width: 100%;
+    .flexLayout();
+    padding: 0 15px 30px 15px;
+    flex-direction: column;
+    .form-cell {
+        .flexLayout();
+        height: 80px;
+        width: 100%;
+        align-items: center;
+        flex-direction: row;
+        .form-item {
+            width: 60%;
+            .flexLayout();
+            .input-cell_ {
+                margin-left: 15px;
+            }
+        }
+        .button-group {
+            .flexLayout();
+            width: 40%;
+            height: 80px;
+            align-items: center;
+            justify-content: flex-end;
+        }
+    }
+    .chart-wrap {
+        border-radius: 4px;
+        background-color: #fff;
+    }
+    .area-total-overview {
+        width: 100%;
+        position: relative;
+        margin: 15px 0;
+        background-color: #fff;
+        .area-button-group {
+            position: absolute;
+            z-index: 20;
+            top: 30px;
+            right: 15px;
+        }
+    }
+    .top-list-and-passenger-flow {
+        width: 100%;
+        .flexLayout();
+        flex-direction: row;
+        margin: 15px 0;
+        .top-list-wrap {
+            width: 40%;
+            padding: 0 15px 0 0;
+        }
+        .passenger-flow-wrap {
+            width: 60%;
+            padding: 0 0 0 15px;
+        }
+    }
+}
