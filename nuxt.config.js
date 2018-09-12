@@ -32,7 +32,8 @@ module.exports = {
   css: [
     '@assets/css/main.css',
     '@assets/icons/iconfont.css',
-    'element-ui/lib/theme-chalk/index.css'
+    'element-ui/lib/theme-chalk/index.css',
+    'video.js/dist/video-js.css'
   ],
   /*
   ** Customize the progress-bar color
@@ -68,6 +69,7 @@ module.exports = {
   plugins: [
     '@plugins/element-ui',
     '~/utils/auth',
-    '~theme/index.css'
+    '~theme/index.css',
+    { src: '@plugins/nuxt-video-player-plugin.js', ssr: false }
   ]
 }

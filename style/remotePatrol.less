@@ -1,0 +1,41 @@
+@import url("./config.less");
+.RemotePatrol {
+    width: 100%;
+    .flexLayout();
+    padding: 0 15px 30px 15px;
+    flex-direction: column;
+    .form-cell {
+        .flexLayout();
+        height: 80px;
+        width: 100%;
+        align-items: center;
+        flex-direction: row;
+        .form-item {
+            width: 70%;
+            .flexLayout();
+            .input-cell_ {
+                margin-left: 15px;
+            }
+        }
+        .button-group {
+            .flexLayout();
+            width: 30%;
+            height: 80px;
+            align-items: center;
+            justify-content: flex-end;
+        }
+    }
+    .video-wrap {
+        width: 100%;
+        background-color: #fff;
+        margin-top: 15px;
+        border-radius: 4px;
+        .flexLayout();
+        flex-direction: row;
+        .video-item {
+            width: 100% / 6;
+            height: 280px;
+            padding: 15px;
+        }
+    }
+}

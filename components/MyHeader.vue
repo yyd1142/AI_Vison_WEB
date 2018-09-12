@@ -146,6 +146,7 @@
           width: 88px;
           text-align: center;
           margin-top: 28px;
+          cursor: pointer;
           .location-icon {
             margin-right: 4px;
             display: inline;

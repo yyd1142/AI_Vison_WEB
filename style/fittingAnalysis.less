@@ -1,0 +1,82 @@
+@import url("./config.less");
+.fittingAnalysis {
+    width: 100%;
+    .flexLayout();
+    padding: 0 15px 30px 15px;
+    flex-direction: column;
+    .my-box-shadow {
+        -moz-box-shadow: 0px 1px 5px #ccc;
+        /* 老的 Firefox */
+        box-shadow: 0px 1px 5px #ccc;
+    }
+    .form-cell {
+        width: 100%;
+        .flexLayout();
+        flex-direction: row;
+        flex-wrap: wrap;
+        padding: 28px 0 0 0;
+        .form-item {
+            width: 100% / 3;
+            .flexLayout();
+            align-items: center;
+            height: 40px;
+            margin-bottom: 15px;
+            &.form-center {
+                justify-content: center;
+            }
+            &.form-right {
+                justify-content: flex-end;
+            }
+            .form-button {
+                width: 240px;
+            }
+        }
+    }
+    .chart-wrap {
+        width: 100%;
+        .flexLayout();
+        flex-direction: row;
+        margin: 15px 0;
+        .chart-item {
+            width: 100% / 2;
+            &.chart-left {
+                padding-right: 15px;
+            }
+            &.chart-center {
+                padding: 0 15px;
+            }
+            &.chart-right {
+                padding-left: 15px;
+            }
+            .chart-padding {
+                width: 100%;
+                background-color: #fff;
+                border-radius: 4px;
+            }
+        }
+    }
+    .data-detail-wrap {
+        width: 100%;
+        .flexLayout();
+        flex-direction: row;
+        margin: 15px 0;
+        .detail-item {
+            width: 100% / 3;
+            &.detail-left {
+                padding-right: 15px;
+            }
+            &.detail-center {
+                padding: 0 15px;
+            }
+            &.detail-right {
+                padding-left: 15px;
+            }
+            .detail-padding {
+                width: 100%;
+                background-color: #fff;
+                border-radius: 4px;
+                min-height: 500px;
+            }
+        }
+    }
+}

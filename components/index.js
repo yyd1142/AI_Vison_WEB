@@ -5,6 +5,7 @@ import TitleCell from './TitleCell.vue';
 import MyFormCell from './MyFormCell';
 import DataDetailCell from './DataDetailCell';
 import DataDetailTitle from './DataDetailTitle';
+import VideoPlayer from './VideoPlayer';
 
 export {
   Footer,
@@ -13,5 +14,6 @@ export {
   TitleCell,
   MyFormCell,
   DataDetailCell,
-  DataDetailTitle
+  DataDetailTitle,
+  VideoPlayer
 }

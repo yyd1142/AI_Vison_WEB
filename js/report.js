@@ -1,5 +1,8 @@
 import RootPage from "@pages/index.vue";
 import { TitleCell, MyFormCell, DataDetailTitle, DataDetailCell } from "@components";
+import api from '@plugins/api';
+import { titleLanguageFilter } from '@filters';
+
 export default {
     name: "Report",
     components: {
@@ -77,20 +80,17 @@ export default {
     },
     async asyncData(ctx) {
         const language = ctx.query.language || 'en';
+        const regionsId = ctx.query.regionsId || '101';
         return {
             language: language,
             form: {
-                area: 1,
+                area: regionsId,
+                sid: '',
+
                 date: '',
                 type: 1
             },
-            optionDatas: [{
-                lable: '廣州北京路1', value: 1
-            }, {
-                lable: '廣州北京路2', value: 2
-            }, {
-                lable: '廣州北京路3', value: 3
-            }],
+            optionDatas: [],
             storeDatas: [
                 {
                     title: '门店', label: '北京路广州路店'
@@ -112,7 +112,33 @@ export default {
             }
         }
     },
+    mounted() {
+        this.$nextTick(() => {
+            this.getAllStore();
+        })
+    },
     methods: {
+        getAllStore() {
+            api.getAllStore({
+                id: this.form.area
+            }).then(res => {
+                if (res.code === 0) {
+                    const language = this.language;
+                    const datas = res.datas.map(item => {
+                        item.value = item.id;
+                        item.label = titleLanguageFilter(item, language);
+                        return item;
+                    })
+                    this.optionDatas = datas;
+                    this.form['sid'] = this.optionDatas[0].id;
+                    this.$nextTick(() => {
+                        
+                    })
+                } else {
+                    this.optionDatas = [];
+                }
+            })
+        },
         search() {
 
         }

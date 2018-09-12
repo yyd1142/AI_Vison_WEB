@@ -6,7 +6,7 @@ import { titleLanguageFilter } from '@filters';
 import moment from 'moment';
 
 export default {
-    name: "baseAnalysis",
+    name: "fittingAnalysis",
     components: {
         RootPage,
         TitleCell,
@@ -154,7 +154,7 @@ export default {
 
             const option = {
                 title: {
-                    text: `${this.languageDatas.MaleToFemaleRatio[this.language]}`,
+                    text: `${this.languageDatas.MaleToFemaleRatioFitting[this.language]}`,
                     padding: [30, 0, 0, 15]
                 },
                 color: ['#2C82BE', '#76DDFB'],
@@ -221,7 +221,7 @@ export default {
             }
             const option = {
                 title: {
-                    text: `${this.languageDatas.AgeDistribution[this.language]}`,
+                    text: `${this.languageDatas.AgeDistributionFitting[this.language]}`,
                     padding: [30, 0, 0, 15]
                 },
                 color: ['#4db960', '#1dc3ea', '#2f2f52', '#a7321e', '#cf9236'],
@@ -435,7 +435,7 @@ export default {
                 `${languageDatas.AgeDistribution[language]}`]
             //自定义过滤栏（不需要导出的行）
             var filter = ['id'];
-            JSONToExcelConvertor(exportDatas, `${item.title}_${languageDatas.DataDetail[language]}(${languageDatas.PassengerFlow[language]})`, title, filter);
+            JSONToExcelConvertor(exportDatas, `${item.title}_${languageDatas.DataDetail[language]}(${languageDatas.FittingAnalysis[language]})`, title, filter);
             this.dialogVisible = false;
         },
         handleClose() {

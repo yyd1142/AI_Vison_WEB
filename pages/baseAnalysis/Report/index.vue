@@ -6,8 +6,8 @@
           <div class="form-item left">
             <MyFormCell :lable="languageDatas.Store[language]">
               <div slot="cell">
-                <el-select v-model="form.area" :placeholder="languageDatas.StoreInput[language]">
-                  <el-option :label="item.lable"
+                <el-select v-model="form.sid" :placeholder="languageDatas.StoreInput[language]">
+                  <el-option :label="item.label"
                              :value="item.value"
                              v-for="item, index in optionDatas"
                              :key="index">
