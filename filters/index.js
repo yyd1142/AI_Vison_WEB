@@ -9,3 +9,9 @@ export const titleLanguageFilter = (item, language) => {
     }
     return title;
 }
+
+export const dateDifference = (startDate, endDate) => {
+    const total = (endDate.getTime() - startDate.getTime()) / 1000;
+    const dayCount = parseInt(total / (24 * 60 * 60));
+    return dayCount;
+}

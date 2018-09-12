@@ -740,5 +740,15 @@
     "cn": "岁",
     "en": "years old",
     "hk": "歲"
+  },
+  "startSate": {
+    "cn": "开始时间",
+    "en": "start date",
+    "hk": "開始時間"
+  },
+  "endSate": {
+    "cn": "结束时间",
+    "en": "end date",
+    "hk": "結束時間"
   }
 }
