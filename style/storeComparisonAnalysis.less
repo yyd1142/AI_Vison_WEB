@@ -1,0 +1,67 @@
+@import url("./config.less");
+.StoreComparisonAnalysis {
+    width: 100%;
+    .flexLayout();
+    padding: 0 15px 30px 15px;
+    flex-direction: column;
+    .form-cell {
+        width: 100%;
+        .flexLayout();
+        flex-direction: row;
+        flex-wrap: wrap;
+        padding: 28px 0 0 0;
+        justify-content: space-between;
+        .form-left {
+            .flexLayout();
+            flex-direction: row;
+            .form-item {
+                .flexLayout();
+                align-items: center;
+                height: 40px;
+                margin-bottom: 15px;
+                margin-right: 15px;
+            }
+        }
+        .form-right {
+            .flexLayout();
+            align-items: center;
+            height: 40px;
+            margin-bottom: 15px;
+            justify-content: flex-end;
+            .form-button {
+                width: 240px;
+            }
+        }
+    }
+    .DataAnalysisChart {
+        width: 100%;
+        .flexLayout();
+        background-color: #fff;
+        margin: 15px 0;
+        .chart-wrap {}
+    }
+    .data-detail-wrap {
+        width: 100%;
+        .flexLayout();
+        flex-direction: row;
+        margin: 15px 0;
+        .detail-item {
+            width: 100% / 3;
+            &.detail-left {
+                padding-right: 15px;
+            }
+            &.detail-center {
+                padding: 0 15px;
+            }
+            &.detail-right {
+                padding-left: 15px;
+            }
+            .detail-padding {
+                width: 100%;
+                background-color: #fff;
+                border-radius: 4px;
+                min-height: 500px;
+            }
+        }
+    }
+}

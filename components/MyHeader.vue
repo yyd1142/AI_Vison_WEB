@@ -87,7 +87,7 @@
 </script>
 
 <style lang="less">
-  @import url("../static/style/config.less");
+  @import url("../style/config.less");
 
   .main-wrap {
     width: 100%;

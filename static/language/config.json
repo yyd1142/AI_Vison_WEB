@@ -1,8 +1,8 @@
 {
   "name": {
-    "cn": "智能零售分析系统",
-    "en": "智能零售分析系统",
-    "hk": "智能零售分析系統"
+    "cn": "AIVision",
+    "en": "AIVision",
+    "hk": "AIVision"
   },
   "MenuList": {
     "cn": "菜单列表",
@@ -597,9 +597,9 @@
     "hk": "對比門店"
   },
   "ContrastStoreInput": {
-    "cn": "请至少选择两个门店",
-    "en": "please select at least two stores",
-    "hk": "請至少選擇兩個門店"
+    "cn": "支持多选",
+    "en": "support multiple choices",
+    "hk": "支持多選"
   },
   "SearchUser": {
     "cn": "搜索用户",
@@ -750,5 +750,30 @@
     "cn": "结束时间",
     "en": "end date",
     "hk": "結束時間"
+  },
+  "weekFormat": {
+    "cn": "YYYY年第WW周",
+    "en": "week WW of yyyy",
+    "hk": "YYYY年第WW周"
+  },
+  "weekFormat2": {
+    "cn": "yyyy年第WW周",
+    "en": "week WW of yyyy",
+    "hk": "yyyy年第WW周"
+  },
+  "ComparisonSales": {
+    "cn": "对比销售额",
+    "en": "Comparison Sales",
+    "hk": "對比銷售額"
+  },
+  "WeekInput": {
+    "cn": "请选择周",
+    "en": "please select week",
+    "hk": "請選擇周"
+  },
+  "MonthInput": {
+    "cn": "请选择月",
+    "en": "please select month",
+    "hk": "請選擇月"
   }
 }

@@ -1,12 +1,12 @@
 const axios = require('axios');
-const domain = 'https://blog.csdn.net/u011127019/phoenix/comment/list/52382277';
+const domain = 'http://aqfwy.com/api/qy/person';
 
 class RegionsDBAction {
   constructor() {
   }
 
   async getAllRegions() {
-    return await axios.get(`${domain}?page=1&tree_type=1`).then(response => {
+    return await axios.get(`${domain}?m=info&userName=ZWY`).then(response => {
       if (response.data) {
         // return response.data;
         return [
@@ -32,7 +32,7 @@ class RegionsDBAction {
   }
 
   async getPeoPleCountById(id, range, groupby) {
-    return await axios.get(`${domain}?page=1&tree_type=1`).then(response => {
+    return await axios.get(`${domain}?m=info&userName=ZWY`).then(response => {
       if (response.data) {
         // return response.data;
         return {
@@ -185,7 +185,7 @@ class RegionsDBAction {
   }
 
   async getAllPeoPleCount(range, groupby) {
-    return await axios.get(`${domain}?page=1&tree_type=1`).then(response => {
+    return await axios.get(`${domain}?m=info&userName=ZWY`).then(response => {
       if (response.data) {
         // return response.data;
         return [

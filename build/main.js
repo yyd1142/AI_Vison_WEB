@@ -127,8 +127,8 @@ module.exports = {
       config.resolve.alias['@static'] = path.join(__dirname, 'static');
       config.resolve.alias['@store'] = path.join(__dirname, 'store');
       config.resolve.alias['@pages'] = path.join(__dirname, 'pages');
-      config.resolve.alias['@js'] = path.join(__dirname, 'static/js');
-      config.resolve.alias['@style'] = path.join(__dirname, 'static/style');
+      config.resolve.alias['@js'] = path.join(__dirname, 'js');
+      config.resolve.alias['@style'] = path.join(__dirname, 'style');
       config.resolve.alias['@filters'] = path.join(__dirname, 'filters');
       if (ctx.isClient) {
         // config.module.rules.push({
@@ -151,7 +151,7 @@ module.exports = {
 var development = __webpack_require__(12);
 var production = __webpack_require__(13);
 
-var NODE_ENV = "production" || 'development';
+var NODE_ENV = "development" || 'development';
 module.exports = NODE_ENV === 'development' ? development : production;
 
 /***/ },
@@ -1730,7 +1730,7 @@ transports.push(new winston.transports.Console({
 global.LOGGER = new winston.Logger({
   transports: transports
 });
-global.DEBUG = !"production" || "production" === 'development';
+global.DEBUG = !"development" || "development" === 'development';
 
 if (!DEBUG) {
   winston.handleExceptions(new winston.transports.File({ filename: 'error.log' }));

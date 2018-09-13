@@ -101,7 +101,11 @@ export default {
                 area: '',
                 sid: '',
                 type: 1,
-                coreIndicator: 1
+                coreIndicator: 1,
+                week: '',
+                comparisonWeek: '',
+                month: '',
+                comparisonMonth: ''
             },
             PassengerFlowDatas: [
                 {
@@ -218,6 +222,8 @@ export default {
             })
         },
         initChart1(xAxisDatas, seriesDatas) {
+            const languageDatas = this.languageDatas;
+            const language = this.language;
             const chart = echarts.init(document.getElementById('DataAnalysisChart'));
             const option = {
                 color: ['rgb(83, 168, 226)', 'rgb(118, 221, 251)'],
@@ -230,7 +236,7 @@ export default {
                 legend: {
                     right: 20,
                     top: 30,
-                    data: ['銷售額', '對比銷售額']
+                    data: [`${languageDatas.Sales[language]}`, `${languageDatas.ComparisonSales[language]}`]
                 },
                 toolbox: {
                     show: true,
@@ -275,7 +281,19 @@ export default {
                 }
             })
         },
+        handlerComparisonWeek(e) {
+            if (e) {
+                this.setChartDatasFormat();
+            }
+        },
+        handlerComparisonMonth(e) {
+            if (e) {
+                this.setChartDatasFormat();
+            }
+        },
         setChartDatasFormat() {
+            const languageDatas = this.languageDatas;
+            const language = this.language;
             const type = this.form.type;
             const startDate = this.form.date[0];
             const endDate = this.form.date[1];
@@ -300,29 +318,69 @@ export default {
             }
             let seriesDatas = [
                 {
-                    name: '銷售額',
+                    name: `${languageDatas.Sales[language]}`,
                     type: 'bar',
                     barGap: 0,
                     data: [320, 332, 301, 334, 390, 332, 301, 301]
                 },
             ]
-            if(type === 2) {
+            if (type === 2) {
                 seriesDatas = [
                     {
-                        name: '銷售額',
+                        name: `${languageDatas.Sales[language]}`,
                         type: 'bar',
                         barGap: 0,
                         data: [320, 332, 301, 334, 390, 332, 301, 301]
                     },
                     {
-                        name: '對比銷售額',
+                        name: `${languageDatas.ComparisonSales[language]}`,
                         type: 'bar',
                         barGap: 0,
                         data: [234, 756, 343, 423, 342, 223, 233, 56]
                     },
                 ]
+            } else if (type === 3) {
+                let comparisonWeek = this.form.comparisonWeek;
+                let week = this.form.week;
+                xAxisDatas = [`${moment(week).format(`${languageDatas.weekFormat[language]}`)} \n vs \n ${moment(comparisonWeek).format(`${languageDatas.weekFormat[language]}`)}`]
+                if(language === 'en') {
+
+                    xAxisDatas = [`Week ${moment(week).format('WW')} of ${moment(week).format('YYYY')} \n vs \n Week ${moment(comparisonWeek).format('WW')} of ${moment(comparisonWeek).format('YYYY')}`]
+                }
+                seriesDatas = [
+                    {
+                        name: `${languageDatas.Sales[language]}`,
+                        type: 'bar',
+                        barGap: 0,
+                        data: [320]
+                    },
+                    {
+                        name: `${languageDatas.ComparisonSales[language]}`,
+                        type: 'bar',
+                        barGap: 0,
+                        data: [234]
+                    },
+                ]
+            } else if (type === 4) {
+                let comparisonMonth = this.form.comparisonMonth;
+                let month = this.form.month;
+                xAxisDatas = [`${moment(month).format(`YYYY-MM`)} \n vs \n ${moment(comparisonMonth).format(`YYYY-MM`)}`]
+                seriesDatas = [
+                    {
+                        name: `${languageDatas.Sales[language]}`,
+                        type: 'bar',
+                        barGap: 0,
+                        data: [456]
+                    },
+                    {
+                        name: `${languageDatas.ComparisonSales[language]}`,
+                        type: 'bar',
+                        barGap: 0,
+                        data: [234]
+                    },
+                ]
             }
             this.initChart1(xAxisDatas, seriesDatas)
-        }
+        },
     }
 }

@@ -56,7 +56,7 @@
             </MyFormCell>
           </div>
           <div class="form-item form-center">
-            <MyFormCell :lable="languageDatas.Date[language]">
+            <MyFormCell :lable="languageDatas.Date[language]" v-if="form.type <= 2">
               <div slot="cell">
                 <el-date-picker
                   v-model="form.date"
@@ -68,9 +68,28 @@
                 </el-date-picker>
               </div>
             </MyFormCell>
+            <MyFormCell :lable="languageDatas.Date[language]" v-if="form.type == 3">
+              <div slot="cell">
+                <el-date-picker
+                  v-model="form.week"
+                  type="week"
+                  :format="languageDatas.weekFormat2[language]"
+                  :placeholder="languageDatas.WeekInput[language]">
+                </el-date-picker>
+              </div>
+            </MyFormCell>
+            <MyFormCell :lable="languageDatas.Date[language]" v-if="form.type == 4">
+              <div slot="cell">
+                <el-date-picker
+                  v-model="form.month"
+                  type="month"
+                  :placeholder="languageDatas.MonthInput[language]">
+                </el-date-picker>
+              </div>
+            </MyFormCell>
           </div>
           <div class="form-item form-right">
-            <MyFormCell :lable="languageDatas.ComparisonDate[language]" v-if="form.type != 1">
+            <MyFormCell :lable="languageDatas.ComparisonDate[language]" v-if="form.type == 2">
               <div slot="cell">
                 <el-date-picker
                   v-model="form.comparisonDate"
@@ -81,6 +100,29 @@
                   :end-placeholder="languageDatas.endSate[language]"
                   :disabled="!form.date ? true : false"
                   @change="handlerComparisonDate">
+                </el-date-picker>
+              </div>
+            </MyFormCell>
+            <MyFormCell :lable="languageDatas.ComparisonDate[language]" v-if="form.type == 3">
+              <div slot="cell">
+                <el-date-picker
+                  v-model="form.comparisonWeek"
+                  type="week"
+                  :format="languageDatas.weekFormat2[language]"
+                  :disabled="!form.week ? true : false"
+                  :placeholder="languageDatas.WeekInput[language]"
+                  @change="handlerComparisonWeek">
+                </el-date-picker>
+              </div>
+            </MyFormCell>
+             <MyFormCell :lable="languageDatas.ComparisonDate[language]" v-if="form.type == 4">
+              <div slot="cell">
+                <el-date-picker
+                  v-model="form.comparisonMonth"
+                  type="month"
+                  :disabled="!form.month ? true : false"
+                  :placeholder="languageDatas.MonthInput[language]"
+                  @change="handlerComparisonMonth">
                 </el-date-picker>
               </div>
             </MyFormCell>

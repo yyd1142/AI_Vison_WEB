@@ -8,7 +8,7 @@ module.exports = {
     middleware: 'auth'
   },
   head: {
-    title: '智慧销售分析系统',
+    title: 'AIVision',
     meta: [
       { charset: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
@@ -53,8 +53,8 @@ module.exports = {
       config.resolve.alias['@static'] = path.join(__dirname, 'static')
       config.resolve.alias['@store'] = path.join(__dirname, 'store')
       config.resolve.alias['@pages'] = path.join(__dirname, 'pages')
-      config.resolve.alias['@js'] = path.join(__dirname, 'static/js')
-      config.resolve.alias['@style'] = path.join(__dirname, 'static/style')
+      config.resolve.alias['@js'] = path.join(__dirname, 'js')
+      config.resolve.alias['@style'] = path.join(__dirname, 'style')
       config.resolve.alias['@filters'] = path.join(__dirname, 'filters')
       if (ctx.isClient) {
         // config.module.rules.push({
