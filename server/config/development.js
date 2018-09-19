@@ -14,5 +14,6 @@ module.exports = {
     RDS_HOST: '193.112.185.85',
     RDS_PWD: 'MKO--Team--2018'
   },
-  imgDomin: 'https://fp-1256261446.picgz.myqcloud.com'
+  imgDomin: 'https://fp-1256261446.picgz.myqcloud.com',
+  domain: 'http://jericsaez.ddns.net/api/v1'
 };

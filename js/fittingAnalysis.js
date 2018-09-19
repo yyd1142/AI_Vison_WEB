@@ -104,9 +104,8 @@ export default {
             })
         },
         getAllStore() {
-            api.getAllStore({
-                id: this.form.area
-            }).then(res => {
+            const params = `/${this.form.area}/stores`;
+            api.getAllStore(params).then(res => {
                 if (res.code === 0) {
                     const language = this.language;
                     const datas = res.datas.map(item => {
@@ -125,14 +124,10 @@ export default {
             })
         },
         getPeoPleCountByStoreInRegion() {
-            api.getPeoPleCountByStoreInRegion({
-                id: this.form.area,
-                sid: this.form.sid,
-                range: this.form.range,
-                groupby: 'day'
-            }).then(res => {
+            const params = `/${this.form.area}/stores/${this.form.sid}/people-counts?range=${this.form.range}&groupby=day`;
+            api.getPeoPleCountByStoreInRegion(params).then(res => {
                 if (res.code === 0) {
-                    const data = res.data;
+                    const data = res.datas;
                     this.peoPleCountByStoreInRegionDatas = data;
                     this.$nextTick(() => {
                         this.initChart1();
@@ -327,11 +322,8 @@ export default {
 
 
         getAllPeoPleCountInRegion() {
-            api.getAllPeoPleCountInRegion({
-                id: this.form.area,
-                range: this.form.range,
-                groupby: 'day'
-            }).then(res => {
+            const params = `/${this.form.area}/stores/people-counts?range=${this.form.range}&groupby=day`;
+            api.getAllPeoPleCountInRegion(params).then(res => {
                 if (res.code === 0) {
                     const datas = res.datas;
                     const language = this.language;

@@ -18,7 +18,7 @@
             <div class="input-cell_">
               <MyFormCell :lable="languageDatas.AreaAcount[language]">
                 <div slot="cell">
-                  <el-input :value="areaAcount" disabled></el-input>
+                  <el-input :value="optionDatas.length" disabled></el-input>
                 </div>
               </MyFormCell>
             </div>

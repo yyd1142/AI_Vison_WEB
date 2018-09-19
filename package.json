@@ -18,6 +18,7 @@
     "cross-env": "^5.0.1",
     "element-ui": "^2.4.6",
     "https": "^1.0.0",
+    "jsonp": "^0.2.1",
     "kcors": "^2.2.2",
     "koa": "^2.4.1",
     "koa-bodyparser": "^4.2.1",

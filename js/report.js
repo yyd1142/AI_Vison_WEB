@@ -119,9 +119,8 @@ export default {
     },
     methods: {
         getAllStore() {
-            api.getAllStore({
-                id: this.form.area
-            }).then(res => {
+            const params = `/${this.form.area}/stores`;
+            api.getAllStore(params).then(res => {
                 if (res.code === 0) {
                     const language = this.language;
                     const datas = res.datas.map(item => {

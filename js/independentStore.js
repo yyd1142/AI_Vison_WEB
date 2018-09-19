@@ -5,12 +5,8 @@ import api from '@plugins/api';
 import { titleLanguageFilter } from '@filters';
 
 const getPeoPleCountByStoreInRegion = (form, cb) => {
-    api.getPeoPleCountByStoreInRegion({
-        id: form.area,
-        sid: form.sid,
-        range: form.range,
-        groupby: 'day'
-    }).then(res => {
+    const params = `/${form.area}/stores/${form.sid}/people-counts?range=${form.range}&groupby=day`;
+    api.getPeoPleCountByStoreInRegion(params).then(res => {
         cb(res)
     })
 }
@@ -25,26 +21,42 @@ export default {
         languageDatas() {
             return this.$store.getters.languageDatas;
         },
+        buttonDatas() {
+            const range = this.form.range;
+            let datas = [{
+                title: 'Yesterday',
+                type: '',
+                value: 1
+            }, {
+                title: 'Last_7_days',
+                type: '',
+                value: 7
+            }, {
+                title: 'Last_30_days',
+                type: '',
+                value: 30
+            }];
+            datas = datas.map(item => {
+                if(item.value === range) {
+                    item.type = 'primary';
+                } else {
+                    item.type = '';
+                }
+                return item;
+            })
+            return datas;
+        }
     },
     async asyncData(ctx) {
         const language = ctx.query.language || 'en';
-        const regionsId = ctx.query.regionsId || '101';
+        const regionsId = ctx.query.regionsId || '';
+        const range = parseInt(ctx.query.range) || 7;
         return {
             language: language,
-            buttonDatas: [{
-                title: 'Yesterday',
-                type: ''
-            }, {
-                title: 'Last_7_days',
-                type: 'primary'
-            }, {
-                title: 'Last_30_days',
-                type: ''
-            }],
             form: {
                 area: regionsId,
                 sid: '',
-                range: ''
+                range: range
             },
             typeIndex: 0,
             typeDatas: [],
@@ -69,9 +81,8 @@ export default {
     },
     methods: {
         getAllStore() {
-            api.getAllStore({
-                id: this.form.area
-            }).then(res => {
+            const params = `/${this.form.area}/stores`;
+            api.getAllStore(params).then(res => {
                 if (res.code === 0) {
                     const language = this.language;
                     const datas = res.datas.map(item => {
@@ -93,7 +104,7 @@ export default {
             getPeoPleCountByStoreInRegion(this.form, (res) => {
                 if (res.code === 0) {
                     const chart = echarts.init(document.getElementById('AreaTotalOverview'));
-                    const data = res.data;
+                    const data = res.datas;
                     let peopleCounts = data.peopleCounts;
                     let days = [];
                     let datas = [];
@@ -507,7 +518,8 @@ export default {
                     i.type = '';
                 }
             }
-            this.form['range'] = item.value;
+            let path = `?language=${this.language}&regionsId=${this.form.area}&range=${item.value}`;
+            window.location.href = path;
         },
     }
 };

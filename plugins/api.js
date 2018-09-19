@@ -33,8 +33,9 @@ const http = (path, method, domain) => {
         params: params ? params : '',
         timeout: 10000,
       }).then((response) => {
-        if(response.data.code === 0) {
-          resolve(response.data);
+        if (response.status === 200) {
+          let result = { code: 0, datas: response.data };
+          resolve(result);
         } else {
           console.error(`请求数据错误，[错误代码:${response.data.code}], ${response.data.msg}`);
         }
@@ -60,16 +61,34 @@ const httpPost = function (path, domain) {
   return http(path, 'post', domain)
 }
 
+const httpPath = function (path, domain) {
+  return (paths) => {
+    return axios({
+      method: 'get',
+      url: (domain ? domain : apiConfig.baseUrl) + '' + path + '' + paths,
+      timeout: 10000
+    }).then(response => {
+      let result = { code: 0, datas: response.data };
+      if (response.status != 200) {
+        console.error(`请求数据错误，[错误代码:${response.data.code}], ${response.data.msg}`);
+        return null
+      }
+      return result
+    }).catch(error => {
+      console.error(`请求数据错误，[错误代码:${response.data.code}], ${response.data.msg}`);
+      return null
+    })
+  }
+}
+
 export default {
-  userInfo: httpGet('/user'),
-  login: httpGet('/login'),
   //regions
-  getAllRegions: httpGet('/regionsAll'),
-  getPeoPleCountById: httpGet('/regions/people-counts'),
-  getAllPeoPleCount: httpGet('/regions/people-counts/all'),
+  getAllRegions: httpGet('/Regions'),
+  getPeoPleCountById: httpPath('/Regions'),
+  getAllPeoPleCount: httpGet('/Regions/people-counts'),
   //stores
-  getAllStore: httpGet('/storesAll'),
-  getPeoPleCountByStoreInRegion: httpGet('/stores/people-counts'),
-  getAllPeoPleCountInRegion: httpGet('/stores/people-counts/all'),
+  getAllStore: httpPath('/Regions'),
+  getPeoPleCountByStoreInRegion: httpPath('/Regions'),
+  getAllPeoPleCountInRegion: httpPath('/Regions'), 
 
 }

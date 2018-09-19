@@ -5,11 +5,7 @@ import moment from 'moment';
 import { titleLanguageFilter } from '@filters';
 
 const getPeoPleCountById = (form, cb) => {
-    const params = {
-        id: form.area,
-        range: form.range,
-        groupby: 'day'
-    }
+    const params = `/${form.area}/people-counts?range=${form.range}&groupby=day`;
     api.getPeoPleCountById(params).then(res => {
         cb(res)
     });
@@ -25,28 +21,41 @@ export default {
         languageDatas() {
             return this.$store.getters.languageDatas;
         },
-    },
-    async asyncData(ctx) {
-        const language = ctx.query.language || 'en';
-        return {
-            language: language,
-            buttonDatas: [{
+        buttonDatas() {
+            const range = this.form.range;
+            let datas = [{
                 title: 'Yesterday',
                 type: '',
                 value: 1
             }, {
                 title: 'Last_7_days',
-                type: 'primary',
+                type: '',
                 value: 7
             }, {
                 title: 'Last_30_days',
                 type: '',
                 value: 30
-            }],
+            }];
+            datas = datas.map(item => {
+                if(item.value === range) {
+                    item.type = 'primary';
+                } else {
+                    item.type = '';
+                }
+                return item;
+            })
+            return datas;
+        }
+    },
+    async asyncData(ctx) {
+        const language = ctx.query.language || 'en';
+        const range = parseInt(ctx.query.range) || 7;
+        return {
+            language: language,
             form: {
                 acount: '',
                 area: '',
-                range: 1
+                range: range
             },
             areaAcount: '',
             typeIndex: 0,
@@ -83,6 +92,7 @@ export default {
                     })
                     this.optionDatas = datas;
                     this.form['area'] = this.optionDatas[0].id;
+                    localStorage.setItem('regionsId', this.form.area);
                     this.$nextTick(() => {
                         this.initChart();
                         this.topListChart();
@@ -97,7 +107,7 @@ export default {
         initChart() {
             getPeoPleCountById(this.form, (response) => {
                 const chart = echarts.init(document.getElementById('AreaTotalOverview'));
-                const data = response.data;
+                const data = response.datas;
                 let peopleCounts = data.peopleCounts;
                 let days = [];
                 let datas = [];
@@ -178,7 +188,7 @@ export default {
 
                         const peopleCounts = item.peopleCounts;
                         let totalEnterSum = [];
-                        for(let j of peopleCounts) {
+                        for (let j of peopleCounts) {
                             const trackCount = j.trackCount;
                             totalEnterSum.push(trackCount.totalEnter);
                         }
@@ -476,8 +486,8 @@ export default {
                     i.type = '';
                 }
             }
-            this.form['range'] = item.value;
-            this.getPeoPleCountById();
+            let path = `?language=${this.language}&range=${item.value}`;
+            window.location.href = path;
         },
     }
 };
