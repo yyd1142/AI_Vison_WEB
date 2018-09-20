@@ -77,12 +77,22 @@ module.exports = __webpack_require__(18);
 
 /***/ },
 /* 1 */
+/***/ function(module, exports, __webpack_require__) {
+
+var development = __webpack_require__(12);
+var production = __webpack_require__(13);
+
+var NODE_ENV = "production" || 'development';
+module.exports = NODE_ENV === 'development' ? development : production;
+
+/***/ },
+/* 2 */
 /***/ function(module, exports) {
 
 module.exports = require("axios");
 
 /***/ },
-/* 2 */
+/* 3 */
 /***/ function(module, exports, __webpack_require__) {
 
 /* WEBPACK VAR INJECTION */(function(__dirname) {var path = __webpack_require__(17);
@@ -95,7 +105,7 @@ module.exports = {
     middleware: 'auth'
   },
   head: {
-    title: '智慧销售分析系统',
+    title: 'AIVision',
     meta: [{ charset: 'utf-8' }, { name: 'viewport', content: 'width=device-width, initial-scale=1' }, { hid: 'description', name: 'description', content: 'Nuxt.js project' }],
     link: [{ rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }],
     script: [{
@@ -145,23 +155,13 @@ module.exports = {
 /* WEBPACK VAR INJECTION */}.call(exports, ""))
 
 /***/ },
-/* 3 */
-/***/ function(module, exports, __webpack_require__) {
-
-var development = __webpack_require__(12);
-var production = __webpack_require__(13);
-
-var NODE_ENV = "development" || 'development';
-module.exports = NODE_ENV === 'development' ? development : production;
-
-/***/ },
 /* 4 */
 /***/ function(module, exports, __webpack_require__) {
 
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__Users_dee_Projects_AIVision_WEB_node_modules_babel_runtime_regenerator__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__Users_dee_Projects_AIVision_WEB_node_modules_babel_runtime_regenerator___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0__Users_dee_Projects_AIVision_WEB_node_modules_babel_runtime_regenerator__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_E_Projects_AI_Vison_WEB_node_modules_babel_runtime_regenerator__ = __webpack_require__(0);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_E_Projects_AI_Vison_WEB_node_modules_babel_runtime_regenerator___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_E_Projects_AI_Vison_WEB_node_modules_babel_runtime_regenerator__);
 
 
 var _this = this;
@@ -179,9 +179,9 @@ var apiRouter = KoaRouter({
 });
 
 apiRouter.get('/regionsAll', function () {
-  var _ref = _asyncToGenerator( /*#__PURE__*/__WEBPACK_IMPORTED_MODULE_0__Users_dee_Projects_AIVision_WEB_node_modules_babel_runtime_regenerator___default.a.mark(function _callee(ctx, next) {
+  var _ref = _asyncToGenerator( /*#__PURE__*/__WEBPACK_IMPORTED_MODULE_0_E_Projects_AI_Vison_WEB_node_modules_babel_runtime_regenerator___default.a.mark(function _callee(ctx, next) {
     var response;
-    return __WEBPACK_IMPORTED_MODULE_0__Users_dee_Projects_AIVision_WEB_node_modules_babel_runtime_regenerator___default.a.wrap(function _callee$(_context) {
+    return __WEBPACK_IMPORTED_MODULE_0_E_Projects_AI_Vison_WEB_node_modules_babel_runtime_regenerator___default.a.wrap(function _callee$(_context) {
       while (1) {
         switch (_context.prev = _context.next) {
           case 0:
@@ -207,9 +207,9 @@ apiRouter.get('/regionsAll', function () {
 }());
 
 apiRouter.get('/regions/people-counts', function () {
-  var _ref2 = _asyncToGenerator( /*#__PURE__*/__WEBPACK_IMPORTED_MODULE_0__Users_dee_Projects_AIVision_WEB_node_modules_babel_runtime_regenerator___default.a.mark(function _callee2(ctx, next) {
+  var _ref2 = _asyncToGenerator( /*#__PURE__*/__WEBPACK_IMPORTED_MODULE_0_E_Projects_AI_Vison_WEB_node_modules_babel_runtime_regenerator___default.a.mark(function _callee2(ctx, next) {
     var id, range, groupby, response, response_;
-    return __WEBPACK_IMPORTED_MODULE_0__Users_dee_Projects_AIVision_WEB_node_modules_babel_runtime_regenerator___default.a.wrap(function _callee2$(_context2) {
+    return __WEBPACK_IMPORTED_MODULE_0_E_Projects_AI_Vison_WEB_node_modules_babel_runtime_regenerator___default.a.wrap(function _callee2$(_context2) {
       while (1) {
         switch (_context2.prev = _context2.next) {
           case 0:
@@ -241,9 +241,9 @@ apiRouter.get('/regions/people-counts', function () {
 }());
 
 apiRouter.get('/regions/people-counts/all', function () {
-  var _ref3 = _asyncToGenerator( /*#__PURE__*/__WEBPACK_IMPORTED_MODULE_0__Users_dee_Projects_AIVision_WEB_node_modules_babel_runtime_regenerator___default.a.mark(function _callee3(ctx, next) {
+  var _ref3 = _asyncToGenerator( /*#__PURE__*/__WEBPACK_IMPORTED_MODULE_0_E_Projects_AI_Vison_WEB_node_modules_babel_runtime_regenerator___default.a.mark(function _callee3(ctx, next) {
     var range, groupby, response;
-    return __WEBPACK_IMPORTED_MODULE_0__Users_dee_Projects_AIVision_WEB_node_modules_babel_runtime_regenerator___default.a.wrap(function _callee3$(_context3) {
+    return __WEBPACK_IMPORTED_MODULE_0_E_Projects_AI_Vison_WEB_node_modules_babel_runtime_regenerator___default.a.wrap(function _callee3$(_context3) {
       while (1) {
         switch (_context3.prev = _context3.next) {
           case 0:
@@ -275,9 +275,9 @@ apiRouter.get('/regions/people-counts/all', function () {
 }());
 
 apiRouter.get('/storesAll', function () {
-  var _ref4 = _asyncToGenerator( /*#__PURE__*/__WEBPACK_IMPORTED_MODULE_0__Users_dee_Projects_AIVision_WEB_node_modules_babel_runtime_regenerator___default.a.mark(function _callee4(ctx, next) {
+  var _ref4 = _asyncToGenerator( /*#__PURE__*/__WEBPACK_IMPORTED_MODULE_0_E_Projects_AI_Vison_WEB_node_modules_babel_runtime_regenerator___default.a.mark(function _callee4(ctx, next) {
     var id, response;
-    return __WEBPACK_IMPORTED_MODULE_0__Users_dee_Projects_AIVision_WEB_node_modules_babel_runtime_regenerator___default.a.wrap(function _callee4$(_context4) {
+    return __WEBPACK_IMPORTED_MODULE_0_E_Projects_AI_Vison_WEB_node_modules_babel_runtime_regenerator___default.a.wrap(function _callee4$(_context4) {
       while (1) {
         switch (_context4.prev = _context4.next) {
           case 0:
@@ -308,9 +308,9 @@ apiRouter.get('/storesAll', function () {
 }());
 
 apiRouter.get('/stores/people-counts', function () {
-  var _ref5 = _asyncToGenerator( /*#__PURE__*/__WEBPACK_IMPORTED_MODULE_0__Users_dee_Projects_AIVision_WEB_node_modules_babel_runtime_regenerator___default.a.mark(function _callee5(ctx, next) {
+  var _ref5 = _asyncToGenerator( /*#__PURE__*/__WEBPACK_IMPORTED_MODULE_0_E_Projects_AI_Vison_WEB_node_modules_babel_runtime_regenerator___default.a.mark(function _callee5(ctx, next) {
     var id, sid, range, groupby, response, response_;
-    return __WEBPACK_IMPORTED_MODULE_0__Users_dee_Projects_AIVision_WEB_node_modules_babel_runtime_regenerator___default.a.wrap(function _callee5$(_context5) {
+    return __WEBPACK_IMPORTED_MODULE_0_E_Projects_AI_Vison_WEB_node_modules_babel_runtime_regenerator___default.a.wrap(function _callee5$(_context5) {
       while (1) {
         switch (_context5.prev = _context5.next) {
           case 0:
@@ -343,9 +343,9 @@ apiRouter.get('/stores/people-counts', function () {
 }());
 
 apiRouter.get('/stores/people-counts/all', function () {
-  var _ref6 = _asyncToGenerator( /*#__PURE__*/__WEBPACK_IMPORTED_MODULE_0__Users_dee_Projects_AIVision_WEB_node_modules_babel_runtime_regenerator___default.a.mark(function _callee6(ctx, next) {
+  var _ref6 = _asyncToGenerator( /*#__PURE__*/__WEBPACK_IMPORTED_MODULE_0_E_Projects_AI_Vison_WEB_node_modules_babel_runtime_regenerator___default.a.mark(function _callee6(ctx, next) {
     var id, range, groupby, response;
-    return __WEBPACK_IMPORTED_MODULE_0__Users_dee_Projects_AIVision_WEB_node_modules_babel_runtime_regenerator___default.a.wrap(function _callee6$(_context6) {
+    return __WEBPACK_IMPORTED_MODULE_0_E_Projects_AI_Vison_WEB_node_modules_babel_runtime_regenerator___default.a.wrap(function _callee6$(_context6) {
       while (1) {
         switch (_context6.prev = _context6.next) {
           case 0:
@@ -441,7 +441,8 @@ module.exports = {
     RDS_HOST: '193.112.185.85',
     RDS_PWD: 'MKO--Team--2018'
   },
-  imgDomin: 'https://fp-1256261446.picgz.myqcloud.com'
+  imgDomin: 'https://fp-1256261446.picgz.myqcloud.com',
+  domain: 'http://jericsaez.ddns.net/api/v1'
 };
 
 /***/ },
@@ -464,7 +465,8 @@ module.exports = {
     RDS_HOST: '10.8.0.6',
     RDS_PWD: 'MKO--Team--2018'
   },
-  imgDomin: 'https://fp-1256261446.picgz.myqcloud.com'
+  imgDomin: 'https://fp-1256261446.picgz.myqcloud.com',
+  domain: 'http://jericsaez.ddns.net/api/v1'
 };
 
 /***/ },
@@ -473,8 +475,8 @@ module.exports = {
 
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__Users_dee_Projects_AIVision_WEB_node_modules_babel_runtime_regenerator__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__Users_dee_Projects_AIVision_WEB_node_modules_babel_runtime_regenerator___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0__Users_dee_Projects_AIVision_WEB_node_modules_babel_runtime_regenerator__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_E_Projects_AI_Vison_WEB_node_modules_babel_runtime_regenerator__ = __webpack_require__(0);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_E_Projects_AI_Vison_WEB_node_modules_babel_runtime_regenerator___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_E_Projects_AI_Vison_WEB_node_modules_babel_runtime_regenerator__);
 
 
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
@@ -483,8 +485,9 @@ function _asyncToGenerator(fn) { return function () { var gen = fn.apply(this, a
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
-var axios = __webpack_require__(1);
-var domain = 'https://blog.csdn.net/u011127019/phoenix/comment/list/52382277';
+var axios = __webpack_require__(2);
+var config = __webpack_require__(1);
+var domain = config.domain;
 
 var RegionsDBAction = function () {
     function RegionsDBAction() {
@@ -494,26 +497,15 @@ var RegionsDBAction = function () {
     _createClass(RegionsDBAction, [{
         key: 'getAllRegions',
         value: function () {
-            var _ref = _asyncToGenerator( /*#__PURE__*/__WEBPACK_IMPORTED_MODULE_0__Users_dee_Projects_AIVision_WEB_node_modules_babel_runtime_regenerator___default.a.mark(function _callee() {
-                return __WEBPACK_IMPORTED_MODULE_0__Users_dee_Projects_AIVision_WEB_node_modules_babel_runtime_regenerator___default.a.wrap(function _callee$(_context) {
+            var _ref = _asyncToGenerator( /*#__PURE__*/__WEBPACK_IMPORTED_MODULE_0_E_Projects_AI_Vison_WEB_node_modules_babel_runtime_regenerator___default.a.mark(function _callee() {
+                return __WEBPACK_IMPORTED_MODULE_0_E_Projects_AI_Vison_WEB_node_modules_babel_runtime_regenerator___default.a.wrap(function _callee$(_context) {
                     while (1) {
                         switch (_context.prev = _context.next) {
                             case 0:
                                 _context.next = 2;
-                                return axios.get(domain + '?page=1&tree_type=1').then(function (response) {
+                                return axios.get(domain + '/Regions').then(function (response) {
                                     if (response.data) {
-                                        // return response.data;
-                                        return [{
-                                            "id": "101",
-                                            "titleEN": "TST",
-                                            "titleZH": "尖沙咀",
-                                            "titleCN": "尖沙咀"
-                                        }, {
-                                            "id": "102",
-                                            "titleEN": "MK",
-                                            "titleZH": "旺角",
-                                            "titleCN": "旺角"
-                                        }];
+                                        return response.data;
                                     } else {
                                         return {};
                                     }
@@ -541,148 +533,21 @@ var RegionsDBAction = function () {
     }, {
         key: 'getPeoPleCountById',
         value: function () {
-            var _ref2 = _asyncToGenerator( /*#__PURE__*/__WEBPACK_IMPORTED_MODULE_0__Users_dee_Projects_AIVision_WEB_node_modules_babel_runtime_regenerator___default.a.mark(function _callee2(id, range, groupby) {
-                return __WEBPACK_IMPORTED_MODULE_0__Users_dee_Projects_AIVision_WEB_node_modules_babel_runtime_regenerator___default.a.wrap(function _callee2$(_context2) {
+            var _ref2 = _asyncToGenerator( /*#__PURE__*/__WEBPACK_IMPORTED_MODULE_0_E_Projects_AI_Vison_WEB_node_modules_babel_runtime_regenerator___default.a.mark(function _callee2(id, range, groupby) {
+                var params;
+                return __WEBPACK_IMPORTED_MODULE_0_E_Projects_AI_Vison_WEB_node_modules_babel_runtime_regenerator___default.a.wrap(function _callee2$(_context2) {
                     while (1) {
                         switch (_context2.prev = _context2.next) {
                             case 0:
-                                _context2.next = 2;
-                                return axios.get(domain + '?page=1&tree_type=1').then(function (response) {
+                                params = domain + '/Regions/' + id + '/people-counts';
+
+                                if (range && groupby) {
+                                    params = params + '?range=' + range + '&groupby=' + groupby;
+                                }
+                                _context2.next = 4;
+                                return axios.get(params).then(function (response) {
                                     if (response.data) {
-                                        // return response.data;
-                                        return {
-                                            "id": "101",
-                                            "titleEN": "TST",
-                                            "titleZH": "尖沙咀",
-                                            "titleCN": "尖沙咀",
-                                            "peopleCounts": [{
-                                                "timestamp": "1536019200",
-                                                "trackCount": {
-                                                    "totalEnter": 300,
-                                                    "totalExit": 300
-                                                },
-                                                "genderCount": {
-                                                    "male": 100,
-                                                    "female": 200
-                                                },
-                                                "ageCount": {
-                                                    "type1": 100,
-                                                    "type2": 200,
-                                                    "type3": 0,
-                                                    "type4": 0,
-                                                    "type5": 0,
-                                                    "unknown": 0
-                                                }
-                                            }, {
-                                                "timestamp": "1535932800",
-                                                "trackCount": {
-                                                    "totalEnter": 400,
-                                                    "totalExit": 400
-                                                },
-                                                "genderCount": {
-                                                    "male": 100,
-                                                    "female": 300
-                                                },
-                                                "ageCount": {
-                                                    "type1": 100,
-                                                    "type2": 200,
-                                                    "type3": 100,
-                                                    "type4": 0,
-                                                    "type5": 0,
-                                                    "unknown": 0
-                                                }
-                                            }, {
-                                                "timestamp": "1535846400",
-                                                "trackCount": {
-                                                    "totalEnter": 500,
-                                                    "totalExit": 500
-                                                },
-                                                "genderCount": {
-                                                    "male": 200,
-                                                    "female": 300
-                                                },
-                                                "ageCount": {
-                                                    "type1": 100,
-                                                    "type2": 200,
-                                                    "type3": 100,
-                                                    "type4": 50,
-                                                    "type5": 0,
-                                                    "unknown": 50
-                                                }
-                                            }, {
-                                                "timestamp": "1535760000",
-                                                "trackCount": {
-                                                    "totalEnter": 600,
-                                                    "totalExit": 600
-                                                },
-                                                "genderCount": {
-                                                    "male": 200,
-                                                    "female": 400
-                                                },
-                                                "ageCount": {
-                                                    "type1": 100,
-                                                    "type2": 200,
-                                                    "type3": 100,
-                                                    "type4": 100,
-                                                    "type5": 50,
-                                                    "unknown": 50
-                                                }
-                                            }, {
-                                                "timestamp": "1535673600",
-                                                "trackCount": {
-                                                    "totalEnter": 500,
-                                                    "totalExit": 500
-                                                },
-                                                "genderCount": {
-                                                    "male": 100,
-                                                    "female": 400
-                                                },
-                                                "ageCount": {
-                                                    "type1": 100,
-                                                    "type2": 200,
-                                                    "type3": 0,
-                                                    "type4": 100,
-                                                    "type5": 100,
-                                                    "unknown": 0
-                                                }
-                                            }, {
-                                                "timestamp": "1535587200",
-                                                "trackCount": {
-                                                    "totalEnter": 400,
-                                                    "totalExit": 400
-                                                },
-                                                "genderCount": {
-                                                    "male": 200,
-                                                    "female": 200
-                                                },
-                                                "ageCount": {
-                                                    "type1": 100,
-                                                    "type2": 200,
-                                                    "type3": 100,
-                                                    "type4": 0,
-                                                    "type5": 0,
-                                                    "unknown": 0
-                                                }
-                                            }, {
-                                                "timestamp": "1535500800",
-                                                "trackCount": {
-                                                    "totalEnter": 300,
-                                                    "totalExit": 300
-                                                },
-                                                "genderCount": {
-                                                    "male": 100,
-                                                    "female": 200
-                                                },
-                                                "ageCount": {
-                                                    "type1": 100,
-                                                    "type2": 200,
-                                                    "type3": 0,
-                                                    "type4": 0,
-                                                    "type5": 0,
-                                                    "unknown": 0
-                                                }
-                                            }]
-                                        };
+                                        return response.data;
                                     } else {
                                         return {};
                                     }
@@ -690,10 +555,10 @@ var RegionsDBAction = function () {
                                     console.log(error);
                                 });
 
-                            case 2:
+                            case 4:
                                 return _context2.abrupt('return', _context2.sent);
 
-                            case 3:
+                            case 5:
                             case 'end':
                                 return _context2.stop();
                         }
@@ -710,280 +575,21 @@ var RegionsDBAction = function () {
     }, {
         key: 'getAllPeoPleCount',
         value: function () {
-            var _ref3 = _asyncToGenerator( /*#__PURE__*/__WEBPACK_IMPORTED_MODULE_0__Users_dee_Projects_AIVision_WEB_node_modules_babel_runtime_regenerator___default.a.mark(function _callee3(range, groupby) {
-                return __WEBPACK_IMPORTED_MODULE_0__Users_dee_Projects_AIVision_WEB_node_modules_babel_runtime_regenerator___default.a.wrap(function _callee3$(_context3) {
+            var _ref3 = _asyncToGenerator( /*#__PURE__*/__WEBPACK_IMPORTED_MODULE_0_E_Projects_AI_Vison_WEB_node_modules_babel_runtime_regenerator___default.a.mark(function _callee3(range, groupby) {
+                var params;
+                return __WEBPACK_IMPORTED_MODULE_0_E_Projects_AI_Vison_WEB_node_modules_babel_runtime_regenerator___default.a.wrap(function _callee3$(_context3) {
                     while (1) {
                         switch (_context3.prev = _context3.next) {
                             case 0:
-                                _context3.next = 2;
-                                return axios.get(domain + '?page=1&tree_type=1').then(function (response) {
+                                params = domain + '/Regions/people-counts';
+
+                                if (range && groupby) {
+                                    params = params + '?range=' + range + '&groupby=' + groupby;
+                                }
+                                _context3.next = 4;
+                                return axios.get(params).then(function (response) {
                                     if (response.data) {
-                                        // return response.data;
-                                        return [{
-                                            "id": "101",
-                                            "titleEN": "TST",
-                                            "titleZH": "尖沙咀",
-                                            "titleCN": "尖沙咀",
-                                            "peopleCounts": [{
-                                                "timestamp": "1536019200",
-                                                "trackCount": {
-                                                    "totalEnter": 320,
-                                                    "totalExit": 300
-                                                },
-                                                "genderCount": {
-                                                    "male": 100,
-                                                    "female": 200
-                                                },
-                                                "ageCount": {
-                                                    "type1": 100,
-                                                    "type2": 200,
-                                                    "type3": 0,
-                                                    "type4": 0,
-                                                    "type5": 0,
-                                                    "unknown": 0
-                                                }
-                                            }, {
-                                                "timestamp": "1535932800",
-                                                "trackCount": {
-                                                    "totalEnter": 450,
-                                                    "totalExit": 400
-                                                },
-                                                "genderCount": {
-                                                    "male": 100,
-                                                    "female": 300
-                                                },
-                                                "ageCount": {
-                                                    "type1": 100,
-                                                    "type2": 200,
-                                                    "type3": 100,
-                                                    "type4": 0,
-                                                    "type5": 0,
-                                                    "unknown": 0
-                                                }
-                                            }, {
-                                                "timestamp": "1535846400",
-                                                "trackCount": {
-                                                    "totalEnter": 500,
-                                                    "totalExit": 500
-                                                },
-                                                "genderCount": {
-                                                    "male": 200,
-                                                    "female": 300
-                                                },
-                                                "ageCount": {
-                                                    "type1": 100,
-                                                    "type2": 200,
-                                                    "type3": 100,
-                                                    "type4": 50,
-                                                    "type5": 0,
-                                                    "unknown": 50
-                                                }
-                                            }, {
-                                                "timestamp": "1535760000",
-                                                "trackCount": {
-                                                    "totalEnter": 440,
-                                                    "totalExit": 600
-                                                },
-                                                "genderCount": {
-                                                    "male": 200,
-                                                    "female": 400
-                                                },
-                                                "ageCount": {
-                                                    "type1": 100,
-                                                    "type2": 200,
-                                                    "type3": 100,
-                                                    "type4": 100,
-                                                    "type5": 50,
-                                                    "unknown": 50
-                                                }
-                                            }, {
-                                                "timestamp": "1535673600",
-                                                "trackCount": {
-                                                    "totalEnter": 760,
-                                                    "totalExit": 500
-                                                },
-                                                "genderCount": {
-                                                    "male": 100,
-                                                    "female": 400
-                                                },
-                                                "ageCount": {
-                                                    "type1": 100,
-                                                    "type2": 200,
-                                                    "type3": 0,
-                                                    "type4": 100,
-                                                    "type5": 100,
-                                                    "unknown": 0
-                                                }
-                                            }, {
-                                                "timestamp": "1535587200",
-                                                "trackCount": {
-                                                    "totalEnter": 340,
-                                                    "totalExit": 400
-                                                },
-                                                "genderCount": {
-                                                    "male": 200,
-                                                    "female": 200
-                                                },
-                                                "ageCount": {
-                                                    "type1": 100,
-                                                    "type2": 200,
-                                                    "type3": 100,
-                                                    "type4": 0,
-                                                    "type5": 0,
-                                                    "unknown": 0
-                                                }
-                                            }, {
-                                                "timestamp": "1535500800",
-                                                "trackCount": {
-                                                    "totalEnter": 670,
-                                                    "totalExit": 300
-                                                },
-                                                "genderCount": {
-                                                    "male": 100,
-                                                    "female": 200
-                                                },
-                                                "ageCount": {
-                                                    "type1": 100,
-                                                    "type2": 200,
-                                                    "type3": 0,
-                                                    "type4": 0,
-                                                    "type5": 0,
-                                                    "unknown": 0
-                                                }
-                                            }]
-                                        }, {
-                                            "id": "102",
-                                            "titleEN": "MK",
-                                            "titleZH": "旺角",
-                                            "titleCN": "旺角",
-                                            "peopleCounts": [{
-                                                "timestamp": "1536019200",
-                                                "trackCount": {
-                                                    "totalEnter": 300,
-                                                    "totalExit": 300
-                                                },
-                                                "genderCount": {
-                                                    "male": 100,
-                                                    "female": 200
-                                                },
-                                                "ageCount": {
-                                                    "type1": 100,
-                                                    "type2": 200,
-                                                    "type3": 0,
-                                                    "type4": 0,
-                                                    "type5": 0,
-                                                    "unknown": 0
-                                                }
-                                            }, {
-                                                "timestamp": "1535932800",
-                                                "trackCount": {
-                                                    "totalEnter": 400,
-                                                    "totalExit": 400
-                                                },
-                                                "genderCount": {
-                                                    "male": 100,
-                                                    "female": 300
-                                                },
-                                                "ageCount": {
-                                                    "type1": 100,
-                                                    "type2": 200,
-                                                    "type3": 100,
-                                                    "type4": 0,
-                                                    "type5": 0,
-                                                    "unknown": 0
-                                                }
-                                            }, {
-                                                "timestamp": "1535846400",
-                                                "trackCount": {
-                                                    "totalEnter": 500,
-                                                    "totalExit": 500
-                                                },
-                                                "genderCount": {
-                                                    "male": 200,
-                                                    "female": 300
-                                                },
-                                                "ageCount": {
-                                                    "type1": 100,
-                                                    "type2": 200,
-                                                    "type3": 100,
-                                                    "type4": 50,
-                                                    "type5": 0,
-                                                    "unknown": 50
-                                                }
-                                            }, {
-                                                "timestamp": "1535760000",
-                                                "trackCount": {
-                                                    "totalEnter": 600,
-                                                    "totalExit": 600
-                                                },
-                                                "genderCount": {
-                                                    "male": 200,
-                                                    "female": 400
-                                                },
-                                                "ageCount": {
-                                                    "type1": 100,
-                                                    "type2": 200,
-                                                    "type3": 100,
-                                                    "type4": 100,
-                                                    "type5": 50,
-                                                    "unknown": 50
-                                                }
-                                            }, {
-                                                "timestamp": "1535673600",
-                                                "trackCount": {
-                                                    "totalEnter": 500,
-                                                    "totalExit": 500
-                                                },
-                                                "genderCount": {
-                                                    "male": 100,
-                                                    "female": 400
-                                                },
-                                                "ageCount": {
-                                                    "type1": 100,
-                                                    "type2": 200,
-                                                    "type3": 0,
-                                                    "type4": 100,
-                                                    "type5": 100,
-                                                    "unknown": 0
-                                                }
-                                            }, {
-                                                "timestamp": "1535587200",
-                                                "trackCount": {
-                                                    "totalEnter": 400,
-                                                    "totalExit": 400
-                                                },
-                                                "genderCount": {
-                                                    "male": 200,
-                                                    "female": 200
-                                                },
-                                                "ageCount": {
-                                                    "type1": 100,
-                                                    "type2": 200,
-                                                    "type3": 100,
-                                                    "type4": 0,
-                                                    "type5": 0,
-                                                    "unknown": 0
-                                                }
-                                            }, {
-                                                "timestamp": "1535500800",
-                                                "trackCount": {
-                                                    "totalEnter": 300,
-                                                    "totalExit": 300
-                                                },
-                                                "genderCount": {
-                                                    "male": 100,
-                                                    "female": 200
-                                                },
-                                                "ageCount": {
-                                                    "type1": 100,
-                                                    "type2": 200,
-                                                    "type3": 0,
-                                                    "type4": 0,
-                                                    "type5": 0,
-                                                    "unknown": 0
-                                                }
-                                            }]
-                                        }];
+                                        return response.data;
                                     } else {
                                         return {};
                                     }
@@ -991,10 +597,10 @@ var RegionsDBAction = function () {
                                     console.log(error);
                                 });
 
-                            case 2:
+                            case 4:
                                 return _context3.abrupt('return', _context3.sent);
 
-                            case 3:
+                            case 5:
                             case 'end':
                                 return _context3.stop();
                         }
@@ -1021,8 +627,8 @@ module.exports = RegionsDBAction;
 
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__Users_dee_Projects_AIVision_WEB_node_modules_babel_runtime_regenerator__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__Users_dee_Projects_AIVision_WEB_node_modules_babel_runtime_regenerator___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0__Users_dee_Projects_AIVision_WEB_node_modules_babel_runtime_regenerator__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_E_Projects_AI_Vison_WEB_node_modules_babel_runtime_regenerator__ = __webpack_require__(0);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_E_Projects_AI_Vison_WEB_node_modules_babel_runtime_regenerator___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_E_Projects_AI_Vison_WEB_node_modules_babel_runtime_regenerator__);
 
 
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
@@ -1031,8 +637,9 @@ function _asyncToGenerator(fn) { return function () { var gen = fn.apply(this, a
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
-var axios = __webpack_require__(1);
-var domain = 'https://blog.csdn.net/u011127019/phoenix/comment/list/52382277';
+var axios = __webpack_require__(2);
+var config = __webpack_require__(1);
+var domain = config.domain;
 
 var StoresDBAction = function () {
     function StoresDBAction() {
@@ -1042,26 +649,15 @@ var StoresDBAction = function () {
     _createClass(StoresDBAction, [{
         key: 'getAllStore',
         value: function () {
-            var _ref = _asyncToGenerator( /*#__PURE__*/__WEBPACK_IMPORTED_MODULE_0__Users_dee_Projects_AIVision_WEB_node_modules_babel_runtime_regenerator___default.a.mark(function _callee(id) {
-                return __WEBPACK_IMPORTED_MODULE_0__Users_dee_Projects_AIVision_WEB_node_modules_babel_runtime_regenerator___default.a.wrap(function _callee$(_context) {
+            var _ref = _asyncToGenerator( /*#__PURE__*/__WEBPACK_IMPORTED_MODULE_0_E_Projects_AI_Vison_WEB_node_modules_babel_runtime_regenerator___default.a.mark(function _callee(id) {
+                return __WEBPACK_IMPORTED_MODULE_0_E_Projects_AI_Vison_WEB_node_modules_babel_runtime_regenerator___default.a.wrap(function _callee$(_context) {
                     while (1) {
                         switch (_context.prev = _context.next) {
                             case 0:
                                 _context.next = 2;
-                                return axios.get(domain + '?page=1&tree_type=1').then(function (response) {
+                                return axios.get(domain + '/Regions/' + id + '/stores').then(function (response) {
                                     if (response.data) {
-                                        // return response.data;
-                                        return [{
-                                            "id": "101001",
-                                            "titleEN": "TST1",
-                                            "titleZH": "尖沙咀1店",
-                                            "titleCN": "尖沙咀1店"
-                                        }, {
-                                            "id": "101002",
-                                            "titleEN": "TST2",
-                                            "titleZH": "尖沙咀2店",
-                                            "titleCN": "尖沙咀2店"
-                                        }];
+                                        return response.data;
                                     } else {
                                         return {};
                                     }
@@ -1089,148 +685,21 @@ var StoresDBAction = function () {
     }, {
         key: 'getPeoPleCountByStoreInRegion',
         value: function () {
-            var _ref2 = _asyncToGenerator( /*#__PURE__*/__WEBPACK_IMPORTED_MODULE_0__Users_dee_Projects_AIVision_WEB_node_modules_babel_runtime_regenerator___default.a.mark(function _callee2(id, sid, range, groupby) {
-                return __WEBPACK_IMPORTED_MODULE_0__Users_dee_Projects_AIVision_WEB_node_modules_babel_runtime_regenerator___default.a.wrap(function _callee2$(_context2) {
+            var _ref2 = _asyncToGenerator( /*#__PURE__*/__WEBPACK_IMPORTED_MODULE_0_E_Projects_AI_Vison_WEB_node_modules_babel_runtime_regenerator___default.a.mark(function _callee2(id, sid, range, groupby) {
+                var params;
+                return __WEBPACK_IMPORTED_MODULE_0_E_Projects_AI_Vison_WEB_node_modules_babel_runtime_regenerator___default.a.wrap(function _callee2$(_context2) {
                     while (1) {
                         switch (_context2.prev = _context2.next) {
                             case 0:
-                                _context2.next = 2;
-                                return axios.get(domain + '?page=1&tree_type=1').then(function (response) {
+                                params = domain + '/Regions/' + id + '/stores/' + storeid + '/people-counts';
+
+                                if (range && groupby) {
+                                    params = params + '?range=' + range + '&groupby=' + groupby;
+                                }
+                                _context2.next = 4;
+                                return axios.get(params).then(function (response) {
                                     if (response.data) {
-                                        // return response.data;
-                                        return {
-                                            "id": "101001",
-                                            "titleEN": "TST1",
-                                            "titleZH": "尖沙咀1店",
-                                            "titleCN": "尖沙咀1店",
-                                            "peopleCounts": [{
-                                                "timestamp": "1536019200",
-                                                "trackCount": {
-                                                    "totalEnter": 300,
-                                                    "totalExit": 300
-                                                },
-                                                "genderCount": {
-                                                    "male": 100,
-                                                    "female": 200
-                                                },
-                                                "ageCount": {
-                                                    "type1": 100,
-                                                    "type2": 200,
-                                                    "type3": 0,
-                                                    "type4": 0,
-                                                    "type5": 0,
-                                                    "unknown": 0
-                                                }
-                                            }, {
-                                                "timestamp": "1535932800",
-                                                "trackCount": {
-                                                    "totalEnter": 400,
-                                                    "totalExit": 400
-                                                },
-                                                "genderCount": {
-                                                    "male": 100,
-                                                    "female": 300
-                                                },
-                                                "ageCount": {
-                                                    "type1": 100,
-                                                    "type2": 200,
-                                                    "type3": 100,
-                                                    "type4": 0,
-                                                    "type5": 0,
-                                                    "unknown": 0
-                                                }
-                                            }, {
-                                                "timestamp": "1535846400",
-                                                "trackCount": {
-                                                    "totalEnter": 500,
-                                                    "totalExit": 500
-                                                },
-                                                "genderCount": {
-                                                    "male": 200,
-                                                    "female": 300
-                                                },
-                                                "ageCount": {
-                                                    "type1": 100,
-                                                    "type2": 200,
-                                                    "type3": 100,
-                                                    "type4": 50,
-                                                    "type5": 0,
-                                                    "unknown": 50
-                                                }
-                                            }, {
-                                                "timestamp": "1535760000",
-                                                "trackCount": {
-                                                    "totalEnter": 600,
-                                                    "totalExit": 600
-                                                },
-                                                "genderCount": {
-                                                    "male": 200,
-                                                    "female": 400
-                                                },
-                                                "ageCount": {
-                                                    "type1": 100,
-                                                    "type2": 200,
-                                                    "type3": 100,
-                                                    "type4": 100,
-                                                    "type5": 50,
-                                                    "unknown": 50
-                                                }
-                                            }, {
-                                                "timestamp": "1535673600",
-                                                "trackCount": {
-                                                    "totalEnter": 500,
-                                                    "totalExit": 500
-                                                },
-                                                "genderCount": {
-                                                    "male": 100,
-                                                    "female": 400
-                                                },
-                                                "ageCount": {
-                                                    "type1": 100,
-                                                    "type2": 200,
-                                                    "type3": 0,
-                                                    "type4": 100,
-                                                    "type5": 100,
-                                                    "unknown": 0
-                                                }
-                                            }, {
-                                                "timestamp": "1535587200",
-                                                "trackCount": {
-                                                    "totalEnter": 400,
-                                                    "totalExit": 400
-                                                },
-                                                "genderCount": {
-                                                    "male": 200,
-                                                    "female": 200
-                                                },
-                                                "ageCount": {
-                                                    "type1": 100,
-                                                    "type2": 200,
-                                                    "type3": 100,
-                                                    "type4": 0,
-                                                    "type5": 0,
-                                                    "unknown": 0
-                                                }
-                                            }, {
-                                                "timestamp": "1535500800",
-                                                "trackCount": {
-                                                    "totalEnter": 300,
-                                                    "totalExit": 300
-                                                },
-                                                "genderCount": {
-                                                    "male": 100,
-                                                    "female": 200
-                                                },
-                                                "ageCount": {
-                                                    "type1": 100,
-                                                    "type2": 200,
-                                                    "type3": 0,
-                                                    "type4": 0,
-                                                    "type5": 0,
-                                                    "unknown": 0
-                                                }
-                                            }]
-                                        };
+                                        return response.data;
                                     } else {
                                         return {};
                                     }
@@ -1238,10 +707,10 @@ var StoresDBAction = function () {
                                     console.log(error);
                                 });
 
-                            case 2:
+                            case 4:
                                 return _context2.abrupt('return', _context2.sent);
 
-                            case 3:
+                            case 5:
                             case 'end':
                                 return _context2.stop();
                         }
@@ -1258,280 +727,21 @@ var StoresDBAction = function () {
     }, {
         key: 'getAllPeoPleCountInRegion',
         value: function () {
-            var _ref3 = _asyncToGenerator( /*#__PURE__*/__WEBPACK_IMPORTED_MODULE_0__Users_dee_Projects_AIVision_WEB_node_modules_babel_runtime_regenerator___default.a.mark(function _callee3(id, range, groupby) {
-                return __WEBPACK_IMPORTED_MODULE_0__Users_dee_Projects_AIVision_WEB_node_modules_babel_runtime_regenerator___default.a.wrap(function _callee3$(_context3) {
+            var _ref3 = _asyncToGenerator( /*#__PURE__*/__WEBPACK_IMPORTED_MODULE_0_E_Projects_AI_Vison_WEB_node_modules_babel_runtime_regenerator___default.a.mark(function _callee3(id, range, groupby) {
+                var params;
+                return __WEBPACK_IMPORTED_MODULE_0_E_Projects_AI_Vison_WEB_node_modules_babel_runtime_regenerator___default.a.wrap(function _callee3$(_context3) {
                     while (1) {
                         switch (_context3.prev = _context3.next) {
                             case 0:
-                                _context3.next = 2;
-                                return axios.get(domain + '?page=1&tree_type=1').then(function (response) {
+                                params = domain + '/Regions/' + id + '/stores/people-counts';
+
+                                if (range && groupby) {
+                                    params = params + '?range=' + range + '&groupby=' + groupby;
+                                }
+                                _context3.next = 4;
+                                return axios.get(params).then(function (response) {
                                     if (response.data) {
-                                        // return response.data;
-                                        return [{
-                                            "id": "101001",
-                                            "titleEN": "TST1",
-                                            "titleZH": "尖沙咀1店",
-                                            "titleCN": "尖沙咀1店",
-                                            "peopleCounts": [{
-                                                "timestamp": "1536019200",
-                                                "trackCount": {
-                                                    "totalEnter": 300,
-                                                    "totalExit": 300
-                                                },
-                                                "genderCount": {
-                                                    "male": 100,
-                                                    "female": 200
-                                                },
-                                                "ageCount": {
-                                                    "type1": 100,
-                                                    "type2": 200,
-                                                    "type3": 0,
-                                                    "type4": 0,
-                                                    "type5": 0,
-                                                    "unknown": 0
-                                                }
-                                            }, {
-                                                "timestamp": "1535932800",
-                                                "trackCount": {
-                                                    "totalEnter": 400,
-                                                    "totalExit": 400
-                                                },
-                                                "genderCount": {
-                                                    "male": 100,
-                                                    "female": 300
-                                                },
-                                                "ageCount": {
-                                                    "type1": 100,
-                                                    "type2": 200,
-                                                    "type3": 100,
-                                                    "type4": 0,
-                                                    "type5": 0,
-                                                    "unknown": 0
-                                                }
-                                            }, {
-                                                "timestamp": "1535846400",
-                                                "trackCount": {
-                                                    "totalEnter": 500,
-                                                    "totalExit": 500
-                                                },
-                                                "genderCount": {
-                                                    "male": 200,
-                                                    "female": 300
-                                                },
-                                                "ageCount": {
-                                                    "type1": 100,
-                                                    "type2": 200,
-                                                    "type3": 100,
-                                                    "type4": 50,
-                                                    "type5": 0,
-                                                    "unknown": 50
-                                                }
-                                            }, {
-                                                "timestamp": "1535760000",
-                                                "trackCount": {
-                                                    "totalEnter": 600,
-                                                    "totalExit": 600
-                                                },
-                                                "genderCount": {
-                                                    "male": 200,
-                                                    "female": 400
-                                                },
-                                                "ageCount": {
-                                                    "type1": 100,
-                                                    "type2": 200,
-                                                    "type3": 100,
-                                                    "type4": 100,
-                                                    "type5": 50,
-                                                    "unknown": 50
-                                                }
-                                            }, {
-                                                "timestamp": "1535673600",
-                                                "trackCount": {
-                                                    "totalEnter": 500,
-                                                    "totalExit": 500
-                                                },
-                                                "genderCount": {
-                                                    "male": 100,
-                                                    "female": 400
-                                                },
-                                                "ageCount": {
-                                                    "type1": 100,
-                                                    "type2": 200,
-                                                    "type3": 0,
-                                                    "type4": 100,
-                                                    "type5": 100,
-                                                    "unknown": 0
-                                                }
-                                            }, {
-                                                "timestamp": "1535587200",
-                                                "trackCount": {
-                                                    "totalEnter": 400,
-                                                    "totalExit": 400
-                                                },
-                                                "genderCount": {
-                                                    "male": 200,
-                                                    "female": 200
-                                                },
-                                                "ageCount": {
-                                                    "type1": 100,
-                                                    "type2": 200,
-                                                    "type3": 100,
-                                                    "type4": 0,
-                                                    "type5": 0,
-                                                    "unknown": 0
-                                                }
-                                            }, {
-                                                "timestamp": "1535500800",
-                                                "trackCount": {
-                                                    "totalEnter": 300,
-                                                    "totalExit": 300
-                                                },
-                                                "genderCount": {
-                                                    "male": 100,
-                                                    "female": 200
-                                                },
-                                                "ageCount": {
-                                                    "type1": 100,
-                                                    "type2": 200,
-                                                    "type3": 0,
-                                                    "type4": 0,
-                                                    "type5": 0,
-                                                    "unknown": 0
-                                                }
-                                            }]
-                                        }, {
-                                            "id": "101002",
-                                            "titleEN": "TST2",
-                                            "titleZH": "尖沙咀2店",
-                                            "titleCN": "尖沙咀2店",
-                                            "peopleCounts": [{
-                                                "timestamp": "1536019200",
-                                                "trackCount": {
-                                                    "totalEnter": 300,
-                                                    "totalExit": 300
-                                                },
-                                                "genderCount": {
-                                                    "male": 100,
-                                                    "female": 200
-                                                },
-                                                "ageCount": {
-                                                    "type1": 100,
-                                                    "type2": 200,
-                                                    "type3": 0,
-                                                    "type4": 0,
-                                                    "type5": 0,
-                                                    "unknown": 0
-                                                }
-                                            }, {
-                                                "timestamp": "1535932800",
-                                                "trackCount": {
-                                                    "totalEnter": 400,
-                                                    "totalExit": 400
-                                                },
-                                                "genderCount": {
-                                                    "male": 100,
-                                                    "female": 300
-                                                },
-                                                "ageCount": {
-                                                    "type1": 100,
-                                                    "type2": 200,
-                                                    "type3": 100,
-                                                    "type4": 0,
-                                                    "type5": 0,
-                                                    "unknown": 0
-                                                }
-                                            }, {
-                                                "timestamp": "1535846400",
-                                                "trackCount": {
-                                                    "totalEnter": 500,
-                                                    "totalExit": 500
-                                                },
-                                                "genderCount": {
-                                                    "male": 200,
-                                                    "female": 300
-                                                },
-                                                "ageCount": {
-                                                    "type1": 100,
-                                                    "type2": 200,
-                                                    "type3": 100,
-                                                    "type4": 50,
-                                                    "type5": 0,
-                                                    "unknown": 50
-                                                }
-                                            }, {
-                                                "timestamp": "1535760000",
-                                                "trackCount": {
-                                                    "totalEnter": 600,
-                                                    "totalExit": 600
-                                                },
-                                                "genderCount": {
-                                                    "male": 200,
-                                                    "female": 400
-                                                },
-                                                "ageCount": {
-                                                    "type1": 100,
-                                                    "type2": 200,
-                                                    "type3": 100,
-                                                    "type4": 100,
-                                                    "type5": 50,
-                                                    "unknown": 50
-                                                }
-                                            }, {
-                                                "timestamp": "1535673600",
-                                                "trackCount": {
-                                                    "totalEnter": 500,
-                                                    "totalExit": 500
-                                                },
-                                                "genderCount": {
-                                                    "male": 100,
-                                                    "female": 400
-                                                },
-                                                "ageCount": {
-                                                    "type1": 100,
-                                                    "type2": 200,
-                                                    "type3": 0,
-                                                    "type4": 100,
-                                                    "type5": 100,
-                                                    "unknown": 0
-                                                }
-                                            }, {
-                                                "timestamp": "1535587200",
-                                                "trackCount": {
-                                                    "totalEnter": 400,
-                                                    "totalExit": 400
-                                                },
-                                                "genderCount": {
-                                                    "male": 200,
-                                                    "female": 200
-                                                },
-                                                "ageCount": {
-                                                    "type1": 100,
-                                                    "type2": 200,
-                                                    "type3": 100,
-                                                    "type4": 0,
-                                                    "type5": 0,
-                                                    "unknown": 0
-                                                }
-                                            }, {
-                                                "timestamp": "1535500800",
-                                                "trackCount": {
-                                                    "totalEnter": 300,
-                                                    "totalExit": 300
-                                                },
-                                                "genderCount": {
-                                                    "male": 100,
-                                                    "female": 200
-                                                },
-                                                "ageCount": {
-                                                    "type1": 100,
-                                                    "type2": 200,
-                                                    "type3": 0,
-                                                    "type4": 0,
-                                                    "type5": 0,
-                                                    "unknown": 0
-                                                }
-                                            }]
-                                        }];
+                                        return response.data;
                                     } else {
                                         return {};
                                     }
@@ -1539,10 +749,10 @@ var StoresDBAction = function () {
                                     console.log(error);
                                 });
 
-                            case 2:
+                            case 4:
                                 return _context3.abrupt('return', _context3.sent);
 
-                            case 3:
+                            case 5:
                             case 'end':
                                 return _context3.stop();
                         }
@@ -1587,16 +797,16 @@ module.exports = require("regenerator-runtime");
 
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__Users_dee_Projects_AIVision_WEB_node_modules_babel_runtime_regenerator__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__Users_dee_Projects_AIVision_WEB_node_modules_babel_runtime_regenerator___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0__Users_dee_Projects_AIVision_WEB_node_modules_babel_runtime_regenerator__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_E_Projects_AI_Vison_WEB_node_modules_babel_runtime_regenerator__ = __webpack_require__(0);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_E_Projects_AI_Vison_WEB_node_modules_babel_runtime_regenerator___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_E_Projects_AI_Vison_WEB_node_modules_babel_runtime_regenerator__);
 
 
 var start = function () {
-  var _ref = _asyncToGenerator( /*#__PURE__*/__WEBPACK_IMPORTED_MODULE_0__Users_dee_Projects_AIVision_WEB_node_modules_babel_runtime_regenerator___default.a.mark(function _callee3() {
+  var _ref = _asyncToGenerator( /*#__PURE__*/__WEBPACK_IMPORTED_MODULE_0_E_Projects_AI_Vison_WEB_node_modules_babel_runtime_regenerator___default.a.mark(function _callee3() {
     var _this = this;
 
     var app, host, port, config, nuxt, builder;
-    return __WEBPACK_IMPORTED_MODULE_0__Users_dee_Projects_AIVision_WEB_node_modules_babel_runtime_regenerator___default.a.wrap(function _callee3$(_context3) {
+    return __WEBPACK_IMPORTED_MODULE_0_E_Projects_AI_Vison_WEB_node_modules_babel_runtime_regenerator___default.a.wrap(function _callee3$(_context3) {
       while (1) {
         switch (_context3.prev = _context3.next) {
           case 0:
@@ -1606,7 +816,7 @@ var start = function () {
 
             // Import and Set Nuxt.js options
 
-            config = __webpack_require__(2);
+            config = __webpack_require__(3);
 
             config.dev = !(app.env === 'production');
 
@@ -1630,9 +840,9 @@ var start = function () {
             KoaOnerror(app);
             app.use(KoaCompose(myRouters));
             app.use(function () {
-              var _ref2 = _asyncToGenerator( /*#__PURE__*/__WEBPACK_IMPORTED_MODULE_0__Users_dee_Projects_AIVision_WEB_node_modules_babel_runtime_regenerator___default.a.mark(function _callee(ctx, next) {
+              var _ref2 = _asyncToGenerator( /*#__PURE__*/__WEBPACK_IMPORTED_MODULE_0_E_Projects_AI_Vison_WEB_node_modules_babel_runtime_regenerator___default.a.mark(function _callee(ctx, next) {
                 var start, ms;
-                return __WEBPACK_IMPORTED_MODULE_0__Users_dee_Projects_AIVision_WEB_node_modules_babel_runtime_regenerator___default.a.wrap(function _callee$(_context) {
+                return __WEBPACK_IMPORTED_MODULE_0_E_Projects_AI_Vison_WEB_node_modules_babel_runtime_regenerator___default.a.wrap(function _callee$(_context) {
                   while (1) {
                     switch (_context.prev = _context.next) {
                       case 0:
@@ -1662,8 +872,8 @@ var start = function () {
               };
             }());
             app.use(function () {
-              var _ref3 = _asyncToGenerator( /*#__PURE__*/__WEBPACK_IMPORTED_MODULE_0__Users_dee_Projects_AIVision_WEB_node_modules_babel_runtime_regenerator___default.a.mark(function _callee2(ctx, next) {
-                return __WEBPACK_IMPORTED_MODULE_0__Users_dee_Projects_AIVision_WEB_node_modules_babel_runtime_regenerator___default.a.wrap(function _callee2$(_context2) {
+              var _ref3 = _asyncToGenerator( /*#__PURE__*/__WEBPACK_IMPORTED_MODULE_0_E_Projects_AI_Vison_WEB_node_modules_babel_runtime_regenerator___default.a.mark(function _callee2(ctx, next) {
+                return __WEBPACK_IMPORTED_MODULE_0_E_Projects_AI_Vison_WEB_node_modules_babel_runtime_regenerator___default.a.wrap(function _callee2$(_context2) {
                   while (1) {
                     switch (_context2.prev = _context2.next) {
                       case 0:
@@ -1716,7 +926,7 @@ var start = function () {
 
 function _asyncToGenerator(fn) { return function () { var gen = fn.apply(this, arguments); return new Promise(function (resolve, reject) { function step(key, arg) { try { var info = gen[key](arg); var value = info.value; } catch (error) { reject(error); return; } if (info.done) { resolve(value); } else { return Promise.resolve(value).then(function (value) { step("next", value); }, function (err) { step("throw", err); }); } } return step("next"); }); }; }
 
-global.CONFIG = __webpack_require__(3);
+global.CONFIG = __webpack_require__(1);
 var winston = __webpack_require__(11);
 var transports = [];
 transports.push(new winston.transports.File({
@@ -1730,7 +940,7 @@ transports.push(new winston.transports.Console({
 global.LOGGER = new winston.Logger({
   transports: transports
 });
-global.DEBUG = !"development" || "development" === 'development';
+global.DEBUG = !"production" || "production" === 'development';
 
 if (!DEBUG) {
   winston.handleExceptions(new winston.transports.File({ filename: 'error.log' }));
