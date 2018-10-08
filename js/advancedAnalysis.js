@@ -109,60 +109,60 @@ export default {
             },
             PassengerFlowDatas: [
                 {
-                    title: '广州北京路店A',
+                    title: 'Tsim Sha Tsui, Hong Kong',
                     value: '198',
                     label: '2018-09-09'
                 }, {
-                    title: '广州北京路店A',
+                    title: 'Tsim Sha Tsui, Hong Kong',
                     value: '198',
                     label: '2018-09-09'
                 }, {
-                    title: '广州北京路店A',
+                    title: 'Tsim Sha Tsui, Hong Kong',
                     value: '198',
                     label: '2018-09-09'
                 }, {
-                    title: '广州北京路店A',
+                    title: 'Tsim Sha Tsui, Hong Kong',
                     value: '198',
                     label: '2018-09-09'
                 }, {
-                    title: '广州北京路店A',
+                    title: 'Tsim Sha Tsui, Hong Kong',
                     value: '198',
                     label: '2018-09-09'
                 }
             ],
             PersonDatas: [
                 {
-                    title: '广州北京路店A',
+                    title: 'Tsim Sha Tsui, Hong Kong',
                     male: '67%',
                     female: '33%',
                     label: '2018-09-09'
                 },
                 {
-                    title: '广州北京路店A',
+                    title: 'Tsim Sha Tsui, Hong Kong',
                     male: '67%',
                     female: '33%',
                     label: '2018-09-09'
                 },
                 {
-                    title: '广州北京路店A',
+                    title: 'Tsim Sha Tsui, Hong Kong',
                     male: '67%',
                     female: '33%',
                     label: '2018-09-09'
                 },
                 {
-                    title: '广州北京路店A',
+                    title: 'Tsim Sha Tsui, Hong Kong',
                     male: '67%',
                     female: '33%',
                     label: '2018-09-09'
                 },
                 {
-                    title: '广州北京路店A',
+                    title: 'Tsim Sha Tsui, Hong Kong',
                     male: '67%',
                     female: '33%',
                     label: '2018-09-09'
                 },
                 {
-                    title: '广州北京路店A',
+                    title: 'Tsim Sha Tsui, Hong Kong',
                     male: '67%',
                     female: '33%',
                     label: '2018-09-09'

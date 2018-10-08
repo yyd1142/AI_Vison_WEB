@@ -775,5 +775,20 @@
     "cn": "请选择月",
     "en": "please select month",
     "hk": "請選擇月"
+  },
+  "Today": {
+    "cn": "即日",
+    "en": "Today",
+    "hk": "即日"
+  },
+  "Weather": {
+    "cn": "天气",
+    "en": "Weather",
+    "hk": "天氣"
+  },
+  "Clerk": {
+    "cn": "店员",
+    "en": "Clerk",
+    "hk": "店員"
   }
 }

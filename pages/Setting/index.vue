@@ -40,7 +40,7 @@
               prop="stroe"
               :label="languageDatas.Store[language]"
               sortable
-              width="180">
+              width="280">
             </el-table-column>
             <el-table-column
               prop="status"
@@ -87,32 +87,32 @@
         tableData: [
           {
             date: '2016-05-02',
-            name: '王小虎',
-            role: '店员',
+            name: 'Mr. Chen',
+            role: 'Clerk',
             admin: 'Administrators',
-            stroe: '广州分公司',
-            status: '正常'
+            stroe: 'Tsim Sha Tsui, Hong Kong',
+            status: 'normal'
           }, {
             date: '2016-05-04',
-            name: '王小虎',
-            role: '店员',
+            name: 'Mr. Chen',
+            role: 'Clerk',
             admin: 'Administrators',
-            stroe: '广州分公司',
-            status: '正常'
+            stroe: 'Tsim Sha Tsui, Hong Kong',
+            status: 'normal'
           }, {
             date: '2016-05-01',
-            name: '王小虎',
-            role: '店员',
+            name: 'Mr. Chen',
+            role: 'Clerk',
             admin: 'Administrators',
-            stroe: '广州分公司',
-            status: '正常'
+            stroe: 'Tsim Sha Tsui, Hong Kong',
+            status: 'normal'
           }, {
             date: '2016-05-03',
-            name: '王小虎',
-            role: '店员',
+            name: 'Mr. Chen',
+            role: 'Clerk',
             admin: 'Administrators',
-            stroe: '广州分公司',
-            status: '正常'
+            stroe: 'Tsim Sha Tsui, Hong Kong',
+            status: 'normal'
           }
         ]
       }

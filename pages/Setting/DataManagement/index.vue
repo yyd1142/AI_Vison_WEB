@@ -28,7 +28,7 @@
               prop="storeName"
               :label="languageDatas.StoreName[language]"
               sortable
-              width="180">
+              width="280">
             </el-table-column>
             <el-table-column
               prop="updateTime"
@@ -101,16 +101,16 @@
         tableData: [
           {
             id: '112',
-            storeName: '广州分公司',
+            storeName: 'Tsim Sha Tsui, Hong Kong',
             updateTime: '2018-09-18',
-            type: '銷售數據',
+            type: 'Sales data',
             amount: '129',
           },
           {
             id: '112',
-            storeName: '广州分公司',
+            storeName: 'Tsim Sha Tsui, Hong Kong',
             updateTime: '2018-09-18',
-            type: '銷售數據',
+            type: 'Sales data',
             amount: '129',
           },
         ],

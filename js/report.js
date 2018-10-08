@@ -76,6 +76,25 @@ export default {
                 },
             ]
             return datas;
+        },
+        storeDatas() {
+            const languageDatas = this.languageDatas;
+            const language = this.language;
+            const datas = [
+                {
+                    title: `${languageDatas.Store[language]}`, label: 'Tsim Sha Tsui, Hong Kong'
+                },
+                {
+                    title: `${languageDatas.StoreManager[language]}`, label: 'Mr. Chen'
+                },
+                {
+                    title: `${languageDatas.Date[language]}`, label: '2018-09-08'
+                },
+                {
+                    title: `${languageDatas.Weather[language]}`, label: 'Cloudy to clear'
+                }
+            ]
+            return datas;
         }
     },
     async asyncData(ctx) {
@@ -91,20 +110,6 @@ export default {
                 type: 1
             },
             optionDatas: [],
-            storeDatas: [
-                {
-                    title: '门店', label: '北京路广州路店'
-                },
-                {
-                    title: '店长', label: '彭于晏'
-                },
-                {
-                    title: '日期', label: '2018-09-08'
-                },
-                {
-                    title: '天气', label: '多云转晴'
-                }
-            ],
             subForm: {
                 date: '',
                 name: '',
@@ -131,7 +136,7 @@ export default {
                     this.optionDatas = datas;
                     this.form['sid'] = this.optionDatas[0].id;
                     this.$nextTick(() => {
-                        
+
                     })
                 } else {
                     this.optionDatas = [];

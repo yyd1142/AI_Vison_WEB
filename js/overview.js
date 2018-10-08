@@ -28,6 +28,10 @@ export default {
                 type: '',
                 value: 1
             }, {
+                title: 'Today',
+                type: '',
+                value: 0
+            }, {
                 title: 'Last_7_days',
                 type: '',
                 value: 7
@@ -37,7 +41,7 @@ export default {
                 value: 30
             }];
             datas = datas.map(item => {
-                if(item.value === range) {
+                if (item.value === range) {
                     item.type = 'primary';
                 } else {
                     item.type = '';
@@ -49,7 +53,7 @@ export default {
     },
     async asyncData(ctx) {
         const language = ctx.query.language || 'en';
-        const range = parseInt(ctx.query.range) || 7;
+        const range = parseInt(ctx.query.range) || 0;
         return {
             language: language,
             form: {
