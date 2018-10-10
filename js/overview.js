@@ -122,7 +122,7 @@ export default {
                 for (let item of peopleCounts) {
                     let _timestamp = moment.unix(item.timestamp);
                     if(this.form.groupby === 'hour') {
-                        item.timestamp = `${_timestamp.format('YYYY-MM-DD')} \n ${_timestamp.format('hh:mm:ss')}`;
+                        item.timestamp = `${_timestamp.format('YYYY-MM-DD')} \n ${_timestamp.format('HH:mm:ss')}`;
                     } else {
                         item.timestamp = _timestamp.format('YYYY-MM-DD');
                     }
