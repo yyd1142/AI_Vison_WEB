@@ -5,7 +5,7 @@ import moment from 'moment';
 import { titleLanguageFilter } from '@filters';
 
 const getPeoPleCountById = (form, cb) => {
-    const params = `/${form.area}/people-counts?range=${form.range}&groupby=day`;
+    const params = `/${form.area}/people-counts?range=${form.range}&groupby=${form.groupby || 'day'}`;
     api.getPeoPleCountById(params).then(res => {
         cb(res)
     });
@@ -24,21 +24,25 @@ export default {
         buttonDatas() {
             const range = this.form.range;
             let datas = [{
-                title: 'Yesterday',
-                type: '',
-                value: 1
-            }, {
                 title: 'Today',
                 type: '',
-                value: 0
+                value: 0,
+                groupby: 'hour'
+            }, {
+                title: 'Yesterday',
+                type: '',
+                value: 1,
+                groupby: 'hour'
             }, {
                 title: 'Last_7_days',
                 type: '',
-                value: 7
+                value: 7,
+                groupby: 'day'
             }, {
                 title: 'Last_30_days',
                 type: '',
-                value: 30
+                value: 30,
+                groupby: 'day'
             }];
             datas = datas.map(item => {
                 if (item.value === range) {
@@ -54,12 +58,14 @@ export default {
     async asyncData(ctx) {
         const language = ctx.query.language || 'en';
         const range = parseInt(ctx.query.range) || 0;
+        const groupby = ctx.query.groupby || 'hour';
         return {
             language: language,
             form: {
                 acount: '',
                 area: '',
-                range: range
+                range: range,
+                groupby: groupby
             },
             areaAcount: '',
             typeIndex: 0,
@@ -79,8 +85,6 @@ export default {
         this.typeDatas = typeDatas;
         this.$nextTick(() => {
             this.getAllRegions();
-            this.topListChart();
-            this.passengerFlowChart();
         })
 
     },
@@ -116,7 +120,12 @@ export default {
                 let days = [];
                 let datas = [];
                 for (let item of peopleCounts) {
-                    item.timestamp = moment.unix(item.timestamp).format('YYYY-MM-DD');
+                    let _timestamp = moment.unix(item.timestamp);
+                    if(this.form.groupby === 'hour') {
+                        item.timestamp = `${_timestamp.format('YYYY-MM-DD')} \n ${_timestamp.format('hh:mm:ss')}`;
+                    } else {
+                        item.timestamp = _timestamp.format('YYYY-MM-DD');
+                    }
                     days.push(item.timestamp);
                     datas.push(item.trackCount.totalEnter);
                 }
@@ -172,7 +181,7 @@ export default {
         topListChart() {
             api.getAllPeoPleCount({
                 range: this.form.range,
-                groupby: 'day'
+                groupby: this.form.groupby || 'day'
             }).then(res => {
                 if (res.code === 0) {
                     const language = this.language;
@@ -490,7 +499,7 @@ export default {
                     i.type = '';
                 }
             }
-            let path = `?language=${this.language}&range=${item.value}`;
+            let path = `?language=${this.language}&range=${item.value}&groupby=${item.groupby}`;
             window.location.href = path;
         },
     }

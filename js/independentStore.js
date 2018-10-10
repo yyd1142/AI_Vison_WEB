@@ -5,7 +5,7 @@ import api from '@plugins/api';
 import { titleLanguageFilter } from '@filters';
 
 const getPeoPleCountByStoreInRegion = (form, cb) => {
-    const params = `/${form.area}/stores/${form.sid}/people-counts?range=${form.range}&groupby=day`;
+    const params = `/${form.area}/stores/${form.sid}/people-counts?range=${form.range}&groupby=${form.groupby}`;
     api.getPeoPleCountByStoreInRegion(params).then(res => {
         cb(res)
     })
@@ -24,24 +24,28 @@ export default {
         buttonDatas() {
             const range = this.form.range;
             let datas = [{
-                title: 'Yesterday',
-                type: '',
-                value: 1
-            }, {
                 title: 'Today',
                 type: '',
-                value: 0
+                value: 0,
+                groupby: 'hour'
+            }, {
+                title: 'Yesterday',
+                type: '',
+                value: 1,
+                groupby: 'hour'
             }, {
                 title: 'Last_7_days',
                 type: '',
-                value: 7
+                value: 7,
+                groupby: 'day'
             }, {
                 title: 'Last_30_days',
                 type: '',
-                value: 30
+                value: 30,
+                groupby: 'day'
             }];
             datas = datas.map(item => {
-                if(item.value === range) {
+                if (item.value === range) {
                     item.type = 'primary';
                 } else {
                     item.type = '';
@@ -55,12 +59,14 @@ export default {
         const language = ctx.query.language || 'en';
         const regionsId = ctx.query.regionsId || '';
         const range = parseInt(ctx.query.range) || 0;
+        const groupby = ctx.query.groupby || 'hour';
         return {
             language: language,
             form: {
                 area: regionsId,
                 sid: '',
-                range: range
+                range: range,
+                groupby: groupby
             },
             typeIndex: 0,
             typeDatas: [],
@@ -113,7 +119,12 @@ export default {
                     let days = [];
                     let datas = [];
                     for (let item of peopleCounts) {
-                        item.timestamp = moment.unix(item.timestamp).format('YYYY-MM-DD');
+                        let _timestamp = moment.unix(item.timestamp);
+                        if (this.form.groupby === 'hour') {
+                            item.timestamp = `${_timestamp.format('YYYY-MM-DD')} \n ${_timestamp.format('hh:mm:ss')}`;
+                        } else {
+                            item.timestamp = _timestamp.format('YYYY-MM-DD');
+                        }
                         days.push(item.timestamp);
                         datas.push(item.trackCount.totalEnter);
                     }
@@ -522,7 +533,7 @@ export default {
                     i.type = '';
                 }
             }
-            let path = `?language=${this.language}&regionsId=${this.form.area}&range=${item.value}`;
+            let path = `?language=${this.language}&regionsId=${this.form.area}&range=${item.value}&groupby=${item.groupby}`;
             window.location.href = path;
         },
     }
