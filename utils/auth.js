@@ -6,13 +6,13 @@ export const getUserFromCookie = (req) => {
         let keyValue = item.trim().split('=');
         user[keyValue[0]] = decodeURI(keyValue[1]);
     }
-    if ('user_name' in user && 'id' in user)
+    if ('name' in user)
         return user;
     return null;
 }
 
 export const getUserFromLocalStorage = () => {
-    let json = window.localStorage.getItem('user');
+    let json = window.localStorage.getItem('name');
     let user = null;
     try {
         user = JSON.parse(json);
@@ -24,10 +24,10 @@ export const getUserFromLocalStorage = () => {
 
 export const setUser = (user) => {
     if (process.SERVER_BUILD) return
-    window.localStorage.setItem('user', JSON.stringify(user))
+    window.localStorage.setItem('name', JSON.stringify(user))
 }
 
 export const removeUser = (user) => {
     if (process.SERVER_BUILD) return
-    window.localStorage.removeItem('user')
+    window.localStorage.removeItem('name')
 }

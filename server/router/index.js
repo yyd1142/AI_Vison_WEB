@@ -8,6 +8,20 @@ const apiRouter = KoaRouter({
   prefix: '/api'
 })
 
+apiRouter.get('/loginApi', async (ctx, next) => {
+  let cookieOpts = {
+    maxAge: 15 * 24 * 60 * 60 * 1000, // 15天
+    httpOnly: true
+  }
+  if (ctx.query.name) {
+    ctx.cookies.set('name', encodeURI(`${ctx.query.name}`), cookieOpts);
+    ctx.body = { code: 0 };
+  } else {
+    ctx.body = { code: 2, message: 'failed.' };
+  }
+
+});
+
 apiRouter.get('/regionsAll', async (ctx, next) => {
   const response = await regionsDBAction.getAllRegions();
   ctx.body = { code: 0, datas: response };

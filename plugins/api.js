@@ -90,5 +90,5 @@ export default {
   getAllStore: httpPath('/Regions'),
   getPeoPleCountByStoreInRegion: httpPath('/Regions'),
   getAllPeoPleCountInRegion: httpPath('/Regions'), 
-
+  login: httpGet('/loginApi', apiConfig.domainLocal),
 }

@@ -6,6 +6,7 @@ import MyFormCell from './MyFormCell';
 import DataDetailCell from './DataDetailCell';
 import DataDetailTitle from './DataDetailTitle';
 import VideoPlayer from './VideoPlayer';
+import LoginHeader from './LoginHeader';
 
 export {
   Footer,
@@ -15,5 +16,6 @@ export {
   MyFormCell,
   DataDetailCell,
   DataDetailTitle,
-  VideoPlayer
+  VideoPlayer,
+  LoginHeader
 }

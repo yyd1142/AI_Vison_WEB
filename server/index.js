@@ -29,6 +29,7 @@ const KoaCompose = require('koa-compose')
 async function start () {
   const app = new Koa()
   const host = process.env.HOST || '127.0.0.1'
+  // const host = '192.168.3.145'
   const port = process.env.PORT || 3000
 
   // Import and Set Nuxt.js options

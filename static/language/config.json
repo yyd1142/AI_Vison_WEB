@@ -790,5 +790,35 @@
     "cn": "店员",
     "en": "Clerk",
     "hk": "店員"
+  },
+  "userNameInput": {
+    "cn": "请输入用户名",
+    "en": "please enter the username",
+    "hk": "請輸入用戶名"
+  },
+  "passwordInput": {
+    "cn": "请输入密码",
+    "en": "please enter the password",
+    "hk": "請輸入密碼"
+  },
+  "Login": {
+    "cn": "登录",
+    "en": "Login",
+    "hk": "登錄"
+  },
+  "rememberPwd": {
+    "cn": "记住密码",
+    "en": "Remember password",
+    "hk": "記住密碼"
+  },
+  "ForgotPwd": {
+    "cn": "忘记密码",
+    "en": "Forgot password",
+    "hk": "忘記密碼"
+  },
+  "errorLoginMessage": {
+    "cn": "帐号或密码不正确.",
+    "en": "Incorrect username or password.",
+    "hk": "賬號或密碼不正確."
   }
 }
