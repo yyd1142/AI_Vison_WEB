@@ -61,6 +61,13 @@
           <div class="form-item form-right">
             <el-button class="form-button" type="primary">{{languageDatas.Search[language]}}</el-button>
           </div>
+          <div class="button-group baseAnalysis-range-button">
+            <el-button-group>
+              <el-button :type="item.type" v-for="(item, index) of buttonDatas" :key="index"
+                         @click="chooseDays(item, index)">{{languageDatas[item.title][language]}}
+              </el-button>
+            </el-button-group>
+          </div>
         </div>
         <TitleCell
           :title="`${languageDatas.PassengerFlowData[language]}`"

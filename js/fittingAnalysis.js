@@ -48,10 +48,44 @@ export default {
                 }
             ];
             return datas;
+        },
+        buttonDatas() {
+            const range = this.form.range;
+            let datas = [{
+                title: 'Today',
+                type: '',
+                value: 0,
+                groupby: 'hour'
+            }, {
+                title: 'Yesterday',
+                type: '',
+                value: 1,
+                groupby: 'hour'
+            }, {
+                title: 'Last_7_days',
+                type: '',
+                value: 7,
+                groupby: 'day'
+            }, {
+                title: 'Last_30_days',
+                type: '',
+                value: 30,
+                groupby: 'day'
+            }];
+            datas = datas.map(item => {
+                if (item.value === range) {
+                    item.type = 'primary';
+                } else {
+                    item.type = '';
+                }
+                return item;
+            })
+            return datas;
         }
     },
     async asyncData(ctx) {
         const language = ctx.query.language || 'en';
+        const range = parseInt(ctx.query.range) || 0;
         return {
             language: language,
             form: {
@@ -62,7 +96,7 @@ export default {
 
                 area: '',
                 sid: '',
-                range: 7
+                range: range
             },
             optionDatas: [],
             storeDatas: [],
@@ -327,6 +361,7 @@ export default {
                 if (res.code === 0) {
                     const datas = res.datas;
                     const language = this.language;
+                    const range = this.form.range;
                     let PassengerFlowDatas = [];
                     let PersonDatas = [];
                     let AgeDatas = [];
@@ -360,20 +395,31 @@ export default {
                         type4Datas = eval(type4Datas.join('+'));
                         type5Datas = eval(type5Datas.join('+'));
                         const typeSum = type1Datas + type2Datas + type3Datas + type4Datas + type5Datas;
+                        const { Today, Yesterday, Last_7_days, Last_30_days } = this.languageDatas;
+                        let label = '';
+                        if (range === 0) {
+                            label = Today[language];
+                        } else if (range === 1) {
+                            label = Yesterday[language];
+                        } else if (range === 7) {
+                            label = Last_7_days[language];
+                        } else if (range === 30) {
+                            label = Last_30_days[language];
+                        } else {}
                         PassengerFlowDatas.push({
                             title: title,
                             value: eval(trackCount.join('+')),
-                            label: '最近7天'
+                            label: label
                         });
                         PersonDatas.push({
                             title: title,
                             male: `${(maleCount / (maleCount + femaleCount) * 100).toFixed(2)}%`,
                             female: `${(femaleCount / (maleCount + femaleCount) * 100).toFixed(2)}%`,
-                            label: '最近7天'
+                            label: label
                         });
                         AgeDatas.push({
                             title: title,
-                            label: '最近7天',
+                            label: label,
                             type1: `${(type1Datas / typeSum * 100).toFixed(2)}%`,
                             type2: `${(type2Datas / typeSum * 100).toFixed(2)}%`,
                             type3: `${(type3Datas / typeSum * 100).toFixed(2)}%`,
@@ -432,6 +478,17 @@ export default {
         },
         handleClose() {
             this.dialogVisible = false;
-        }
+        },
+        chooseDays(item, index) {
+            for (let [k, i] of this.buttonDatas.entries()) {
+                if (k === index) {
+                    i.type = 'primary';
+                } else {
+                    i.type = '';
+                }
+            }
+            let path = `?language=${this.language}&range=${item.value}&groupby=${item.groupby}`;
+            window.location.href = path;
+        },
     }
 }
