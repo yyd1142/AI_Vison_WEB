@@ -22,13 +22,13 @@
           </el-dropdown>
         </div>
         <div class="location-wrap">
-          <el-dropdown>
+          <el-dropdown @command="setting">
                   <span class="el-dropdown-link user-name">
                     Admin<i class="el-icon-arrow-down el-icon--right"></i>
                   </span>
             <el-dropdown-menu slot="dropdown">
-              <el-dropdown-item>{{languageDatas.Profile[language]}}</el-dropdown-item>
-              <el-dropdown-item>{{languageDatas.SignOut[language]}}</el-dropdown-item>
+              <!-- <el-dropdown-item command="Profile">{{languageDatas.Profile[language]}}</el-dropdown-item> -->
+              <el-dropdown-item command="SignOut">{{languageDatas.SignOut[language]}}</el-dropdown-item>
             </el-dropdown-menu>
           </el-dropdown>
         </div>
@@ -38,6 +38,7 @@
 </template>
 
 <script>
+  import api from '@plugins/api';
   export default {
     data() {
       return {
@@ -81,6 +82,16 @@
     methods: {
       chooseLang(command) {
         window.location.href = `?language=${command}`;
+      },
+      setting(command) {
+        api.logout({}).then(res => {
+            const resonse = res.datas;
+            if(resonse && resonse.code === 0) {
+                location.href = `/login?language=en`;
+            } else {
+                this.$message({ message: `failed!`, type: 'warning' });
+            }
+        })
       }
     }
   };

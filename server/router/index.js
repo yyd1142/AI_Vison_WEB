@@ -22,6 +22,11 @@ apiRouter.get('/loginApi', async (ctx, next) => {
 
 });
 
+apiRouter.get('/logoutApi', async (ctx, next) => {
+  ctx.cookies.set('name', null);
+	ctx.body = { code: 0 };
+});
+
 apiRouter.get('/regionsAll', async (ctx, next) => {
   const response = await regionsDBAction.getAllRegions();
   ctx.body = { code: 0, datas: response };
